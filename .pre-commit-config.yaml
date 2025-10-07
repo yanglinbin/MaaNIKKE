@@ -12,6 +12,8 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
+        # Limit prettier to run only on docs, .github workflows and README/package files
+        files: ^(docs/|\.github/|README\.md|package.json|\.github/workflows/).*\.(ya?ml|json|md)$
         types_or:
           - yaml
           - json

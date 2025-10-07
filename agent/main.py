@@ -3,8 +3,8 @@ import sys
 from maa.agent.agent_server import AgentServer
 from maa.toolkit import Toolkit
 
-import my_action
-import my_reco
+import agent.custom.action.general as general
+import agent.custom.reco.my_reco as my_reco
 
 
 def main():

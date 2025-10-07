@@ -1,80 +1,124 @@
 {
     "controller": [
         {
-            "name": "安卓端",
-            "type": "Adb"
-        },
-        {
             "name": "桌面端",
             "type": "Win32",
             "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
+                "class_regex": "UnityWndClass*",
+                "window_regex": "NIKKE",
+                "input": 2,
+                "screencap": 2
             }
         }
     ],
     "resource": [
         {
-            "name": "官服",
+            "name": "国际服",
             "path": [
-                "{PROJECT_DIR}/resource"
-            ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource",
-                "{PROJECT_DIR}/resource_bilibili"
+                "{PROJECT_DIR}/resource/base"
             ]
         }
     ],
-    "agent_demo": {
+    "agent": {
         "child_exec": "python",
         "child_args": [
-            "{PROJECT_DIR}/agent/main.py"
+            "-u",
+            "{PROJECT_DIR}/../agent/main.py"
         ]
     },
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
-        },
-        {
-            "name": "选项任务",
-            "entry": "MyTask2",
+            "name": "普通商店",
+            "entry": "普通商店",
             "option": [
-                "任务选项1"
+                "百货商店",
+                "竞技场商店",
+                "代码手册",
+                "代码手册宝箱",
+                "公司武器熔炉"
             ]
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "pipeline_override": {}
-        },
-        {
-            "name": "带Custom的任务",
-            "entry": "MyTask4"
+            "name": "付费商店",
+            "entry": "付费商店"
         }
     ],
     "option": {
-        "任务选项1": {
+        "百货商店": {
             "cases": [
                 {
-                    "name": "文本1",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
-                        }
-                    }
+                    "name": "Yes",
+                    "pipeline_override": {}
                 },
                 {
-                    "name": "文本2",
+                    "name": "No",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
+                        "百货商店": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "竞技场商店": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "竞技场商店": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "代码手册": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "代码手册": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "代码手册宝箱": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "代码手册宝箱": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "公司武器熔炉": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "公司武器熔炉": {
+                            "enabled": false
                         }
                     }
                 }
