@@ -47,4 +47,36 @@
 - 依赖缺失或版本不符会导致 DLL 加载失败，详见 FAQ。
 - 日志文件为排查问题的重要依据。
 
+## 开发环境：终端自动激活虚拟环境（重要）
+
+每次打开项目终端时应自动激活项目虚拟环境（`.venv`），以确保 `pre-commit`、`python`、`pip` 和扩展在相同的环境中运行。请遵循以下可操作规则：
+
+- 推荐设置（VS Code workspace settings）
+
+   在 `.vscode/settings.json` 中设置：
+
+   ```jsonc
+   {
+      "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "python.terminal.activateEnvironment": true,
+      "terminal.integrated.defaultProfile.windows": "PowerShell"
+   }
+   ```
+
+- 说明与替代方案
+   - 不要在 profile 的 `args` 里直接写 `Activate.ps1`（`${workspaceFolder}` 在 args 中可能不会被正确展开或在不同系统编码下失败）。
+   - 如果你使用 Git Bash / Cmd，请让 Python 扩展自动激活（`python.terminal.activateEnvironment`），或为这些 shell 添加 profile 并使用 shell 本身的 `source`/`activate` 命令。
+   - 若首次终端未激活：确认左下角已选择工作区的 `.venv` 解释器（Ctrl+Shift+P → Python: Select Interpreter），然后关闭所有终端并 New Terminal。
+
+- 常见问题
+   - 错误：`pre-commit not found` 或 `Received protocol 'e:'` — 说明当前终端不是项目 venv，或 pre-commit hook 指向错误的 python（见 `.git/hooks/pre-commit`）。解决办法：在 VS Code 里新建终端以触发自动激活，或手动激活：
+
+      ```powershell
+      & ${workspaceFolder}\\.venv\\Scripts\\Activate.ps1
+      ```
+
+   - 如果 PowerShell 执行策略阻止执行 Activate.ps1，可临时使用 `-ExecutionPolicy Bypass`，或改变 CurrentUser 策略。
+
+把这条规则作为本项目的开发环境约定写入，以便 AI agent 在执行任何仓库操作前确保激活虚拟环境。
+
 如需详细开发规范、集成协议或接口说明，请查阅 `docs/zh_cn/` 及 MaaFramework 官方文档。

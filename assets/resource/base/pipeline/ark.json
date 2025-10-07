@@ -484,8 +484,8 @@
     "__mpe_external_返回主页_ark": {
         "__mpe_code": {
             "position": {
-                "x": 338,
-                "y": 2579
+                "x": 1241,
+                "y": 3140
             }
         }
     },
@@ -504,30 +504,14 @@
                 "y": 2341
             }
         },
-        "next": [
-            "方舟任务完成"
-        ],
         "interrupt": [
             "拦截战",
             "模拟室",
-            "无限之塔"
+            "返回主页"
+        ],
+        "next": [
+            "方舟任务完成"
         ]
-    },
-    "方舟任务完成": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 1225,
-                "y": 2152
-            }
-        }
     },
     "返回方舟": {
         "recognition": {
@@ -550,8 +534,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 4643,
-                "y": 2490
+                "x": 4881,
+                "y": 2510
             }
         }
     },
@@ -585,8 +569,8 @@
         "focus": "开始模拟室任务",
         "__mpe_code": {
             "position": {
-                "x": 1201,
-                "y": 2651
+                "x": 1241,
+                "y": 2653
             }
         },
         "next": [
@@ -608,8 +592,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1214,
-                "y": 3268
+                "x": 1140,
+                "y": 3498
             }
         }
     },
@@ -824,8 +808,8 @@
     "__mpe_external_返回_ark": {
         "__mpe_code": {
             "position": {
-                "x": 4568,
-                "y": 2778
+                "x": 4707,
+                "y": 2852
             }
         }
     },
@@ -1014,5 +998,36 @@
         "next": [
             "模拟室快速模拟完成"
         ]
+    },
+    "方舟任务完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.5
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "百货商店任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 1227,
+                "y": 1942
+            }
+        }
     }
 }

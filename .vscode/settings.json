@@ -38,5 +38,12 @@
     "[markdown]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-    }
+    },
+    // Set project virtualenv as default interpreter and ensure terminals activate it
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    // Prefer letting the Python extension activate the environment inside the
+    // default PowerShell profile. Custom profile args often don't expand
+    // ${workspaceFolder} reliably on Windows.
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
