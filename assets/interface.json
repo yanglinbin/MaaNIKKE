@@ -6,7 +6,7 @@
             "win32": {
                 "class_regex": "UnityWndClass*",
                 "window_regex": "NIKKE",
-                "input": 2,
+                "input": 1,
                 "screencap": 2
             }
         }
@@ -23,28 +23,118 @@
         "child_exec": "python",
         "child_args": [
             "-u",
-            "{PROJECT_DIR}/../agent/main.py"
+            "-m",
+            "agent.main"
         ]
     },
     "task": [
         {
-            "name": "普通商店",
-            "entry": "普通商店",
+            "name": "百货商店",
+            "entry": "百货商店",
             "option": [
-                "百货商店",
+                "普通商店",
                 "竞技场商店",
-                "代码手册",
-                "代码手册宝箱",
-                "公司武器熔炉"
+                "竞技场商店_代码手册",
+                "竞技场商店_代码手册宝箱",
+                "竞技场商店_公司武器熔炉"
             ]
         },
         {
             "name": "付费商店",
             "entry": "付费商店"
+        },
+        {
+            "name": "方舟任务",
+            "entry": "方舟",
+            "option": [
+                "拦截战",
+                "异常个体拦截战boss选择",
+                "模拟室",
+                "模拟室_快速模拟"
+            ]
         }
     ],
     "option": {
-        "百货商店": {
+        "异常个体拦截战boss选择": {
+            "cases": [
+                {
+                    "name": "茵迪维利亚",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "茵迪维利亚"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "过激派",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "过激派"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "死神",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "死神"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "克拉肯",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "克拉肯"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "镜像容器",
+                    "pipeline_override": {
+                        "选择boss": {
+                            "recognition": {
+                                "type": "OCR",
+                                "param": {
+                                    "expected": [
+                                        "镜像容器"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟室_快速模拟": {
             "cases": [
                 {
                     "name": "Yes",
@@ -53,7 +143,55 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "百货商店": {
+                        "开始模拟": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "模拟室": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "模拟室": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "拦截战": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "拦截战": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "普通商店": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "普通商店": {
                             "enabled": false
                         }
                     }
@@ -76,7 +214,7 @@
                 }
             ]
         },
-        "代码手册": {
+        "竞技场商店_代码手册": {
             "cases": [
                 {
                     "name": "Yes",
@@ -92,7 +230,7 @@
                 }
             ]
         },
-        "代码手册宝箱": {
+        "竞技场商店_代码手册宝箱": {
             "cases": [
                 {
                     "name": "Yes",
@@ -108,7 +246,7 @@
                 }
             ]
         },
-        "公司武器熔炉": {
+        "竞技场商店_公司武器熔炉": {
             "cases": [
                 {
                     "name": "Yes",

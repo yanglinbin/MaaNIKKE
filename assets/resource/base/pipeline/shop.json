@@ -1,8 +1,8 @@
 {
-    "__mpe_config_商店自动购买": {
+    "__mpe_config_商店功能": {
         "__mpe_code": {
             "prefix": "",
-            "filename": "商店自动购买",
+            "filename": "商店功能",
             "version": "v0.5.3"
         }
     },
@@ -31,12 +31,12 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1740,
-                "y": 344
+                "x": 1439,
+                "y": 277
             }
         },
         "next": [
-            "付费商店小红点检测"
+            "付费商店无小红点"
         ],
         "interrupt": [
             "进入付费商店"
@@ -61,12 +61,12 @@
         "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 2030,
-                "y": 498
+                "x": 1740,
+                "y": 528
             }
         },
         "next": [
-            "是否进入付费商店"
+            "成功进入付费商店"
         ]
     },
     "进入普通礼包页面": {
@@ -85,23 +85,18 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 2610,
-                "y": 498
+                "x": 2320,
+                "y": 543
             }
         },
         "next": [
-            "无普通礼包"
-        ],
-        "interrupt": [
-            "检测是否存在每日礼包",
-            "检测是否存在每周礼包",
-            "检测是否存在每月礼包"
+            "成功进入普通礼包页面",
+            "进入普通礼包页面"
         ]
     },
-    "付费商店小红点检测": {
+    "付费商店无小红点": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -124,15 +119,15 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 2030,
-                "y": 219
+                "x": 1865,
+                "y": 127
             }
         },
         "next": [
             "付费商店领取完毕"
         ]
     },
-    "是否进入付费商店": {
+    "成功进入付费商店": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -151,18 +146,18 @@
             "type": "DoNothing",
             "param": {}
         },
-        "timeout": 20000,
+        "focus": "成功进入付费商店",
         "__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 483
+                "x": 2030,
+                "y": 528
             }
         },
         "next": [
             "进入普通礼包页面"
         ]
     },
-    "进入每日礼包界面": {
+    "进入每日礼包": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -178,18 +173,18 @@
                 ]
             }
         },
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 3190,
-                "y": 294
+                "x": 3860,
+                "y": 559
             }
         },
         "next": [
-            "点击每日免费礼包"
+            "购买每日免费礼包"
         ]
     },
-    "点击每日免费礼包": {
+    "购买每日免费礼包": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -208,8 +203,8 @@
         "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 3480,
-                "y": 294
+                "x": 4315,
+                "y": 426
             }
         },
         "next": [
@@ -227,18 +222,18 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 21,
-                "y": 1326
+                "x": 1160,
+                "y": 664
             }
         },
-        "interrupt": [
-            "返回主页"
-        ],
         "next": [
             "付费商店识别"
+        ],
+        "interrupt": [
+            "返回主页"
         ]
     },
-    "点击每周免费礼包": {
+    "购买每周免费礼包": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -257,15 +252,15 @@
         "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 3480,
-                "y": 543
+                "x": 4259,
+                "y": 157
             }
         },
         "next": [
             "领取奖励"
         ]
     },
-    "点击每月免费礼包": {
+    "购买每月免费礼包": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -284,15 +279,15 @@
         "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 3480,
-                "y": 792
+                "x": 4252,
+                "y": -105
             }
         },
         "next": [
             "领取奖励"
         ]
     },
-    "进入每周礼包界面": {
+    "进入每周礼包": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -301,24 +296,25 @@
             "type": "Click",
             "param": {
                 "target": [
-                    144,
+                    251,
                     192,
-                    73,
-                    23
+                    81,
+                    22
                 ]
             }
         },
+        "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 3190,
-                "y": 558
+                "x": 3911,
+                "y": 200
             }
         },
         "next": [
-            "点击每周免费礼包"
+            "购买每周免费礼包"
         ]
     },
-    "进入每月礼包界面": {
+    "进入每月礼包": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -327,24 +323,25 @@
             "type": "Click",
             "param": {
                 "target": [
-                    144,
+                    363,
                     192,
-                    73,
+                    80,
                     23
                 ]
             }
         },
+        "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 3190,
-                "y": 807
+                "x": 3885,
+                "y": -117
             }
         },
         "next": [
-            "点击每月免费礼包"
+            "购买每月免费礼包"
         ]
     },
-    "检测是否存在每日礼包": {
+    "每日礼包": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -366,15 +363,15 @@
         "timeout": 500,
         "__mpe_code": {
             "position": {
-                "x": 2900,
-                "y": 279
+                "x": 3589,
+                "y": 604
             }
         },
         "next": [
-            "进入每日礼包界面"
+            "进入每日礼包"
         ]
     },
-    "检测是否存在每周礼包": {
+    "每周礼包": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -396,15 +393,15 @@
         "timeout": 500,
         "__mpe_code": {
             "position": {
-                "x": 2900,
-                "y": 528
+                "x": 3611,
+                "y": 253
             }
         },
         "next": [
-            "进入每周礼包界面"
+            "进入每周礼包"
         ]
     },
-    "检测是否存在每月礼包": {
+    "每月礼包": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -426,15 +423,15 @@
         "timeout": 500,
         "__mpe_code": {
             "position": {
-                "x": 2900,
-                "y": 777
+                "x": 3620,
+                "y": -134
             }
         },
         "next": [
-            "进入每月礼包界面"
+            "进入每月礼包"
         ]
     },
-    "百货商店": {
+    "普通商店": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -443,11 +440,11 @@
             "type": "DoNothing",
             "param": {}
         },
-        "enabled": true,
+        "focus": "开始普通商店任务",
         "__mpe_code": {
             "position": {
-                "x": 2030,
-                "y": 1218
+                "x": 2090,
+                "y": 3468
             }
         },
         "next": [
@@ -457,7 +454,7 @@
             "购买免费物品"
         ]
     },
-    "百货商店识别": {
+    "查找百货商店": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -482,75 +479,44 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 402,
-                "y": 2332
+                "x": 500,
+                "y": 2613
             }
         },
         "next": [
-            "百货商店小红点检测"
+            "进入百货商店"
         ]
     },
     "进入百货商店": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "商店"
+                ],
+                "roi": [
+                    352,
+                    464,
+                    81,
+                    56
+                ]
+            }
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target": [
-                    323,
-                    477,
-                    112,
-                    39
-                ]
-            }
+            "param": {}
         },
         "__mpe_code": {
             "position": {
-                "x": 1019,
-                "y": 2468
+                "x": 826,
+                "y": 2654
             }
         },
         "next": [
-            "是否成功进入百货商店",
-            "进入百货商店"
+            "成功进入百货商店"
         ]
     },
-    "百货商店小红点检测": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "common/小红点.png"
-                ],
-                "roi": "百货商店识别",
-                "roi_offset": [
-                    60,
-                    0,
-                    -30,
-                    0
-                ]
-            }
-        },
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "NodeOverride",
-                "custom_action_param": "{\"百货商店\":{\"recognition\":\"DirectHit\",\"action\":\"DoNothing\"}"
-            }
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 770,
-                "y": 2291
-            }
-        },
-        "next": [
-            "进入百货商店"
-        ]
-    },
-    "是否成功进入百货商店": {
+    "成功进入百货商店": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -570,14 +536,15 @@
             "param": {}
         },
         "timeout": 20000,
+        "focus": "成功进入百货商店",
         "__mpe_code": {
             "position": {
-                "x": 1363,
-                "y": 2449
+                "x": 1139,
+                "y": 2609
             }
         },
         "next": [
-            "普通商店功能列表"
+            "百货商店功能列表"
         ]
     },
     "购买免费物品": {
@@ -610,12 +577,12 @@
         "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 3190,
-                "y": 1260
+                "x": 3930,
+                "y": 3180
             }
         },
         "next": [
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
     "无免费刷新": {
@@ -640,12 +607,12 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 2610,
-                "y": 981
+                "x": 2908,
+                "y": 3518
             }
         },
         "next": [
-            "百货商店购买完成"
+            "普通商店购买完成"
         ]
     },
     "确定免费刷新": {
@@ -677,8 +644,8 @@
         "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 2900,
-                "y": 1200
+                "x": 3324,
+                "y": 3813
             }
         },
         "next": [
@@ -694,10 +661,11 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "付费商店领取成功",
         "__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 279
+                "x": 2193,
+                "y": 273
             }
         }
     },
@@ -724,10 +692,13 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 2900,
-                "y": 0
+                "x": 2978,
+                "y": 774
             }
-        }
+        },
+        "next": [
+            "返回主页"
+        ]
     },
     "无免费物品": {
         "recognition": {
@@ -752,8 +723,8 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 1083
+                "x": 2459,
+                "y": 3631
             }
         },
         "next": [
@@ -782,27 +753,33 @@
         "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 2610,
-                "y": 1230
+                "x": 2937,
+                "y": 3856
             }
         },
         "next": [
             "确定免费刷新"
         ]
     },
-    "百货商店购买完成": {
+    "普通商店购买完成": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "普通商店"
+                }
+            }
         },
+        "focus": "普通商店任务完成",
         "__mpe_code": {
             "position": {
-                "x": 2900,
-                "y": 1026
+                "x": 3337,
+                "y": 3538
             }
         }
     },
@@ -817,8 +794,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1847,
-                "y": 2533
+                "x": 1821,
+                "y": 2296
             }
         },
         "next": [
@@ -847,8 +824,8 @@
         "post_wait_freezes": 300,
         "__mpe_code": {
             "position": {
-                "x": 2039,
-                "y": 2787
+                "x": 2105,
+                "y": 2335
             }
         }
     },
@@ -874,18 +851,18 @@
         "timeout": 20000,
         "__mpe_code": {
             "position": {
-                "x": 2058,
-                "y": 2515
+                "x": 2067,
+                "y": 1987
             }
         },
-        "interrupt": [
-            "购买代码手册",
-            "购买代码手册宝箱",
-            "购买公司武器熔炉",
-            "返回百货商店"
-        ],
         "next": [
             "竞技场商店购买完成"
+        ],
+        "interrupt": [
+            "代码手册",
+            "代码手册宝箱",
+            "公司武器熔炉",
+            "返回普通商店"
         ]
     },
     "无代码手册1": {
@@ -909,18 +886,18 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2610,
-                "y": 1855
+                "x": 2616,
+                "y": 2621
             }
         },
         "next": [
             "无代码手册2"
         ],
         "interrupt": [
-            "点击代码手册2"
+            "购买代码手册2"
         ]
     },
-    "购买代码手册": {
+    "代码手册": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -931,18 +908,18 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2704,
-                "y": 2497
+                "x": 2628,
+                "y": 2383
             }
         },
         "next": [
             "无代码手册1"
         ],
         "interrupt": [
-            "点击代码手册1"
+            "购买代码手册1"
         ]
     },
-    "购买代码手册宝箱": {
+    "代码手册宝箱": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -953,18 +930,18 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2679,
-                "y": 2627
+                "x": 2667,
+                "y": 2123
             }
         },
         "next": [
-            "检测代码手册宝箱"
+            "无代码手册宝箱"
         ],
         "interrupt": [
             "点击代码手册宝箱"
         ]
     },
-    "购买公司武器熔炉": {
+    "公司武器熔炉": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -975,18 +952,18 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2691,
-                "y": 2759
+                "x": 2623,
+                "y": 1983
             }
         },
         "next": [
-            "检测公司武器熔炉"
+            "无公司武器熔炉"
         ],
         "interrupt": [
             "点击公司武器熔炉"
         ]
     },
-    "点击代码手册1": {
+    "购买代码手册1": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -1005,12 +982,12 @@
         "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 3013,
-                "y": 2299
+                "x": 3190,
+                "y": 2277
             }
         },
         "next": [
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
     "点击公司武器熔炉": {
@@ -1033,14 +1010,14 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 3169
+                "y": 1394
             }
         },
         "next": [
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
-    "检测代码手册宝箱": {
+    "无代码手册宝箱": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1062,14 +1039,14 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 2512
+                "y": 2051
             }
         },
         "next": [
             "代码手册宝箱购买完毕"
         ]
     },
-    "检测公司武器熔炉": {
+    "无公司武器熔炉": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1091,7 +1068,7 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 2950
+                "y": 1613
             }
         },
         "next": [
@@ -1120,14 +1097,14 @@
         "__mpe_code": {
             "position": {
                 "x": 2900,
-                "y": 1745
+                "y": 2825
             }
         },
         "next": [
             "无代码手册3"
         ],
         "interrupt": [
-            "点击代码手册3"
+            "购买代码手册3"
         ]
     },
     "无代码手册3": {
@@ -1152,14 +1129,14 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 1636
+                "y": 2934
             }
         },
         "next": [
             "代码手册购买完毕"
         ]
     },
-    "点击代码手册2": {
+    "购买代码手册2": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -1179,14 +1156,14 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 2074
+                "y": 2496
             }
         },
         "next": [
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
-    "点击代码手册3": {
+    "购买代码手册3": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -1206,11 +1183,11 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 1855
+                "y": 2715
             }
         },
         "next": [
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
     "代码手册购买完毕": {
@@ -1219,13 +1196,18 @@
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "代码手册"
+                }
+            }
         },
         "__mpe_code": {
             "position": {
-                "x": 3632,
-                "y": 1621
+                "x": 3608,
+                "y": 2894
             }
         }
     },
@@ -1235,13 +1217,18 @@
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "代码手册宝箱"
+                }
+            }
         },
         "__mpe_code": {
             "position": {
-                "x": 3480,
-                "y": 2950
+                "x": 3695,
+                "y": 2032
             }
         }
     },
@@ -1251,13 +1238,18 @@
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "公司武器熔炉"
+                }
+            }
         },
         "__mpe_code": {
             "position": {
-                "x": 3480,
-                "y": 3248
+                "x": 3651,
+                "y": 1593
             }
         }
     },
@@ -1281,14 +1273,14 @@
         "__mpe_code": {
             "position": {
                 "x": 3190,
-                "y": 2731
+                "y": 1832
             }
         },
         "next": [
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
-    "普通商店功能列表": {
+    "百货商店功能列表": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -1299,20 +1291,20 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1577,
-                "y": 2443
+                "x": 1449,
+                "y": 2645
             }
         },
+        "next": [
+            "百货商店购买完成"
+        ],
         "interrupt": [
-            "百货商店",
+            "普通商店",
             "竞技场商店",
             "返回主页"
-        ],
-        "next": [
-            "普通商店购买完成"
         ]
     },
-    "普通商店": {
+    "百货商店": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -1323,32 +1315,16 @@
         },
         "__mpe_code": {
             "position": {
-                "x": -50,
-                "y": 2376
+                "x": 0,
+                "y": 2545
             }
         },
+        "next": [
+            "查找百货商店"
+        ],
         "interrupt": [
             "返回主页"
-        ],
-        "next": [
-            "百货商店识别"
         ]
-    },
-    "返回主页": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 1272,
-                "y": 1565
-            }
-        }
     },
     "领取奖励": {
         "recognition": {
@@ -1371,81 +1347,98 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 4483,
-                "y": 1365
+                "x": 6059,
+                "y": 233
             }
         }
     },
     "竞技场商店购买完成": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 2417,
-                "y": 2404
-            }
-        }
-    },
-    "确认购买并领取奖励": {
-        "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "购买道具"
+                    "普通商店"
                 ],
                 "roi": [
-                    597,
-                    112,
-                    88,
+                    63,
+                    259,
+                    85,
                     32
                 ]
             }
         },
         "action": {
-            "type": "Click",
+            "type": "Custom",
             "param": {
-                "target": [
-                    659,
-                    593,
-                    85,
-                    27
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "竞技场商店"
+                }
+            }
+        },
+        "focus": "竞技场商店购买完成",
+        "__mpe_code": {
+            "position": {
+                "x": 2359,
+                "y": 1676
+            }
+        }
+    },
+    "确认购买": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "购买"
+                ],
+                "roi": [
+                    633,
+                    549,
+                    152,
+                    100
                 ]
             }
         },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
         "__mpe_code": {
             "position": {
-                "x": 3816,
-                "y": 2113
+                "x": 5382,
+                "y": 2262
             }
         },
         "next": [
             "领取奖励",
-            "确认购买并领取奖励"
+            "确认购买"
         ]
     },
-    "返回百货商店": {
+    "返回普通商店": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Click",
+            "param": {
+                "target": [
+                    7,
+                    261,
+                    41,
+                    42
+                ]
+            }
         },
+        "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 2354,
-                "y": 2809
+                "x": 2606,
+                "y": 2873
             }
         }
     },
-    "普通商店购买完成": {
+    "百货商店购买完成": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1468,11 +1461,55 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "百货商店任务完成",
         "__mpe_code": {
             "position": {
-                "x": 2084,
-                "y": 2195
+                "x": 1771,
+                "y": 3699
             }
         }
+    },
+    "__mpe_external_返回主页_商店功能": {
+        "__mpe_code": {
+            "position": {
+                "x": 3909,
+                "y": 1176
+            }
+        }
+    },
+    "成功进入普通礼包页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "普通礼包"
+                ],
+                "roi": [
+                    610,
+                    53,
+                    86,
+                    34
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "成功进入普通礼包",
+        "__mpe_code": {
+            "position": {
+                "x": 2629,
+                "y": 510
+            }
+        },
+        "next": [
+            "无普通礼包"
+        ],
+        "interrupt": [
+            "每日礼包",
+            "每周礼包",
+            "每月礼包"
+        ]
     }
 }

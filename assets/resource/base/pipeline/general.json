@@ -1,0 +1,243 @@
+{
+    "__mpe_config_general": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "general",
+            "version": "v0.5.3"
+        }
+    },
+    "返回主页": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    15,
+                    666,
+                    63,
+                    27
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 246
+            }
+        }
+    },
+    "跳过boss等待": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    550,
+                    255,
+                    174,
+                    129
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 72
+            }
+        },
+        "next": [
+            "确定跳过boss等待",
+            "跳过boss等待"
+        ]
+    },
+    "等待boos结算": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 0
+            }
+        },
+        "next": [
+            "boss结算"
+        ]
+    },
+    "快速跳过战斗": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "enabled": false,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 159
+            }
+        },
+        "next": [
+            "boss结算"
+        ]
+    },
+    "战斗开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 87
+            }
+        },
+        "next": [
+            "进入战斗"
+        ]
+    },
+    "确定跳过boss等待": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "跳过动画"
+                ],
+                "roi": [
+                    575,
+                    168,
+                    131,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    672,
+                    435,
+                    104,
+                    28
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 820,
+                "y": 40
+            }
+        },
+        "next": [
+            "等待boos结算",
+            "快速跳过战斗"
+        ]
+    },
+    "进入战斗": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/进入boss战.png"
+                ],
+                "roi": [
+                    594,
+                    178,
+                    94,
+                    87
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "timeout": 30000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 42
+            }
+        },
+        "next": [
+            "跳过boss等待"
+        ]
+    },
+    "boss结算": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意处进行下一步"
+                ],
+                "roi": [
+                    572,
+                    604,
+                    138,
+                    54
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "timeout": 180000,
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 27
+            }
+        }
+    },
+    "返回": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    11,
+                    668,
+                    69,
+                    21
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "__mpe_code": {
+            "position": {
+                "x": -4,
+                "y": 414
+            }
+        }
+    }
+}

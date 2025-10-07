@@ -6,7 +6,6 @@ from maa.agent.agent_server import AgentServer
 from maa.custom_action import CustomAction
 from maa.context import Context
 
-from utils import logger
 
 
 @AgentServer.custom_action("DisableNode")
@@ -53,10 +52,8 @@ class NodeOverride(CustomAction):
         ppover = json.loads(argv.custom_action_param)
 
         if not ppover:
-            logger.warning("No ppover")
             return CustomAction.RunResult(success=True)
 
-        logger.debug(f"NodeOverride: {ppover}")
         context.override_pipeline(ppover)
 
         return CustomAction.RunResult(success=True)
