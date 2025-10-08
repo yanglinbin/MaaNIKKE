@@ -57,7 +57,7 @@
             "跳过boss等待"
         ]
     },
-    "等待boos结算": {
+    "等待战斗结算": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -66,6 +66,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "timeout": 180000,
         "__mpe_code": {
             "position": {
                 "x": 1160,
@@ -73,7 +74,7 @@
             }
         },
         "next": [
-            "boss结算"
+            "战斗结算"
         ]
     },
     "快速跳过战斗": {
@@ -88,15 +89,15 @@
         "enabled": false,
         "__mpe_code": {
             "position": {
-                "x": 1160,
-                "y": 159
+                "x": 1162,
+                "y": 183
             }
         },
         "next": [
-            "boss结算"
+            "战斗结算"
         ]
     },
-    "战斗开始": {
+    "boss战开始": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -107,12 +108,12 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 0,
-                "y": 87
+                "x": 18,
+                "y": 93
             }
         },
         "next": [
-            "进入战斗"
+            "进入boss战"
         ]
     },
     "确定跳过boss等待": {
@@ -148,11 +149,11 @@
             }
         },
         "next": [
-            "等待boos结算",
+            "等待战斗结算",
             "快速跳过战斗"
         ]
     },
-    "进入战斗": {
+    "进入boss战": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -175,15 +176,15 @@
         "timeout": 30000,
         "__mpe_code": {
             "position": {
-                "x": 290,
-                "y": 42
+                "x": 294,
+                "y": 34
             }
         },
         "next": [
             "跳过boss等待"
         ]
     },
-    "boss结算": {
+    "战斗结算": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -200,16 +201,8 @@
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target": [
-                    0,
-                    0,
-                    0,
-                    0
-                ]
-            }
+            "param": {}
         },
-        "timeout": 180000,
         "__mpe_code": {
             "position": {
                 "x": 1450,
@@ -240,5 +233,24 @@
                 "y": 414
             }
         }
+    },
+    "普通战开始": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 835,
+                "y": -138
+            }
+        },
+        "next": [
+            "等待战斗结算"
+        ]
     }
 }

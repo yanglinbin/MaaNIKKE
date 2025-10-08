@@ -50,11 +50,28 @@
                 "拦截战",
                 "异常个体拦截战boss选择",
                 "模拟室",
-                "模拟室_快速模拟"
+                "模拟室_快速模拟",
+                "无限之塔"
             ]
         }
     ],
     "option": {
+        "无限之塔": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "无限之塔": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "异常个体拦截战boss选择": {
             "cases": [
                 {

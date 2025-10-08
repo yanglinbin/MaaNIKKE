@@ -54,11 +54,12 @@
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1500,
+        "focus": "开始拦截战任务",
         "__mpe_code": {
             "position": {
-                "x": 1195,
-                "y": 2365
+                "x": 1264,
+                "y": 2382
             }
         },
         "next": [
@@ -88,10 +89,11 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "成功进入拦截战",
         "__mpe_code": {
             "position": {
-                "x": 1484,
-                "y": 2400
+                "x": 1579,
+                "y": 2405
             }
         },
         "next": [
@@ -153,13 +155,13 @@
             "type": "OCR",
             "param": {
                 "expected": [
-                    "异常个体"
+                    "持有装备情况"
                 ],
                 "roi": [
-                    580,
-                    490,
-                    121,
-                    34
+                    1128,
+                    94,
+                    141,
+                    47
                 ]
             }
         },
@@ -167,6 +169,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "pre_wait_freezes": 1500,
         "__mpe_code": {
             "position": {
                 "x": 1845,
@@ -226,7 +229,6 @@
                 ]
             }
         },
-        "enabled": false,
         "__mpe_code": {
             "position": {
                 "x": 2326,
@@ -246,6 +248,7 @@
             "type": "Click",
             "param": {}
         },
+        "focus": "准备拦截战战斗",
         "__mpe_code": {
             "position": {
                 "x": 2681,
@@ -253,7 +256,7 @@
             }
         },
         "next": [
-            "拦截战完成"
+            "拦截战任务完成"
         ],
         "interrupt": [
             "快速战斗",
@@ -276,7 +279,6 @@
                 ]
             }
         },
-        "post_delay": 600,
         "__mpe_code": {
             "position": {
                 "x": 2369,
@@ -318,26 +320,30 @@
                 ]
             }
         },
+        "post_delay": 1500,
         "__mpe_code": {
             "position": {
-                "x": 3414,
-                "y": 1748
+                "x": 3487,
+                "y": 1918
             }
-        }
+        },
+        "next": [
+            "战斗结算"
+        ]
     },
     "进入拦截战战斗": {
         "recognition": {
             "type": "ColorMatch",
             "param": {
                 "lower": [
-                    250,
-                    106,
-                    47
+                    220,
+                    30,
+                    20
                 ],
                 "upper": [
                     250,
-                    107,
-                    48
+                    70,
+                    50
                 ],
                 "roi": [
                     663,
@@ -361,23 +367,23 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 3424,
-                "y": 2042
+                "x": 2985,
+                "y": 2178
             }
         },
         "next": [
-            "战斗开始"
+            "boss战开始"
         ]
     },
-    "__mpe_external_战斗开始_ark": {
+    "__mpe_external_boss战开始_ark": {
         "__mpe_code": {
             "position": {
-                "x": 4083,
-                "y": 2138
+                "x": 3307,
+                "y": 2361
             }
         }
     },
-    "拦截战完成": {
+    "拦截战任务完成": {
         "recognition": {
             "type": "ColorMatch",
             "param": {
@@ -417,7 +423,7 @@
             }
         },
         "next": [
-            "返回方舟"
+            "成功返回方舟"
         ],
         "interrupt": [
             "返回"
@@ -473,19 +479,22 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 298,
-                "y": 2367
+                "x": 299,
+                "y": 2325
             }
         },
         "next": [
             "成功进入方舟"
+        ],
+        "interrupt": [
+            "进入方舟"
         ]
     },
     "__mpe_external_返回主页_ark": {
         "__mpe_code": {
             "position": {
-                "x": 1241,
-                "y": 3140
+                "x": 485,
+                "y": 2635
             }
         }
     },
@@ -504,16 +513,17 @@
                 "y": 2341
             }
         },
+        "next": [
+            "方舟任务完成"
+        ],
         "interrupt": [
             "拦截战",
             "模拟室",
+            "无限之塔",
             "返回主页"
-        ],
-        "next": [
-            "方舟任务完成"
         ]
     },
-    "返回方舟": {
+    "成功返回方舟": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -534,8 +544,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 4881,
-                "y": 2510
+                "x": 6157,
+                "y": 3728
             }
         }
     },
@@ -565,12 +575,12 @@
                 ]
             }
         },
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 1500,
         "focus": "开始模拟室任务",
         "__mpe_code": {
             "position": {
-                "x": 1241,
-                "y": 2653
+                "x": 1320,
+                "y": 2807
             }
         },
         "next": [
@@ -583,19 +593,44 @@
     },
     "无限之塔": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "无限之塔"
+                ],
+                "roi": [
+                    649,
+                    230,
+                    162,
+                    86
+                ]
+            }
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Click",
+            "param": {
+                "target": [
+                    702,
+                    168,
+                    60,
+                    79
+                ]
+            }
         },
+        "post_wait_freezes": 1500,
+        "focus": "开始无限之塔任务",
         "__mpe_code": {
             "position": {
-                "x": 1140,
-                "y": 3498
+                "x": 1328,
+                "y": 3593
             }
-        }
+        },
+        "next": [
+            "成功进入无限之塔"
+        ],
+        "interrupt": [
+            "无限之塔"
+        ]
     },
     "模拟室重置": {
         "recognition": {
@@ -684,12 +719,12 @@
                 "y": 2913
             }
         },
+        "next": [
+            "快速模拟"
+        ],
         "interrupt": [
             "选择难度5",
             "选择c区"
-        ],
-        "next": [
-            "快速模拟"
         ]
     },
     "快速模拟": {
@@ -808,8 +843,8 @@
     "__mpe_external_返回_ark": {
         "__mpe_code": {
             "position": {
-                "x": 4707,
-                "y": 2852
+                "x": 6147,
+                "y": 3943
             }
         }
     },
@@ -835,12 +870,15 @@
         "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 2726,
-                "y": 2721
+                "x": 2750,
+                "y": 2757
             }
         },
         "next": [
             "进入快速模拟战斗"
+        ],
+        "interrupt": [
+            "跳过增益效果选择"
         ]
     },
     "进入快速模拟战斗": {
@@ -866,15 +904,18 @@
         "timeout": 180000,
         "__mpe_code": {
             "position": {
-                "x": 2985,
-                "y": 2721
+                "x": 3034,
+                "y": 2712
             }
         },
         "next": [
             "等待战斗结束并结算"
+        ],
+        "interrupt": [
+            "进入快速模拟战斗"
         ]
     },
-    "模拟室快速模拟完成": {
+    "模拟室快速模拟任务完成": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -891,12 +932,12 @@
         "focus": "模拟室快速模拟完成",
         "__mpe_code": {
             "position": {
-                "x": 4163,
-                "y": 2862
+                "x": 4250,
+                "y": 2675
             }
         },
         "next": [
-            "返回方舟"
+            "成功返回方舟"
         ],
         "interrupt": [
             "返回"
@@ -952,14 +993,18 @@
             "type": "Click",
             "param": {}
         },
+        "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 3544,
-                "y": 2742
+                "x": 3573,
+                "y": 2713
             }
         },
         "next": [
             "确认模拟结束"
+        ],
+        "interrupt": [
+            "模拟结束"
         ]
     },
     "确认模拟结束": {
@@ -991,12 +1036,12 @@
         "post_wait_freezes": 1500,
         "__mpe_code": {
             "position": {
-                "x": 3844,
-                "y": 2769
+                "x": 3945,
+                "y": 2654
             }
         },
         "next": [
-            "模拟室快速模拟完成"
+            "模拟室快速模拟任务完成"
         ]
     },
     "方舟任务完成": {
@@ -1022,11 +1067,826 @@
             "type": "DoNothing",
             "param": {}
         },
-        "focus": "百货商店任务完成",
+        "focus": "方舟任务完成",
         "__mpe_code": {
             "position": {
                 "x": 1227,
                 "y": 1942
+            }
+        }
+    },
+    "__mpe_external_战斗结算_ark": {
+        "__mpe_code": {
+            "position": {
+                "x": 6197,
+                "y": 3635
+            }
+        }
+    },
+    "成功进入无限之塔": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "无限之塔"
+                ],
+                "roi": [
+                    0,
+                    8,
+                    83,
+                    28
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "成功进入无限之塔",
+        "__mpe_code": {
+            "position": {
+                "x": 1684,
+                "y": 3634
+            }
+        },
+        "next": [
+            "企业塔"
+        ]
+    },
+    "极乐净土塔 ": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "OPEN"
+                ],
+                "roi": [
+                    457,
+                    362,
+                    89,
+                    52
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2463,
+                "y": 3813
+            }
+        },
+        "next": [
+            "极乐净土塔挑战完毕"
+        ],
+        "interrupt": [
+            "进入极乐净土塔"
+        ]
+    },
+    "米西利斯塔": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "OPEN"
+                ],
+                "roi": [
+                    548,
+                    362,
+                    92,
+                    40
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2460,
+                "y": 4035
+            }
+        },
+        "next": [
+            "米西利斯塔挑战完毕"
+        ],
+        "interrupt": [
+            "进入米西利斯塔"
+        ]
+    },
+    "泰特拉塔": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "OPEN"
+                ],
+                "roi": [
+                    642,
+                    363,
+                    91,
+                    50
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2464,
+                "y": 4252
+            }
+        },
+        "next": [
+            "泰特拉塔挑战完毕"
+        ],
+        "interrupt": [
+            "进入泰特拉塔"
+        ]
+    },
+    "朝圣塔": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "OPEN"
+                ],
+                "roi": [
+                    733,
+                    362,
+                    91,
+                    37
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2462,
+                "y": 4500
+            }
+        },
+        "next": [
+            "朝圣塔挑战完毕"
+        ],
+        "interrupt": [
+            "进入朝圣塔"
+        ]
+    },
+    "企业塔": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "开始企业塔任务",
+        "__mpe_code": {
+            "position": {
+                "x": 1999,
+                "y": 3691
+            }
+        },
+        "next": [
+            "无限之塔任务完成"
+        ],
+        "interrupt": [
+            "极乐净土塔 ",
+            "米西利斯塔",
+            "泰特拉塔",
+            "朝圣塔",
+            "返回方舟"
+        ]
+    },
+    "无限之塔任务完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "方舟"
+                ],
+                "roi": [
+                    0,
+                    1,
+                    65,
+                    56
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "无限之塔"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2456,
+                "y": 3573
+            }
+        }
+    },
+    "下一关卡": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    0,
+                    155,
+                    240
+                ],
+                "upper": [
+                    0,
+                    180,
+                    255
+                ],
+                "roi": [
+                    1165,
+                    661,
+                    21,
+                    37
+                ],
+                "method": 4
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1161,
+                    667,
+                    83,
+                    25
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4225,
+                "y": 3983
+            }
+        }
+    },
+    "进入企业塔战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ],
+                "roi": [
+                    662,
+                    623,
+                    183,
+                    83
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3809,
+                "y": 4144
+            }
+        },
+        "next": [
+            "企业塔战斗结束"
+        ]
+    },
+    "当前企业塔战斗次数耗尽": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    65,
+                    65,
+                    65
+                ],
+                "upper": [
+                    90,
+                    90,
+                    90
+                ],
+                "method": 4,
+                "roi": [
+                    670,
+                    638,
+                    42,
+                    58
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3772,
+                "y": 3523
+            }
+        }
+    },
+    "进入企业塔战斗准备": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    589,
+                    251,
+                    101,
+                    92
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3512,
+                "y": 4065
+            }
+        },
+        "next": [
+            "当前企业塔战斗次数耗尽"
+        ],
+        "interrupt": [
+            "进入企业塔战斗"
+        ]
+    },
+    "当前企业塔战斗完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "剩余次数0/3"
+                ],
+                "roi": [
+                    582,
+                    573,
+                    124,
+                    25
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4182,
+                "y": 3679
+            }
+        },
+        "next": [
+            "返回无限之塔"
+        ],
+        "interrupt": [
+            "返回"
+        ]
+    },
+    "返回方舟": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2456,
+                "y": 4737
+            }
+        },
+        "next": [
+            "成功返回方舟"
+        ],
+        "interrupt": [
+            "返回"
+        ]
+    },
+    "极乐净土塔挑战完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "每日通关0/3"
+                ],
+                "roi": [
+                    464,
+                    592,
+                    71,
+                    34
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "极乐净土塔"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3006,
+                "y": 2984
+            }
+        }
+    },
+    "米西利斯塔挑战完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "每日通关0/3"
+                ],
+                "roi": [
+                    551,
+                    593,
+                    85,
+                    31
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "米西利斯塔"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3012,
+                "y": 3233
+            }
+        }
+    },
+    "泰特拉塔挑战完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "每日通关0/3"
+                ],
+                "roi": [
+                    647,
+                    588,
+                    79,
+                    40
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "泰特拉塔"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3007,
+                "y": 3473
+            }
+        }
+    },
+    "朝圣塔挑战完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "每日通关0/3"
+                ],
+                "roi": [
+                    732,
+                    594,
+                    91,
+                    34
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "米朝圣塔"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3004,
+                "y": 3714
+            }
+        }
+    },
+    "成功进入企业塔": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "ark/企业塔内部楼层跳转按钮.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1500,
+        "__mpe_code": {
+            "position": {
+                "x": 3252,
+                "y": 4149
+            }
+        },
+        "next": [
+            "进入企业塔战斗准备"
+        ]
+    },
+    "企业塔战斗结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意处进行下一步"
+                ],
+                "roi": [
+                    555,
+                    579,
+                    170,
+                    116
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3893,
+                "y": 3826
+            }
+        },
+        "next": [
+            "当前企业塔战斗完毕"
+        ],
+        "interrupt": [
+            "下一关卡",
+            "企业塔战斗结算"
+        ]
+    },
+    "进入极乐净土塔": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    466,
+                    468,
+                    69,
+                    79
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2905,
+                "y": 3995
+            }
+        },
+        "next": [
+            "成功进入企业塔"
+        ]
+    },
+    "进入米西利斯塔": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    559,
+                    464,
+                    67,
+                    68
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2892,
+                "y": 4194
+            }
+        },
+        "next": [
+            "成功进入企业塔"
+        ]
+    },
+    "进入泰特拉塔": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    651,
+                    468,
+                    73,
+                    76
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2892,
+                "y": 4359
+            }
+        },
+        "next": [
+            "成功进入企业塔"
+        ]
+    },
+    "进入朝圣塔": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    739,
+                    455,
+                    79,
+                    83
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2895,
+                "y": 4537
+            }
+        },
+        "next": [
+            "成功进入企业塔"
+        ]
+    },
+    "返回无限之塔": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "可选择任一"
+                ],
+                "roi": [
+                    587,
+                    101,
+                    111,
+                    26
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4521,
+                "y": 3319
+            }
+        }
+    },
+    "企业塔战斗结算": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意处进行下一步"
+                ],
+                "roi": [
+                    555,
+                    579,
+                    170,
+                    116
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1500,
+        "__mpe_code": {
+            "position": {
+                "x": 4448,
+                "y": 3827
+            }
+        },
+        "next": [
+            "关闭无限之塔战斗准备页面"
+        ]
+    },
+    "关闭无限之塔战斗准备页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "ark/无限之塔战斗准备关闭按钮.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    741,
+                    292,
+                    179,
+                    171
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4811,
+                "y": 3632
+            }
+        },
+        "interrupt": [
+            "关闭无限之塔战斗准备页面"
+        ],
+        "next": [
+            "成功关闭无限之塔战斗准备页面"
+        ]
+    },
+    "成功关闭无限之塔战斗准备页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "剩余次数"
+                ],
+                "roi": [
+                    582,
+                    573,
+                    124,
+                    25
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 5080,
+                "y": 3635
             }
         }
     }
