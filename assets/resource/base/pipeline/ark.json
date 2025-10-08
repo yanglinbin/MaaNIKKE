@@ -1133,6 +1133,7 @@
             "param": {}
         },
         "post_delay": 1000,
+        "focus": "检查极乐净土塔",
         "__mpe_code": {
             "position": {
                 "x": 2463,
@@ -1166,9 +1167,10 @@
             "param": {}
         },
         "post_wait_freezes": 1000,
+        "focus": "检查米西利斯塔",
         "__mpe_code": {
             "position": {
-                "x": 2460,
+                "x": 2454,
                 "y": 4035
             }
         },
@@ -1199,10 +1201,11 @@
             "param": {}
         },
         "post_wait_freezes": 1000,
+        "focus": "检查泰特拉塔",
         "__mpe_code": {
             "position": {
-                "x": 2464,
-                "y": 4252
+                "x": 2480,
+                "y": 4251
             }
         },
         "next": [
@@ -1232,10 +1235,11 @@
             "param": {}
         },
         "post_wait_freezes": 1000,
+        "focus": "检查朝圣塔",
         "__mpe_code": {
             "position": {
                 "x": 2462,
-                "y": 4500
+                "y": 4509
             }
         },
         "next": [
@@ -1514,6 +1518,7 @@
                 }
             }
         },
+        "focus": "极乐净土塔挑战完毕",
         "__mpe_code": {
             "position": {
                 "x": 3006,
@@ -1545,6 +1550,7 @@
                 }
             }
         },
+        "focus": "米西利斯塔挑战完毕",
         "__mpe_code": {
             "position": {
                 "x": 3012,
@@ -1576,6 +1582,7 @@
                 }
             }
         },
+        "focus": "泰特拉塔挑战完毕",
         "__mpe_code": {
             "position": {
                 "x": 3007,
@@ -1603,14 +1610,15 @@
             "param": {
                 "custom_action": "DisableNode",
                 "custom_action_param": {
-                    "node_name": "米朝圣塔"
+                    "node_name": "朝圣塔"
                 }
             }
         },
+        "focus": "朝圣塔挑战完毕",
         "__mpe_code": {
             "position": {
-                "x": 3004,
-                "y": 3714
+                "x": 3012,
+                "y": 3755
             }
         }
     },
