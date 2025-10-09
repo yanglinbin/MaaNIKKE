@@ -3,7 +3,7 @@
         "__mpe_code": {
             "prefix": "",
             "filename": "general",
-            "version": "v0.5.3"
+            "version": "v0.5.4_beta2"
         }
     },
     "返回主页": {
@@ -26,7 +26,7 @@
         "__mpe_code": {
             "position": {
                 "x": 0,
-                "y": 246
+                "y": 238
             }
         }
     },
@@ -212,27 +212,40 @@
     },
     "返回": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "返回"
+                ],
+                "roi": [
+                    0,
+                    620,
+                    200,
+                    100
+                ]
+            }
         },
         "action": {
             "type": "Click",
             "param": {
                 "target": [
-                    11,
-                    668,
-                    69,
-                    21
+                    9,
+                    667,
+                    26,
+                    25
                 ]
             }
         },
-        "post_wait_freezes": 500,
+        "pre_delay": 500,
         "__mpe_code": {
             "position": {
-                "x": -4,
-                "y": 414
+                "x": 753,
+                "y": 560
             }
-        }
+        },
+        "next": [
+            "等待页面稳定"
+        ]
     },
     "普通战开始": {
         "recognition": {
@@ -252,5 +265,71 @@
         "next": [
             "等待战斗结算"
         ]
+    },
+    "等待页面稳定": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_wait_freezes": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 1022,
+                "y": 651
+            }
+        }
+    },
+    "返回方舟": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "返回方舟",
+        "__mpe_code": {
+            "position": {
+                "x": 447,
+                "y": 435
+            }
+        },
+        "next": [
+            "成功返回方舟"
+        ],
+        "interrupt": [
+            "返回"
+        ]
+    },
+    "成功返回方舟": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "方舟"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    63,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1017,
+                "y": 395
+            }
+        }
     }
 }

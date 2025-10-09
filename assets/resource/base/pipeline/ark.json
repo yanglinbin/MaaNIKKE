@@ -3,7 +3,7 @@
         "__mpe_code": {
             "prefix": "",
             "filename": "ark",
-            "version": "v0.5.3"
+            "version": "v0.5.4_beta2"
         }
     },
     "方舟": {
@@ -45,14 +45,7 @@
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target": [
-                    518,
-                    482,
-                    70,
-                    92
-                ]
-            }
+            "param": {}
         },
         "post_wait_freezes": 1500,
         "focus": "开始拦截战任务",
@@ -63,9 +56,7 @@
             }
         },
         "next": [
-            "成功进入拦截战"
-        ],
-        "interrupt": [
+            "成功进入拦截战",
             "拦截战"
         ]
     },
@@ -378,8 +369,8 @@
     "__mpe_external_boss战开始_ark": {
         "__mpe_code": {
             "position": {
-                "x": 3307,
-                "y": 2361
+                "x": 6197,
+                "y": 3556
             }
         }
     },
@@ -423,7 +414,7 @@
             }
         },
         "next": [
-            "成功返回方舟"
+            "返回方舟"
         ],
         "interrupt": [
             "返回"
@@ -484,17 +475,15 @@
             }
         },
         "next": [
-            "成功进入方舟"
-        ],
-        "interrupt": [
+            "成功进入方舟",
             "进入方舟"
         ]
     },
     "__mpe_external_返回主页_ark": {
         "__mpe_code": {
             "position": {
-                "x": 485,
-                "y": 2635
+                "x": 6202,
+                "y": 3807
             }
         }
     },
@@ -520,34 +509,9 @@
             "拦截战",
             "模拟室",
             "无限之塔",
+            "竞技场",
             "返回主页"
         ]
-    },
-    "成功返回方舟": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "方舟"
-                ],
-                "roi": [
-                    0,
-                    1,
-                    65,
-                    56
-                ]
-            }
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 6157,
-                "y": 3728
-            }
-        }
     },
     "模拟室": {
         "recognition": {
@@ -566,14 +530,7 @@
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target": [
-                    488,
-                    278,
-                    62,
-                    105
-                ]
-            }
+            "param": {}
         },
         "post_wait_freezes": 1500,
         "focus": "开始模拟室任务",
@@ -584,11 +541,11 @@
             }
         },
         "next": [
-            "成功进入模拟室"
+            "成功进入模拟室",
+            "模拟室"
         ],
         "interrupt": [
-            "模拟室重置",
-            "模拟室"
+            "模拟室重置"
         ]
     },
     "无限之塔": {
@@ -608,14 +565,7 @@
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target": [
-                    702,
-                    168,
-                    60,
-                    79
-                ]
-            }
+            "param": {}
         },
         "post_wait_freezes": 1500,
         "focus": "开始无限之塔任务",
@@ -626,9 +576,7 @@
             }
         },
         "next": [
-            "成功进入无限之塔"
-        ],
-        "interrupt": [
+            "成功进入无限之塔",
             "无限之塔"
         ]
     },
@@ -843,8 +791,8 @@
     "__mpe_external_返回_ark": {
         "__mpe_code": {
             "position": {
-                "x": 6147,
-                "y": 3943
+                "x": 6214,
+                "y": 3426
             }
         }
     },
@@ -875,9 +823,7 @@
             }
         },
         "next": [
-            "进入快速模拟战斗"
-        ],
-        "interrupt": [
+            "进入快速模拟战斗",
             "跳过增益效果选择"
         ]
     },
@@ -901,7 +847,7 @@
             "param": {}
         },
         "focus": "进入快速模拟战斗",
-        "timeout": 180000,
+        "timeout": 240000,
         "__mpe_code": {
             "position": {
                 "x": 3034,
@@ -909,9 +855,7 @@
             }
         },
         "next": [
-            "等待战斗结束并结算"
-        ],
-        "interrupt": [
+            "等待战斗结束并结算",
             "进入快速模拟战斗"
         ]
     },
@@ -937,7 +881,7 @@
             }
         },
         "next": [
-            "成功返回方舟"
+            "返回方舟"
         ],
         "interrupt": [
             "返回"
@@ -962,8 +906,7 @@
             "type": "Click",
             "param": {}
         },
-        "timeout": 180000,
-        "focus": "等待战斗结束",
+        "focus": "战斗结束",
         "__mpe_code": {
             "position": {
                 "x": 3299,
@@ -1001,9 +944,7 @@
             }
         },
         "next": [
-            "确认模拟结束"
-        ],
-        "interrupt": [
+            "确认模拟结束",
             "模拟结束"
         ]
     },
@@ -1105,8 +1046,8 @@
         "focus": "成功进入无限之塔",
         "__mpe_code": {
             "position": {
-                "x": 1684,
-                "y": 3634
+                "x": 1671,
+                "y": 3614
             }
         },
         "next": [
@@ -1238,8 +1179,8 @@
         "focus": "检查朝圣塔",
         "__mpe_code": {
             "position": {
-                "x": 2462,
-                "y": 4509
+                "x": 2501,
+                "y": 4497
             }
         },
         "next": [
@@ -1367,6 +1308,8 @@
             "type": "Click",
             "param": {}
         },
+        "timeout": 240000,
+        "focus": "进入企业塔战斗，等待战斗结束",
         "__mpe_code": {
             "position": {
                 "x": 3809,
@@ -1467,28 +1410,6 @@
         },
         "next": [
             "返回无限之塔"
-        ],
-        "interrupt": [
-            "返回"
-        ]
-    },
-    "返回方舟": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 2456,
-                "y": 4737
-            }
-        },
-        "next": [
-            "成功返回方舟"
         ],
         "interrupt": [
             "返回"
@@ -1865,11 +1786,9 @@
                 "y": 3632
             }
         },
-        "interrupt": [
-            "关闭无限之塔战斗准备页面"
-        ],
         "next": [
-            "成功关闭无限之塔战斗准备页面"
+            "成功关闭无限之塔战斗准备页面",
+            "关闭无限之塔战斗准备页面"
         ]
     },
     "成功关闭无限之塔战斗准备页面": {
@@ -1895,6 +1814,558 @@
             "position": {
                 "x": 5080,
                 "y": 3635
+            }
+        }
+    },
+    "竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^竞技场$"
+                ],
+                "roi": [
+                    700,
+                    454,
+                    108,
+                    30
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1500,
+        "focus": "开始竞技场任务",
+        "__mpe_code": {
+            "position": {
+                "x": 1319,
+                "y": 4318
+            }
+        },
+        "next": [
+            "竞技场",
+            "成功进入竞技场"
+        ]
+    },
+    "新人竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^新人竞技场$"
+                ],
+                "roi": [
+                    439,
+                    313,
+                    200,
+                    141
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2444,
+                "y": 5169
+            }
+        },
+        "next": [
+            "成功进入新人竞技场",
+            "新人竞技场"
+        ]
+    },
+    "特殊竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^特殊竞技场$"
+                ],
+                "roi": [
+                    639,
+                    313,
+                    189,
+                    139
+                ],
+                "replace": [
+                    [
+                        "寺",
+                        "特"
+                    ]
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2446,
+                "y": 5393
+            }
+        },
+        "next": [
+            "成功进入特殊竞技场",
+            "特殊竞技场"
+        ]
+    },
+    "成功进入新人竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^新人竞技场$"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    73,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "timeout": 30000,
+        "__mpe_code": {
+            "position": {
+                "x": 2757,
+                "y": 5146
+            }
+        },
+        "next": [
+            "新人竞技场挑战完毕"
+        ],
+        "interrupt": [
+            "开始挑战竞技场"
+        ]
+    },
+    "成功进入特殊竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^特殊竞技场$"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    73,
+                    44
+                ],
+                "replace": [
+                    [
+                        "寺",
+                        "特"
+                    ]
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "timeout": 30000,
+        "__mpe_code": {
+            "position": {
+                "x": 2754,
+                "y": 5422
+            }
+        },
+        "next": [
+            "特殊竞技场挑战完毕"
+        ],
+        "interrupt": [
+            "开始挑战竞技场"
+        ]
+    },
+    "开始挑战竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "免费"
+                ],
+                "roi": [
+                    737,
+                    467,
+                    85,
+                    109
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "准备挑战",
+        "__mpe_code": {
+            "position": {
+                "x": 3147,
+                "y": 5245
+            }
+        },
+        "next": [
+            "竞技场快速战斗"
+        ],
+        "interrupt": [
+            "开启竞技场快速战斗"
+        ]
+    },
+    "竞技场快速战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "ON"
+                ],
+                "roi": [
+                    495,
+                    562,
+                    116,
+                    58
+                ],
+                "replace": [
+                    [
+                        "0",
+                        "O"
+                    ]
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3459,
+                "y": 5042
+            }
+        },
+        "next": [
+            "进入竞技场战斗"
+        ]
+    },
+    "开启竞技场快速战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "OFF"
+                ],
+                "roi": [
+                    493,
+                    580,
+                    120,
+                    42
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "focus": "开启快速战斗",
+        "__mpe_code": {
+            "position": {
+                "x": 3472,
+                "y": 5261
+            }
+        }
+    },
+    "新人竞技场挑战完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "免费"
+                ],
+                "roi": [
+                    737,
+                    467,
+                    85,
+                    109
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "新人竞技场"
+                }
+            }
+        },
+        "inverse": true,
+        "focus": "新人竞技场挑战完毕",
+        "__mpe_code": {
+            "position": {
+                "x": 3126,
+                "y": 4902
+            }
+        },
+        "next": [
+            "返回竞技场主页"
+        ],
+        "interrupt": [
+            "延迟节点"
+        ]
+    },
+    "进入竞技场战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ],
+                "roi": [
+                    639,
+                    561,
+                    154,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "timeout": 240000,
+        "__mpe_code": {
+            "position": {
+                "x": 3829,
+                "y": 5134
+            }
+        },
+        "next": [
+            "竞技场战斗完毕"
+        ]
+    },
+    "竞技场战斗完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击进行下一步"
+                ],
+                "roi": [
+                    511,
+                    571,
+                    250,
+                    127
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 4182,
+                "y": 5141
+            }
+        },
+        "next": [
+            "返回竞技场准备页面",
+            "竞技场战斗完毕"
+        ]
+    },
+    "特殊竞技场挑战完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "免费"
+                ],
+                "roi": [
+                    737,
+                    467,
+                    85,
+                    109
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "特殊竞技场"
+                }
+            }
+        },
+        "inverse": true,
+        "focus": "特殊竞技场挑战完毕",
+        "__mpe_code": {
+            "position": {
+                "x": 3139,
+                "y": 5452
+            }
+        },
+        "next": [
+            "返回竞技场主页"
+        ],
+        "interrupt": [
+            "延迟节点"
+        ]
+    },
+    "返回竞技场主页": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^竞技场$"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    73,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "返回到竞技场主页",
+        "__mpe_code": {
+            "position": {
+                "x": 4057,
+                "y": 4715
+            }
+        }
+    },
+    "成功进入竞技场": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^竞技场$"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    73,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 4797
+            }
+        },
+        "next": [
+            "竞技场任务完成"
+        ],
+        "interrupt": [
+            "新人竞技场",
+            "特殊竞技场",
+            "返回方舟"
+        ]
+    },
+    "竞技场任务完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "方舟"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    63,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "竞技场"
+                }
+            }
+        },
+        "focus": "竞技场任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 2490,
+                "y": 4788
+            }
+        }
+    },
+    "返回竞技场准备页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ],
+                "roi": [
+                    737,
+                    467,
+                    85,
+                    109
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4462,
+                "y": 5126
+            }
+        }
+    },
+    "延迟节点": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "focus": "返回",
+        "__mpe_code": {
+            "position": {
+                "x": 4063,
+                "y": 4938
+            }
+        },
+        "next": [
+            "返回"
+        ]
+    },
+    "__mpe_external_返回方舟_ark": {
+        "__mpe_code": {
+            "position": {
+                "x": 6237,
+                "y": 3911
             }
         }
     }
