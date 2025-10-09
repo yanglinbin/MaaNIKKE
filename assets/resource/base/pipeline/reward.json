@@ -1,0 +1,888 @@
+{
+    "__mpe_config_reward": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "reward",
+            "version": "v0.5.4_beta2"
+        }
+    },
+    "奖励领取": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": -286,
+                "y": 2432
+            }
+        },
+        "interrupt": [
+            "任务执行前检查"
+        ],
+        "next": [
+            "奖励领取任务分发"
+        ]
+    },
+    "__mpe_external_任务执行前检查_reward": {
+        "__mpe_code": {
+            "position": {
+                "x": -64,
+                "y": 2611
+            }
+        }
+    },
+    "奖励领取任务分发": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 196,
+                "y": 2453
+            }
+        },
+        "interrupt": [
+            "友情点赠送",
+            "邮件领取",
+            "任务领取",
+            "通行证领取",
+            "启用奖励领取任务完成节点"
+        ],
+        "next": [
+            "奖励领取任务完成"
+        ]
+    },
+    "友情点赠送": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    1245,
+                    145,
+                    27,
+                    27
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1232,
+                    160,
+                    23,
+                    24
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 651,
+                "y": 2317
+            }
+        },
+        "next": [
+            "赠送友情点"
+        ]
+    },
+    "邮件领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    1210,
+                    8,
+                    32,
+                    29
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1216,
+                    15,
+                    20,
+                    19
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 647,
+                "y": 2561
+            }
+        },
+        "next": [
+            "领取邮件"
+        ]
+    },
+    "通行证领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/通行证.png"
+                ],
+                "roi": [
+                    1105,
+                    89,
+                    60,
+                    59
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 639,
+                "y": 3109
+            }
+        },
+        "interrupt": [
+            "选择通行证"
+        ],
+        "next": [
+            "所有通行证领取完毕"
+        ]
+    },
+    "奖励领取任务完成": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 656,
+                "y": 2177
+            }
+        }
+    },
+    "启用奖励领取任务完成节点": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "EnableNode",
+                "custom_action_param": {
+                    "node_name": "奖励领取任务完成"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 598,
+                "y": 3520
+            }
+        }
+    },
+    "赠送友情点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "赠送"
+                ],
+                "roi": [
+                    529,
+                    570,
+                    311,
+                    89
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 911,
+                "y": 2317
+            }
+        },
+        "next": [
+            "确定赠送友情点"
+        ]
+    },
+    "确定赠送友情点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ],
+                "roi": [
+                    524,
+                    396,
+                    236,
+                    116
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1187,
+                "y": 2316
+            }
+        },
+        "next": [
+            "关闭友情点赠送页面"
+        ]
+    },
+    "关闭友情点赠送页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "好友"
+                ],
+                "roi": [
+                    577,
+                    54,
+                    126,
+                    67
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    778,
+                    70,
+                    42,
+                    37
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1476,
+                "y": 2281
+            }
+        },
+        "next": [
+            "友情点赠送完毕"
+        ]
+    },
+    "领取邮件": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    583,
+                    582,
+                    257,
+                    68
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 976,
+                "y": 2587
+            }
+        },
+        "next": [
+            "点击领取奖励",
+            "关闭邮件"
+        ]
+    },
+    "__mpe_external_点击领取奖励_reward": {
+        "__mpe_code": {
+            "position": {
+                "x": 2651,
+                "y": 3261
+            }
+        }
+    },
+    "关闭邮件": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "邮件"
+                ],
+                "roi": [
+                    586,
+                    75,
+                    108,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    784,
+                    82,
+                    24,
+                    24
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1279,
+                "y": 2594
+            }
+        },
+        "next": [
+            "邮件领取完毕"
+        ]
+    },
+    "任务领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    1094,
+                    46,
+                    44,
+                    44
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1105,
+                    60,
+                    17,
+                    21
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 637,
+                "y": 2815
+            }
+        },
+        "next": [
+            "关闭任务面板"
+        ],
+        "interrupt": [
+            "检查任务领取项"
+        ]
+    },
+    "关闭任务面板": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    120,
+                    120,
+                    120
+                ],
+                "upper": [
+                    130,
+                    130,
+                    130
+                ],
+                "method": 4,
+                "roi": [
+                    744,
+                    626,
+                    35,
+                    19
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    798,
+                    41,
+                    19,
+                    17
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1650,
+                "y": 2734
+            }
+        },
+        "next": [
+            "任务领取完毕"
+        ]
+    },
+    "检查任务领取项": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    0,
+                    170,
+                    240
+                ],
+                "upper": [
+                    70,
+                    190,
+                    255
+                ],
+                "method": 4,
+                "roi": [
+                    744,
+                    626,
+                    35,
+                    19
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    722,
+                    635,
+                    81,
+                    24
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1176,
+                "y": 2896
+            }
+        },
+        "interrupt": [
+            "点击领取奖励"
+        ],
+        "next": [
+            "检查任务领取项",
+            "关闭任务面板"
+        ]
+    },
+    "任务领取完毕": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2009,
+                "y": 2730
+            }
+        }
+    },
+    "邮件领取完毕": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1546,
+                "y": 2594
+            }
+        }
+    },
+    "友情点赠送完毕": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1736,
+                "y": 2281
+            }
+        }
+    },
+    "选择通行证": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    1227,
+                    71,
+                    52,
+                    231
+                ],
+                "green_mask": true,
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 928,
+                "y": 3613
+            }
+        },
+        "next": [
+            "当前通行证领取完成"
+        ],
+        "interrupt": [
+            "有未领取通行证任务",
+            "通行证升级",
+            "有未领取通行证奖励"
+        ]
+    },
+    "进入通行证任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "任务"
+                ],
+                "roi": [
+                    465,
+                    215,
+                    352,
+                    37
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1730,
+                "y": 3611
+            }
+        },
+        "next": [
+            "通行证任务全部领取"
+        ]
+    },
+    "进入通行证奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "奖励"
+                ],
+                "roi": [
+                    465,
+                    215,
+                    352,
+                    37
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1663,
+                "y": 3985
+            }
+        },
+        "next": [
+            "通行证奖励全部领取"
+        ]
+    },
+    "通行证任务全部领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ],
+                "roi": [
+                    517,
+                    645,
+                    253,
+                    52
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2073,
+                "y": 3599
+            }
+        }
+    },
+    "通行证奖励全部领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ],
+                "roi": [
+                    517,
+                    645,
+                    253,
+                    52
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1961,
+                "y": 3922
+            }
+        },
+        "next": [
+            "点击领取奖励"
+        ]
+    },
+    "通行证升级": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "RANK"
+                ],
+                "roi": [
+                    588,
+                    317,
+                    100,
+                    35
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1410,
+                "y": 3710
+            }
+        }
+    },
+    "当前通行证领取完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    465,
+                    215,
+                    352,
+                    37
+                ],
+                "template": [
+                    "common/小红点.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    796,
+                    42,
+                    18,
+                    17
+                ]
+            }
+        },
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 1933,
+                "y": 3322
+            }
+        }
+    },
+    "有未领取通行证任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    779,
+                    209,
+                    48,
+                    30
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1421,
+                "y": 3497
+            }
+        },
+        "next": [
+            "进入通行证任务"
+        ]
+    },
+    "有未领取通行证奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    598,
+                    206,
+                    40,
+                    34
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1343,
+                "y": 3905
+            }
+        },
+        "next": [
+            "进入通行证奖励"
+        ]
+    },
+    "所有通行证领取完毕": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    1227,
+                    71,
+                    52,
+                    231
+                ],
+                "green_mask": true,
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 960,
+                "y": 3265
+            }
+        },
+        "next": [
+            "退出通行证选择页面"
+        ]
+    },
+    "退出通行证选择页面": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1092,
+                    110,
+                    22,
+                    20
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1455,
+                "y": 3236
+            }
+        }
+    }
+}

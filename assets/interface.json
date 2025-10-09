@@ -54,11 +54,102 @@
                 "无限之塔",
                 "竞技场",
                 "竞技场_新人竞技场",
-                "竞技场_特殊竞技场"
+                "竞技场_特殊竞技场",
+                "竞技场_特殊竞技场_累计奖励领取"
+            ]
+        },
+        {
+            "name": "奖励领取",
+            "entry": "奖励领取",
+            "option": [
+                "友情点赠送",
+                "邮件领取",
+                "任务领取",
+                "通行证领取"
             ]
         }
     ],
     "option": {
+        "通行证领取": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "通行证领取": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "任务领取": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "任务领取": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "邮件领取": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "邮件领取": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "友情点赠送": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "友情点赠送": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "竞技场_特殊竞技场_累计奖励领取": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "领取特殊竞技场奖励": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "竞技场_新人竞技场": {
             "cases": [
                 {
