@@ -27,6 +27,7 @@
             "param": {}
         },
         "post_delay": 500,
+        "focus": "返回主页",
         "__mpe_code": {
             "position": {
                 "x": 170,
@@ -112,7 +113,7 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 18,
+                "x": 0,
                 "y": 93
             }
         },
@@ -243,8 +244,8 @@
         "pre_delay": 500,
         "__mpe_code": {
             "position": {
-                "x": 753,
-                "y": 560
+                "x": 737,
+                "y": 600
             }
         },
         "next": [
@@ -282,8 +283,8 @@
         "pre_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 1022,
-                "y": 651
+                "x": 1113,
+                "y": 652
             }
         }
     },
@@ -365,6 +366,7 @@
             "type": "DoNothing",
             "param": {}
         },
+        "focus": "任务执行前检查",
         "__mpe_code": {
             "position": {
                 "x": -148,
