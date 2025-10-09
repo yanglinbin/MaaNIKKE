@@ -17,15 +17,15 @@
         },
         "__mpe_code": {
             "position": {
-                "x": -14,
-                "y": 2462
+                "x": -96,
+                "y": 2351
             }
         },
         "next": [
             "进入方舟"
         ],
         "interrupt": [
-            "返回主页"
+            "任务执行前检查"
         ]
     },
     "拦截战": {
@@ -482,8 +482,8 @@
     "__mpe_external_返回主页_ark": {
         "__mpe_code": {
             "position": {
-                "x": 6202,
-                "y": 3807
+                "x": 6188,
+                "y": 3720
             }
         }
     },
@@ -1984,6 +1984,7 @@
             "特殊竞技场挑战完毕"
         ],
         "interrupt": [
+            "领取特殊竞技场奖励",
             "开始挑战竞技场"
         ]
     },
@@ -2309,8 +2310,8 @@
         "focus": "竞技场任务完成",
         "__mpe_code": {
             "position": {
-                "x": 2490,
-                "y": 4788
+                "x": 2548,
+                "y": 4759
             }
         }
     },
@@ -2364,8 +2365,113 @@
     "__mpe_external_返回方舟_ark": {
         "__mpe_code": {
             "position": {
-                "x": 6237,
-                "y": 3911
+                "x": 6195,
+                "y": 3774
+            }
+        }
+    },
+    "领取特殊竞技场奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "TOUCH"
+                ],
+                "roi": [
+                    536,
+                    104,
+                    65,
+                    61
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    621,
+                    134,
+                    38,
+                    43
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3147,
+                "y": 5777
+            }
+        },
+        "next": [
+            "确定领取特殊竞技场奖励"
+        ]
+    },
+    "确定领取特殊竞技场奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取奖励"
+                ],
+                "roi": [
+                    375,
+                    511,
+                    531,
+                    197
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3466,
+                "y": 5810
+            }
+        },
+        "next": [
+            "完成特殊竞技场奖励领取任务"
+        ]
+    },
+    "__mpe_external_点击领取奖励_ark": {
+        "__mpe_code": {
+            "position": {
+                "x": 4106,
+                "y": 5828
+            }
+        }
+    },
+    "完成特殊竞技场奖励领取任务": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "领取特殊竞技场奖励"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3771,
+                "y": 5793
+            }
+        },
+        "next": [
+            "点击领取奖励"
+        ]
+    },
+    "__mpe_external_任务执行前检查_ark": {
+        "__mpe_code": {
+            "position": {
+                "x": 307,
+                "y": 2584
             }
         }
     }

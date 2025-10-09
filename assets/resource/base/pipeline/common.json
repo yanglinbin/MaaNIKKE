@@ -1,32 +1,36 @@
 {
-    "__mpe_config_general": {
+    "__mpe_config_common": {
         "__mpe_code": {
             "prefix": "",
-            "filename": "general",
+            "filename": "common",
             "version": "v0.5.4_beta2"
         }
     },
     "返回主页": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/返回主页.png"
+                ],
+                "roi": [
+                    35,
+                    602,
+                    153,
+                    118
+                ],
+                "green_mask": true
+            }
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target": [
-                    15,
-                    666,
-                    63,
-                    27
-                ]
-            }
+            "param": {}
         },
         "post_delay": 500,
         "__mpe_code": {
             "position": {
-                "x": 0,
-                "y": 238
+                "x": 170,
+                "y": 749
             }
         }
     },
@@ -329,6 +333,80 @@
             "position": {
                 "x": 1017,
                 "y": 395
+            }
+        }
+    },
+    "点击领取奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": -10,
+                "y": 263
+            }
+        }
+    },
+    "任务执行前检查": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": -148,
+                "y": 643
+            }
+        },
+        "next": [
+            "任务执行前检查成功"
+        ],
+        "interrupt": [
+            "返回主页",
+            "返回"
+        ]
+    },
+    "任务执行前检查成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.5
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "任务执行前检查成功",
+        "__mpe_code": {
+            "position": {
+                "x": 168,
+                "y": 420
             }
         }
     }
