@@ -3,7 +3,7 @@
         "__mpe_code": {
             "prefix": "",
             "filename": "common",
-            "version": "v0.5.4_beta2"
+            "version": "v0.5.3"
         }
     },
     "返回主页": {
@@ -352,8 +352,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": -10,
-                "y": 263
+                "x": -234,
+                "y": 281
             }
         }
     },
@@ -409,6 +409,26 @@
             "position": {
                 "x": 168,
                 "y": 420
+            }
+        }
+    },
+    "点击进行下一步": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击进行下一步"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 18,
+                "y": 284
             }
         }
     }

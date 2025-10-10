@@ -3,7 +3,7 @@
         "__mpe_code": {
             "prefix": "",
             "filename": "reward",
-            "version": "v0.5.4_beta2"
+            "version": "v0.5.3"
         }
     },
     "奖励领取": {
@@ -21,11 +21,11 @@
                 "y": 2432
             }
         },
-        "interrupt": [
-            "任务执行前检查"
-        ],
         "next": [
             "奖励领取任务分发"
+        ],
+        "interrupt": [
+            "任务执行前检查"
         ]
     },
     "__mpe_external_任务执行前检查_reward": {
@@ -55,7 +55,7 @@
             "友情点赠送",
             "邮件领取",
             "任务领取",
-            "通行证领取",
+            "通行证领取_副本",
             "防御基地奖励领取",
             "启用奖励领取任务完成节点"
         ],
@@ -135,65 +135,12 @@
                 "y": 2561
             }
         },
-        "interrupt": [
-            "领取邮件"
-        ],
         "next": [
             "邮件领取完毕"
-        ]
-    },
-    "通行证领取": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "common/通行证.png"
-                ],
-                "roi": [
-                    1105,
-                    89,
-                    60,
-                    59
-                ],
-                "green_mask": true
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {}
-        },
-        "post_delay": 1000,
-        "focus": "开始通行证领取任务",
-        "__mpe_code": {
-            "position": {
-                "x": 639,
-                "y": 3109
-            }
-        },
-        "interrupt": [
-            "选择通行证"
         ],
-        "next": [
-            "所有通行证领取完毕"
+        "interrupt": [
+            "领取邮件"
         ]
-    },
-    "奖励领取任务完成": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "enabled": false,
-        "focus": "奖励领取任务完成",
-        "__mpe_code": {
-            "position": {
-                "x": 689,
-                "y": 2046
-            }
-        }
     },
     "启用奖励领取任务完成节点": {
         "recognition": {
@@ -203,9 +150,11 @@
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "EnableNode",
+                "custom_action": "NodeOverride",
                 "custom_action_param": {
-                    "node_name": "奖励领取任务完成"
+                    "奖励领取任务完成": {
+                        "threshold": "0.7"
+                    }
                 }
             }
         },
@@ -474,12 +423,12 @@
                 "y": 2907
             }
         },
-        "interrupt": [
-            "点击领取奖励"
-        ],
         "next": [
             "检查任务领取项",
             "关闭任务面板"
+        ],
+        "interrupt": [
+            "点击领取奖励"
         ]
     },
     "任务领取完毕": {
@@ -538,8 +487,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 928,
-                "y": 3613
+                "x": 1007,
+                "y": 3551
             }
         },
         "next": [
@@ -603,8 +552,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1663,
-                "y": 3985
+                "x": 1718,
+                "y": 3875
             }
         },
         "next": [
@@ -660,8 +609,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1961,
-                "y": 3922
+                "x": 2022,
+                "y": 3947
             }
         },
         "next": [
@@ -685,7 +634,14 @@
         },
         "action": {
             "type": "Click",
-            "param": {}
+            "param": {
+                "target": [
+                    564,
+                    486,
+                    185,
+                    104
+                ]
+            }
         },
         "__mpe_code": {
             "position": {
@@ -699,10 +655,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    465,
-                    215,
-                    352,
-                    37
+                    455,
+                    193,
+                    373,
+                    115
                 ],
                 "template": [
                     "common/小红点.png"
@@ -737,10 +693,10 @@
                     "common/小红点.png"
                 ],
                 "roi": [
-                    779,
-                    209,
-                    48,
-                    30
+                    775,
+                    175,
+                    85,
+                    75
                 ],
                 "green_mask": true
             }
@@ -751,8 +707,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1421,
-                "y": 3497
+                "x": 1428,
+                "y": 3634
             }
         },
         "next": [
@@ -761,24 +717,18 @@
     },
     "有未领取通行证奖励": {
         "recognition": {
-            "type": "ColorMatch",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    400,
-                    560,
-                    29,
-                    25
+                    592,
+                    203,
+                    52,
+                    46
                 ],
-                "lower": [
-                    250,
-                    45,
-                    25
+                "template": [
+                    "common/小红点1.png"
                 ],
-                "upper": [
-                    255,
-                    60,
-                    35
-                ]
+                "green_mask": true
             }
         },
         "action": {
@@ -787,8 +737,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1343,
-                "y": 3905
+                "x": 1468,
+                "y": 3910
             }
         },
         "next": [
@@ -898,8 +848,19 @@
     },
     "防御基地奖励领取": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点1.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    387,
+                    544,
+                    58,
+                    63
+                ]
+            }
         },
         "action": {
             "type": "Click",
@@ -912,19 +873,19 @@
                 ]
             }
         },
-        "post_delay": 500,
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 630,
-                "y": 4104
+                "x": 605,
+                "y": 3741
             }
         },
+        "next": [
+            "获得防御基地奖励"
+        ],
         "interrupt": [
             "存在免费一举歼灭",
             "启用获得防御基地奖励节点"
-        ],
-        "next": [
-            "获得防御基地奖励"
         ]
     },
     "存在免费一举歼灭": {
@@ -949,8 +910,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 962,
-                "y": 4274
+                "x": 981,
+                "y": 4320
             }
         },
         "next": [
@@ -978,8 +939,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1318,
-                "y": 4279
+                "x": 1225,
+                "y": 4332
             }
         },
         "next": [
@@ -1008,15 +969,15 @@
         "post_wait_freezes": 600,
         "__mpe_code": {
             "position": {
-                "x": 1642,
-                "y": 4298
+                "x": 1467,
+                "y": 4317
             }
         },
-        "interrupt": [
-            "点击领取奖励"
-        ],
         "next": [
             "退出一举歼灭"
+        ],
+        "interrupt": [
+            "点击领取奖励"
         ]
     },
     "防御基地奖励领取完毕": {
@@ -1035,8 +996,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1382,
-                "y": 4074
+                "x": 1595,
+                "y": 4106
             }
         },
         "next": [
@@ -1064,8 +1025,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2059,
-                "y": 4274
+                "x": 1813,
+                "y": 4302
             }
         },
         "next": [
@@ -1116,8 +1077,81 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2319,
-                "y": 4274
+                "x": 2075,
+                "y": 4180
+            }
+        }
+    },
+    "通行证领取_副本": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点1.png"
+                ],
+                "roi": [
+                    1119,
+                    88,
+                    49,
+                    65
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -10,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "focus": "开始通行证领取任务",
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 630,
+                "y": 3097
+            }
+        },
+        "interrupt": [
+            "选择通行证"
+        ],
+        "next": [
+            "所有通行证领取完毕"
+        ]
+    },
+    "奖励领取任务完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    1
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "奖励领取任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 659,
+                "y": 2004
             }
         }
     }
