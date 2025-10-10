@@ -245,6 +245,7 @@
             }
         },
         "pre_delay": 500,
+        "focus": "返回",
         "__mpe_code": {
             "position": {
                 "x": 737,
@@ -487,6 +488,7 @@
             "param": {}
         },
         "post_wait_freezes": 500,
+        "focus": "返回大厅",
         "__mpe_code": {
             "position": {
                 "x": 205,
