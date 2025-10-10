@@ -30,10 +30,13 @@
         "focus": "返回主页",
         "__mpe_code": {
             "position": {
-                "x": 170,
-                "y": 749
+                "x": 213,
+                "y": 788
             }
-        }
+        },
+        "next": [
+            "返回主页成功"
+        ]
     },
     "跳过boss等待": {
         "recognition": {
@@ -300,8 +303,8 @@
         "focus": "返回方舟",
         "__mpe_code": {
             "position": {
-                "x": 447,
-                "y": 435
+                "x": 401,
+                "y": 294
             }
         },
         "next": [
@@ -378,7 +381,8 @@
         ],
         "interrupt": [
             "返回主页",
-            "返回"
+            "返回",
+            "大厅"
         ]
     },
     "任务执行前检查成功": {
@@ -390,7 +394,7 @@
                 ],
                 "green_mask": true,
                 "threshold": [
-                    0.5
+                    0.7
                 ],
                 "roi": [
                     269,
@@ -407,7 +411,7 @@
         "focus": "任务执行前检查成功",
         "__mpe_code": {
             "position": {
-                "x": 168,
+                "x": 176,
                 "y": 420
             }
         }
@@ -431,5 +435,66 @@
                 "y": 284
             }
         }
+    },
+    "返回主页成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.7
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "返回主页成功",
+        "__mpe_code": {
+            "position": {
+                "x": 586,
+                "y": 874
+            }
+        }
+    },
+    "大厅": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "大厅"
+                ],
+                "roi": [
+                    597,
+                    671,
+                    83,
+                    48
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 205,
+                "y": 1100
+            }
+        },
+        "next": [
+            "返回主页成功"
+        ]
     }
 }

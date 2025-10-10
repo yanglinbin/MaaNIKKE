@@ -55,9 +55,9 @@
             "友情点赠送",
             "邮件领取",
             "任务领取",
-            "通行证领取_副本",
+            "通行证领取",
             "防御基地奖励领取",
-            "启用奖励领取任务完成节点"
+            "修改奖励领取任务完成节点"
         ],
         "next": [
             "奖励领取任务完成"
@@ -93,8 +93,8 @@
         "focus": "开始友情点赠送任务",
         "__mpe_code": {
             "position": {
-                "x": 643,
-                "y": 2300
+                "x": 660,
+                "y": 1823
             }
         },
         "next": [
@@ -131,8 +131,8 @@
         "focus": "开始邮件领取任务",
         "__mpe_code": {
             "position": {
-                "x": 647,
-                "y": 2561
+                "x": 652,
+                "y": 2186
             }
         },
         "next": [
@@ -142,7 +142,7 @@
             "领取邮件"
         ]
     },
-    "启用奖励领取任务完成节点": {
+    "修改奖励领取任务完成节点": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -153,7 +153,9 @@
                 "custom_action": "NodeOverride",
                 "custom_action_param": {
                     "奖励领取任务完成": {
-                        "threshold": "0.7"
+                        "threshold": [
+                            0.7
+                        ]
                     }
                 }
             }
@@ -161,8 +163,8 @@
         "focus": "启用奖励领取任务完成节点",
         "__mpe_code": {
             "position": {
-                "x": 638,
-                "y": 4448
+                "x": 712,
+                "y": 4801
             }
         }
     },
@@ -187,8 +189,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 927,
-                "y": 2149
+                "x": 930,
+                "y": 1854
             }
         },
         "next": [
@@ -217,8 +219,8 @@
         "post_delay": 400,
         "__mpe_code": {
             "position": {
-                "x": 1242,
-                "y": 2194
+                "x": 1210,
+                "y": 1869
             }
         },
         "next": [
@@ -253,8 +255,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1507,
-                "y": 2224
+                "x": 1482,
+                "y": 1884
             }
         },
         "next": [
@@ -282,8 +284,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1072,
-                "y": 2692
+                "x": 1037,
+                "y": 2372
             }
         },
         "next": [
@@ -293,8 +295,8 @@
     "__mpe_external_点击领取奖励_reward": {
         "__mpe_code": {
             "position": {
-                "x": 2651,
-                "y": 3261
+                "x": 3053,
+                "y": 3483
             }
         }
     },
@@ -328,8 +330,8 @@
         "focus": "开始任务领取任务",
         "__mpe_code": {
             "position": {
-                "x": 637,
-                "y": 2815
+                "x": 657,
+                "y": 2560
             }
         },
         "next": [
@@ -375,8 +377,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1632,
-                "y": 2828
+                "x": 1446,
+                "y": 2460
             }
         },
         "next": [
@@ -419,8 +421,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1240,
-                "y": 2907
+                "x": 1037,
+                "y": 2638
             }
         },
         "next": [
@@ -442,8 +444,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2009,
-                "y": 2730
+                "x": 1935,
+                "y": 2529
             }
         }
     },
@@ -458,8 +460,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1792,
-                "y": 2256
+                "x": 1780,
+                "y": 1951
             }
         }
     },
@@ -487,8 +489,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1007,
-                "y": 3551
+                "x": 994,
+                "y": 3429
             }
         },
         "next": [
@@ -522,8 +524,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1730,
-                "y": 3611
+                "x": 1700,
+                "y": 3367
             }
         },
         "next": [
@@ -552,8 +554,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1718,
-                "y": 3875
+                "x": 1702,
+                "y": 3788
             }
         },
         "next": [
@@ -582,8 +584,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 2073,
-                "y": 3599
+                "x": 1972,
+                "y": 3363
             }
         }
     },
@@ -609,8 +611,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 2022,
-                "y": 3947
+                "x": 1979,
+                "y": 3784
             }
         },
         "next": [
@@ -645,8 +647,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1410,
-                "y": 3710
+                "x": 1453,
+                "y": 3557
             }
         }
     },
@@ -680,8 +682,8 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 1933,
-                "y": 3322
+                "x": 1461,
+                "y": 3063
             }
         }
     },
@@ -707,8 +709,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1428,
-                "y": 3634
+                "x": 1441,
+                "y": 3342
             }
         },
         "next": [
@@ -737,8 +739,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1468,
-                "y": 3910
+                "x": 1420,
+                "y": 3774
             }
         },
         "next": [
@@ -774,8 +776,8 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 979,
-                "y": 3171
+                "x": 1028,
+                "y": 2935
             }
         },
         "next": [
@@ -800,8 +802,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1455,
-                "y": 3236
+                "x": 1448,
+                "y": 2893
             }
         }
     },
@@ -841,8 +843,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1084,
-                "y": 2422
+                "x": 1022,
+                "y": 2087
             }
         }
     },
@@ -876,8 +878,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 605,
-                "y": 3741
+                "x": 714,
+                "y": 4165
             }
         },
         "next": [
@@ -910,8 +912,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 981,
-                "y": 4320
+                "x": 1162,
+                "y": 4570
             }
         },
         "next": [
@@ -939,8 +941,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1225,
-                "y": 4332
+                "x": 1440,
+                "y": 4627
             }
         },
         "next": [
@@ -969,38 +971,14 @@
         "post_wait_freezes": 600,
         "__mpe_code": {
             "position": {
-                "x": 1467,
-                "y": 4317
+                "x": 1704,
+                "y": 4589
             }
         },
         "next": [
             "退出一举歼灭"
         ],
         "interrupt": [
-            "点击领取奖励"
-        ]
-    },
-    "防御基地奖励领取完毕": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "防御基地奖励领取"
-                }
-            }
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 1595,
-                "y": 4106
-            }
-        },
-        "next": [
             "点击领取奖励"
         ]
     },
@@ -1025,8 +1003,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1813,
-                "y": 4302
+                "x": 1979,
+                "y": 4550
             }
         },
         "next": [
@@ -1055,10 +1033,13 @@
         "enabled": false,
         "__mpe_code": {
             "position": {
-                "x": 981,
-                "y": 3975
+                "x": 1005,
+                "y": 3999
             }
         },
+        "interrupt": [
+            "点击领取奖励"
+        ],
         "next": [
             "防御基地奖励领取完毕"
         ]
@@ -1072,17 +1053,19 @@
             "type": "Custom",
             "param": {
                 "custom_action": "EnableNode",
-                "custom_action_param": "获得防御基地奖励"
+                "custom_action_param": {
+                    "node_name": "获得防御基地奖励"
+                }
             }
         },
         "__mpe_code": {
             "position": {
-                "x": 2075,
-                "y": 4180
+                "x": 2320,
+                "y": 4426
             }
         }
     },
-    "通行证领取_副本": {
+    "通行证领取": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1113,8 +1096,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 630,
-                "y": 3097
+                "x": 636,
+                "y": 2865
             }
         },
         "interrupt": [
@@ -1150,8 +1133,44 @@
         "focus": "奖励领取任务完成",
         "__mpe_code": {
             "position": {
-                "x": 659,
-                "y": 2004
+                "x": 649,
+                "y": 1539
+            }
+        }
+    },
+    "防御基地奖励领取完毕": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.7
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "防御基地奖励领取"
+                }
+            }
+        },
+        "focus": "奖励领取任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 1428,
+                "y": 3994
             }
         }
     }

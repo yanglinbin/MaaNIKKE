@@ -800,22 +800,6 @@
             "点击进行下一步"
         ]
     },
-    "前哨基地任务完成": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 2309,
-                "y": -409
-            }
-        }
-    },
     "启用前哨基地任务完成节点": {
         "recognition": {
             "type": "DirectHit",
@@ -827,15 +811,59 @@
                 "custom_action": "NodeOverride",
                 "custom_action_param": {
                     "前哨基地任务完成": {
-                        "threshold": "0.7"
+                        "threshold": [
+                            0.7
+                        ]
                     }
                 }
             }
         },
         "__mpe_code": {
             "position": {
-                "x": 2267,
-                "y": 369
+                "x": 2258,
+                "y": 388
+            }
+        },
+        "next": [
+            "返回主页"
+        ]
+    },
+    "__mpe_external_返回主页_outpost": {
+        "__mpe_code": {
+            "position": {
+                "x": 2626,
+                "y": 421
+            }
+        }
+    },
+    "前哨基地任务完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    1
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "前哨基地任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 2304,
+                "y": -578
             }
         }
     }

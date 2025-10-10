@@ -31,8 +31,8 @@
     "__mpe_external_任务执行前检查_consultation": {
         "__mpe_code": {
             "position": {
-                "x": 4293,
-                "y": 49
+                "x": 4320,
+                "y": 138
             }
         }
     },
@@ -58,8 +58,8 @@
         "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 4349,
-                "y": -132
+                "x": 4341,
+                "y": -188
             }
         },
         "next": [
@@ -83,13 +83,13 @@
             }
         },
         "action": {
-            "type": "Click",
+            "type": "DoNothing",
             "param": {}
         },
         "__mpe_code": {
             "position": {
-                "x": 4661,
-                "y": -143
+                "x": 4671,
+                "y": -142
             }
         },
         "next": [
@@ -118,7 +118,7 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 4940,
+                "x": 4943,
                 "y": -156
             }
         },
@@ -148,7 +148,7 @@
         "post_wait_freezes": 500,
         "__mpe_code": {
             "position": {
-                "x": 5269,
+                "x": 5270,
                 "y": -156
             }
         },
@@ -173,7 +173,7 @@
             }
         },
         "action": {
-            "type": "Click",
+            "type": "DoNothing",
             "param": {}
         },
         "__mpe_code": {

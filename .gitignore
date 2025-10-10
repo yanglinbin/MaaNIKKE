@@ -309,6 +309,9 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 ServiceFabricBackup/
 *.rptproj.bak
+.nicegui/
+.vscode/
+docs/
 
 # SQL Server files
 *.mdf
