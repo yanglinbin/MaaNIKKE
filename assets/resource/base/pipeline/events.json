@@ -1,0 +1,1492 @@
+{
+    "__mpe_config_events": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "events",
+            "version": "v0.5.3"
+        }
+    },
+    "活动任务分发": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 158
+            }
+        },
+        "next": [
+            "活动任务完成"
+        ],
+        "interrupt": [
+            "小活动",
+            "大活动"
+        ]
+    },
+    "小活动": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 158
+            }
+        }
+    },
+    "大活动": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "events/生化危机联动活动.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    753,
+                    506,
+                    291,
+                    206
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 882,
+                "y": 322
+            }
+        },
+        "next": [
+            "大活动未完成"
+        ],
+        "interrupt": [
+            "进入大活动"
+        ]
+    },
+    "活动": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 65
+            }
+        },
+        "next": [
+            "活动任务执行前检查成功_"
+        ],
+        "interrupt": [
+            "任务执行前检查"
+        ]
+    },
+    "活动任务完成": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 0
+            }
+        }
+    },
+    "__mpe_external_任务执行前检查_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 276,
+                "y": 217
+            }
+        }
+    },
+    "活动任务执行前检查成功_": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.7
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 287,
+                "y": -77
+            }
+        },
+        "next": [
+            "活动任务分发"
+        ]
+    },
+    "大活动未完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    940,
+                    567,
+                    49,
+                    46
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 1213,
+                "y": 209
+            }
+        }
+    },
+    "进入大活动": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "大活动"
+            }
+        },
+        "timeout": 60000,
+        "__mpe_code": {
+            "position": {
+                "x": 1213,
+                "y": 453
+            }
+        },
+        "next": [
+            "成功进入大活动"
+        ]
+    },
+    "成功进入大活动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动地区"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1473,
+                "y": 453
+            }
+        },
+        "next": [
+            "大活动任务分发"
+        ]
+    },
+    "大活动任务分发": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1724,
+                "y": 489
+            }
+        },
+        "next": [
+            "大活动任务完成"
+        ],
+        "interrupt": [
+            "剧情活动关卡",
+            "挑战关卡",
+            "签到印章",
+            "活动任务"
+        ]
+    },
+    "大活动任务完成": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2084,
+                "y": 280
+            }
+        }
+    },
+    "剧情活动关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^STORYI$"
+                ],
+                "roi": [
+                    422,
+                    489,
+                    448,
+                    180
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "timeout": 60000,
+        "focus": "开始剧情活动关卡任务",
+        "__mpe_code": {
+            "position": {
+                "x": 2082,
+                "y": 457
+            }
+        },
+        "next": [
+            "成功进入剧情活动"
+        ]
+    },
+    "成功进入剧情活动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "剧情活动"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2419,
+                "y": 481
+            }
+        },
+        "next": [
+            "剧情活动画面稳定"
+        ]
+    },
+    "剧情活动画面稳定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "记录保管"
+                ],
+                "roi": [
+                    487,
+                    431,
+                    323,
+                    288
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2705,
+                "y": 447
+            }
+        },
+        "next": [
+            "进入剧情活动关卡"
+        ]
+    },
+    "进入剧情活动关卡": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    624,
+                    489,
+                    28,
+                    17
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2977,
+                "y": 470
+            }
+        },
+        "next": [
+            "成功进入剧情活动关卡"
+        ]
+    },
+    "成功进入剧情活动关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动关卡"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3270,
+                "y": 453
+            }
+        },
+        "next": [
+            "活动快速战斗模式",
+            "活动推图模式"
+        ]
+    },
+    "活动推图模式": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "enabled": false,
+        "__mpe_code": {
+            "position": {
+                "x": 3596,
+                "y": 706
+            }
+        }
+    },
+    "活动快速战斗模式": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3573,
+                "y": 370
+            }
+        },
+        "next": [
+            "滑动到剧情活动关卡最下层"
+        ]
+    },
+    "滑动到剧情活动关卡最下层": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    648,
+                    624,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        657,
+                        276,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3865,
+                "y": 324
+            }
+        },
+        "next": [
+            "选择最下层剧情活动关卡"
+        ]
+    },
+    "选择最下层剧情活动关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "Repeat"
+                ],
+                "roi": [
+                    712,
+                    230,
+                    89,
+                    475
+                ],
+                "order_by": "Vertical",
+                "threshold": 0.9,
+                "index": 2
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4160,
+                "y": 276
+            }
+        },
+        "interrupt": [
+            "剧情活动关卡快速战斗"
+        ],
+        "next": [
+            "剧情活动关卡道具不足"
+        ]
+    },
+    "剧情活动关卡快速战斗": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    250,
+                    100,
+                    35
+                ],
+                "upper": [
+                    255,
+                    107,
+                    40
+                ],
+                "method": 4,
+                "roi": [
+                    673,
+                    603,
+                    36,
+                    28
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    728,
+                    608,
+                    58,
+                    21
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "__mpe_code": {
+            "position": {
+                "x": 4539,
+                "y": 388
+            }
+        },
+        "next": [
+            "剧情活动关卡快速战斗配置页面"
+        ]
+    },
+    "剧情活动关卡快速战斗配置页面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "快速战斗"
+                ],
+                "roi": [
+                    545,
+                    325,
+                    184,
+                    50
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4862,
+                "y": 391
+            }
+        },
+        "next": [
+            "自定次数MAX"
+        ]
+    },
+    "自定次数MAX": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "MAX"
+                ],
+                "roi": [
+                    476,
+                    455,
+                    326,
+                    125
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 5185,
+                "y": 420
+            }
+        },
+        "next": [
+            "进行剧情活动关卡快速战斗"
+        ]
+    },
+    "进行剧情活动关卡快速战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进行战斗"
+                ],
+                "roi": [
+                    476,
+                    455,
+                    326,
+                    125
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 5482,
+                "y": 399
+            }
+        },
+        "interrupt": [
+            "点击任意处进行下一步"
+        ],
+        "next": [
+            "剧情活动关卡快速战斗完成"
+        ]
+    },
+    "__mpe_external_点击任意处进行下一步_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 5831,
+                "y": 535
+            }
+        }
+    },
+    "剧情活动关卡快速战斗完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动关卡"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 5848,
+                "y": 289
+            }
+        },
+        "interrupt": [
+            "返回到活动地区"
+        ],
+        "next": [
+            "剧情活动关卡任务完成"
+        ]
+    },
+    "__mpe_external_返回_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 6840,
+                "y": 1131
+            }
+        }
+    },
+    "返回到活动地区": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 5719,
+                "y": 1524
+            }
+        },
+        "interrupt": [
+            "返回"
+        ],
+        "next": [
+            "成功返回到活动地区"
+        ]
+    },
+    "剧情活动关卡道具不足": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    100,
+                    100,
+                    100
+                ],
+                "upper": [
+                    105,
+                    105,
+                    105
+                ],
+                "method": 4,
+                "roi": [
+                    670,
+                    601,
+                    37,
+                    32
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_delay": 1500,
+        "__mpe_code": {
+            "position": {
+                "x": 4541,
+                "y": 64
+            }
+        },
+        "next": [
+            "剧情活动关卡任务完成"
+        ],
+        "interrupt": [
+            "返回到活动地区"
+        ]
+    },
+    "进入挑战关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^挑战$"
+                ],
+                "roi": [
+                    422,
+                    489,
+                    448,
+                    180
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "timeout": 60000,
+        "__mpe_code": {
+            "position": {
+                "x": 2402,
+                "y": 914
+            }
+        },
+        "next": [
+            "成功进入挑战关卡"
+        ]
+    },
+    "挑战关卡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    432,
+                    573,
+                    36,
+                    32
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    482,
+                    592,
+                    31,
+                    18
+                ]
+            }
+        },
+        "focus": "开始挑战关卡任务",
+        "__mpe_code": {
+            "position": {
+                "x": 2065,
+                "y": 761
+            }
+        },
+        "interrupt": [
+            "进入挑战关卡"
+        ],
+        "next": [
+            "挑战关卡任务完成"
+        ]
+    },
+    "挑战最新挑战关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "CHALLENGE STAGE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3013,
+                "y": 947
+            }
+        },
+        "next": [
+            "开始挑战挑战关卡"
+        ]
+    },
+    "成功进入挑战关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "挑战关卡"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2706,
+                "y": 935
+            }
+        },
+        "next": [
+            "挑战最新挑战关卡"
+        ]
+    },
+    "开始挑战挑战关卡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ],
+                "roi": [
+                    640,
+                    583,
+                    209,
+                    136
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3273,
+                "y": 947
+            }
+        },
+        "interrupt": [
+            "进入挑战关卡boss战",
+            "返回到活动地区"
+        ],
+        "next": [
+            "挑战关卡任务完成"
+        ]
+    },
+    "__mpe_external_boss战开始_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 4074,
+                "y": 1307
+            }
+        }
+    },
+    "进入挑战关卡boss战过渡节点": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "进入挑战关卡boss战"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3784,
+                "y": 1156
+            }
+        },
+        "next": [
+            "boss战开始"
+        ]
+    },
+    "成功返回到活动地区": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动地区"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 6830,
+                "y": 889
+            }
+        }
+    },
+    "剧情活动关卡任务完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动地区"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "剧情活动关卡"
+                }
+            }
+        },
+        "focus": "剧情活动关卡任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 6237,
+                "y": 86
+            }
+        }
+    },
+    "签到印章": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    820,
+                    536,
+                    32,
+                    36
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    763,
+                    559,
+                    57,
+                    16
+                ]
+            }
+        },
+        "focus": "开始签到印章任务",
+        "__mpe_code": {
+            "position": {
+                "x": 2062,
+                "y": 1126
+            }
+        },
+        "interrupt": [
+            "进入签到印章"
+        ],
+        "next": [
+            "签到印章任务完成"
+        ]
+    },
+    "进入签到印章": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "签到印章"
+                ],
+                "roi": [
+                    422,
+                    489,
+                    448,
+                    180
+                ],
+                "replace": [
+                    [
+                        "意",
+                        "章"
+                    ]
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "timeout": 60000,
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2446,
+                "y": 1300
+            }
+        },
+        "interrupt": [
+            "签到印章全部领取",
+            "返回到活动地区"
+        ],
+        "next": [
+            "签到印章任务完成"
+        ]
+    },
+    "签到印章全部领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ],
+                "roi": [
+                    672,
+                    595,
+                    158,
+                    69
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "timeout": 60000,
+        "__mpe_code": {
+            "position": {
+                "x": 2781,
+                "y": 1468
+            }
+        },
+        "next": [
+            "领取签到奖励"
+        ]
+    },
+    "__mpe_external_点击领取奖励_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 3907,
+                "y": 1873
+            }
+        }
+    },
+    "领取签到奖励过渡节点": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "签到印章全部领取"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3395,
+                "y": 1567
+            }
+        },
+        "next": [
+            "点击领取奖励"
+        ]
+    },
+    "领取签到奖励": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3090,
+                "y": 1559
+            }
+        },
+        "next": [
+            "领取签到奖励过渡节点"
+        ]
+    },
+    "进入挑战关卡boss战": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3530,
+                "y": 1112
+            }
+        },
+        "next": [
+            "进入挑战关卡boss战过渡节点"
+        ]
+    },
+    "活动任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    1229,
+                    116,
+                    50,
+                    77
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1238,
+                    135,
+                    27,
+                    23
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2020,
+                "y": 1710
+            }
+        },
+        "interrupt": [
+            "活动任务每日任务",
+            "活动任务成就",
+            "返回到活动地区"
+        ],
+        "next": [
+            "活动任务任务完成"
+        ]
+    },
+    "已完成所有活动任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "已完成所有任务"
+                ],
+                "roi": [
+                    553,
+                    382,
+                    172,
+                    62
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    792,
+                    34,
+                    26,
+                    25
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2658,
+                "y": 1911
+            }
+        }
+    },
+    "活动任务全部领取": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ],
+                "roi": [
+                    671,
+                    617,
+                    158,
+                    58
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2671,
+                "y": 2269
+            }
+        },
+        "next": [
+            "点击领取奖励",
+            "活动任务奖励领取完毕"
+        ]
+    },
+    "活动任务每日任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    560,
+                    101,
+                    96,
+                    69
+                ],
+                "template": [
+                    "common/小红点.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    531,
+                    135,
+                    49,
+                    21
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2373,
+                "y": 2020
+            }
+        },
+        "next": [
+            "已完成所有活动任务"
+        ],
+        "interrupt": [
+            "活动任务全部领取"
+        ]
+    },
+    "活动任务成就": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点.png"
+                ],
+                "roi": [
+                    723,
+                    110,
+                    59,
+                    54
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    725,
+                    137,
+                    32,
+                    16
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2290,
+                "y": 2399
+            }
+        },
+        "next": [
+            "活动任务全部领取"
+        ]
+    },
+    "活动任务奖励领取完毕": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3031,
+                "y": 2469
+            }
+        }
+    },
+    "活动任务任务完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动地区"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "活动任务"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2383,
+                "y": 1583
+            }
+        }
+    },
+    "挑战关卡任务完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动地区"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "挑战关卡"
+                }
+            }
+        },
+        "focus": "挑战关卡任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 3950,
+                "y": 731
+            }
+        }
+    },
+    "签到印章任务完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动地区"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    98,
+                    53
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "签到印章"
+                }
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2951,
+                "y": 1189
+            }
+        }
+    }
+}

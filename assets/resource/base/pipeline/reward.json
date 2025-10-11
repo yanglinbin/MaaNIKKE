@@ -17,22 +17,22 @@
         },
         "__mpe_code": {
             "position": {
-                "x": -360,
-                "y": 3460
+                "x": -348,
+                "y": 3365
             }
         },
-        "next": [
-            "奖励领取任务分发"
-        ],
         "interrupt": [
             "任务执行前检查"
+        ],
+        "next": [
+            "奖励领取任务执行前检查成功"
         ]
     },
     "__mpe_external_任务执行前检查_reward": {
         "__mpe_code": {
             "position": {
-                "x": 56,
-                "y": 3577
+                "x": -4,
+                "y": 3556
             }
         }
     },
@@ -47,8 +47,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 74,
-                "y": 3398
+                "x": 295,
+                "y": 3287
             }
         },
         "next": [
@@ -485,10 +485,10 @@
                     "common/小红点.png"
                 ],
                 "roi": [
-                    1227,
-                    71,
-                    52,
-                    231
+                    1128,
+                    88,
+                    151,
+                    49
                 ],
                 "green_mask": true,
                 "index": 0
@@ -704,7 +704,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点1.png"
+                    "common/小红点.png"
                 ],
                 "roi": [
                     781,
@@ -740,7 +740,7 @@
                     143
                 ],
                 "template": [
-                    "common/小红点1.png"
+                    "common/小红点.png"
                 ],
                 "green_mask": true
             }
@@ -1229,5 +1229,38 @@
                 "y": 3188
             }
         }
+    },
+    "奖励领取任务执行前检查成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.7
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": -3,
+                "y": 3207
+            }
+        },
+        "next": [
+            "奖励领取任务分发"
+        ]
     }
 }
