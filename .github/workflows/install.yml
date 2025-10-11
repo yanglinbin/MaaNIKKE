@@ -5,7 +5,7 @@ on:
     tags:
       - "v*"
     branches:
-      - "**"
+      - "main"
     paths:
       - ".github/workflows/install.yml"
       - "assets/**"
@@ -51,11 +51,12 @@ jobs:
 
   install:
     needs: meta
-    runs-on: macos-latest
+    runs-on: windows-latest
     strategy:
       matrix:
-        os: [win, macos, linux, android]
-        arch: [aarch64, x86_64]
+        include:
+          - os: win
+            arch: x86_64
       fail-fast: false
 
     steps:
@@ -154,5 +155,6 @@ jobs:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
+          generate_release_notes: true
           draft: false
           prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
