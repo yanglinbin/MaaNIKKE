@@ -17,8 +17,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": -286,
-                "y": 2432
+                "x": -360,
+                "y": 3460
             }
         },
         "next": [
@@ -31,8 +31,8 @@
     "__mpe_external_任务执行前检查_reward": {
         "__mpe_code": {
             "position": {
-                "x": 142,
-                "y": 2694
+                "x": 56,
+                "y": 3577
             }
         }
     },
@@ -47,10 +47,13 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 154,
-                "y": 2438
+                "x": 74,
+                "y": 3398
             }
         },
+        "next": [
+            "奖励领取任务完成"
+        ],
         "interrupt": [
             "友情点赠送",
             "邮件领取",
@@ -58,9 +61,6 @@
             "通行证领取",
             "防御基地奖励领取",
             "修改奖励领取任务完成节点"
-        ],
-        "next": [
-            "奖励领取任务完成"
         ]
     },
     "友情点赠送": {
@@ -131,12 +131,12 @@
         "focus": "开始邮件领取任务",
         "__mpe_code": {
             "position": {
-                "x": 652,
-                "y": 2186
+                "x": 666,
+                "y": 2209
             }
         },
         "next": [
-            "邮件领取完毕"
+            "无可领取邮件"
         ],
         "interrupt": [
             "领取邮件"
@@ -163,8 +163,8 @@
         "focus": "启用奖励领取任务完成节点",
         "__mpe_code": {
             "position": {
-                "x": 712,
-                "y": 4801
+                "x": 528,
+                "y": 5164
             }
         }
     },
@@ -189,8 +189,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 930,
-                "y": 1854
+                "x": 940,
+                "y": 1848
             }
         },
         "next": [
@@ -219,8 +219,8 @@
         "post_delay": 400,
         "__mpe_code": {
             "position": {
-                "x": 1210,
-                "y": 1869
+                "x": 1201,
+                "y": 1843
             }
         },
         "next": [
@@ -255,12 +255,12 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1482,
-                "y": 1884
+                "x": 1471,
+                "y": 1841
             }
         },
         "next": [
-            "友情点赠送完毕"
+            "友情点赠送任务完成"
         ]
     },
     "领取邮件": {
@@ -284,8 +284,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1037,
-                "y": 2372
+                "x": 932,
+                "y": 2363
             }
         },
         "next": [
@@ -330,8 +330,8 @@
         "focus": "开始任务领取任务",
         "__mpe_code": {
             "position": {
-                "x": 657,
-                "y": 2560
+                "x": 635,
+                "y": 2616
             }
         },
         "next": [
@@ -377,12 +377,12 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1446,
-                "y": 2460
+                "x": 940,
+                "y": 2552
             }
         },
         "next": [
-            "任务领取完毕"
+            "任务领取任务完成"
         ]
     },
     "检查任务领取项": {
@@ -421,8 +421,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1037,
-                "y": 2638
+                "x": 945,
+                "y": 2860
             }
         },
         "next": [
@@ -433,35 +433,47 @@
             "点击领取奖励"
         ]
     },
-    "任务领取完毕": {
+    "任务领取任务完成": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "任务领取"
+                }
+            }
         },
+        "focus": "任务领取任务完成",
         "__mpe_code": {
             "position": {
-                "x": 1935,
-                "y": 2529
+                "x": 1223,
+                "y": 2524
             }
         }
     },
-    "友情点赠送完毕": {
+    "友情点赠送任务完成": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
         },
         "action": {
-            "type": "DoNothing",
-            "param": {}
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "友情点赠送"
+                }
+            }
         },
+        "focus": "友情点赠送任务完成",
         "__mpe_code": {
             "position": {
-                "x": 1780,
-                "y": 1951
+                "x": 1777,
+                "y": 1832
             }
         }
     },
@@ -489,8 +501,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 994,
-                "y": 3429
+                "x": 890,
+                "y": 3759
             }
         },
         "next": [
@@ -507,13 +519,13 @@
             "type": "OCR",
             "param": {
                 "expected": [
-                    "任务"
+                    "^任务$"
                 ],
                 "roi": [
-                    465,
-                    215,
-                    352,
-                    37
+                    650,
+                    158,
+                    174,
+                    133
                 ]
             }
         },
@@ -524,8 +536,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1700,
-                "y": 3367
+                "x": 1537,
+                "y": 3702
             }
         },
         "next": [
@@ -537,13 +549,13 @@
             "type": "OCR",
             "param": {
                 "expected": [
-                    "奖励"
+                    "^奖励$"
                 ],
                 "roi": [
-                    465,
-                    215,
-                    352,
-                    37
+                    472,
+                    157,
+                    165,
+                    133
                 ]
             }
         },
@@ -554,8 +566,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1702,
-                "y": 3788
+                "x": 1534,
+                "y": 4149
             }
         },
         "next": [
@@ -584,8 +596,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1972,
-                "y": 3363
+                "x": 1847,
+                "y": 3683
             }
         }
     },
@@ -611,8 +623,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 1979,
-                "y": 3784
+                "x": 1879,
+                "y": 4104
             }
         },
         "next": [
@@ -647,8 +659,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1453,
-                "y": 3557
+                "x": 1233,
+                "y": 3942
             }
         }
     },
@@ -657,10 +669,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    455,
-                    193,
-                    373,
-                    115
+                    420,
+                    145,
+                    454,
+                    203
                 ],
                 "template": [
                     "common/小红点.png"
@@ -682,8 +694,8 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 1461,
-                "y": 3063
+                "x": 1232,
+                "y": 3442
             }
         }
     },
@@ -692,13 +704,13 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/小红点1.png"
                 ],
                 "roi": [
-                    775,
-                    175,
-                    85,
-                    75
+                    781,
+                    157,
+                    75,
+                    139
                 ],
                 "green_mask": true
             }
@@ -709,8 +721,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1441,
-                "y": 3342
+                "x": 1233,
+                "y": 3732
             }
         },
         "next": [
@@ -722,10 +734,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    592,
-                    203,
-                    52,
-                    46
+                    583,
+                    158,
+                    63,
+                    143
                 ],
                 "template": [
                     "common/小红点1.png"
@@ -739,15 +751,15 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1420,
-                "y": 3774
+                "x": 1238,
+                "y": 4155
             }
         },
         "next": [
             "进入通行证奖励"
         ]
     },
-    "所有通行证领取完毕": {
+    "无待领取通行证奖励": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -760,24 +772,18 @@
                     52,
                     231
                 ],
-                "green_mask": true,
-                "index": 0
+                "green_mask": true
             }
         },
         "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "通行证领取"
-                }
-            }
+            "type": "DoNothing",
+            "param": {}
         },
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 1028,
-                "y": 2935
+                "x": 940,
+                "y": 3182
             }
         },
         "next": [
@@ -802,12 +808,15 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1448,
-                "y": 2893
+                "x": 1226,
+                "y": 3225
             }
-        }
+        },
+        "next": [
+            "通行证领取任务完成"
+        ]
     },
-    "邮件领取完毕": {
+    "无可领取邮件": {
         "recognition": {
             "type": "ColorMatch",
             "param": {
@@ -843,10 +852,13 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1022,
-                "y": 2087
+                "x": 952,
+                "y": 2057
             }
-        }
+        },
+        "next": [
+            "邮件领取任务完成"
+        ]
     },
     "防御基地奖励领取": {
         "recognition": {
@@ -878,8 +890,8 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 714,
-                "y": 4165
+                "x": 585,
+                "y": 4582
             }
         },
         "next": [
@@ -912,8 +924,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1162,
-                "y": 4570
+                "x": 876,
+                "y": 4820
             }
         },
         "next": [
@@ -941,8 +953,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1440,
-                "y": 4627
+                "x": 1222,
+                "y": 4849
             }
         },
         "next": [
@@ -971,8 +983,8 @@
         "post_wait_freezes": 600,
         "__mpe_code": {
             "position": {
-                "x": 1704,
-                "y": 4589
+                "x": 1507,
+                "y": 4797
             }
         },
         "next": [
@@ -1003,8 +1015,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1979,
-                "y": 4550
+                "x": 1829,
+                "y": 4810
             }
         },
         "next": [
@@ -1033,15 +1045,15 @@
         "enabled": false,
         "__mpe_code": {
             "position": {
-                "x": 1005,
-                "y": 3999
+                "x": 880,
+                "y": 4522
             }
         },
+        "next": [
+            "防御基地奖励领取任务完成"
+        ],
         "interrupt": [
             "点击领取奖励"
-        ],
-        "next": [
-            "防御基地奖励领取完毕"
         ]
     },
     "启用获得防御基地奖励节点": {
@@ -1060,8 +1072,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 4426
+                "x": 2195,
+                "y": 4814
             }
         }
     },
@@ -1096,15 +1108,15 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 636,
-                "y": 2865
+                "x": 571,
+                "y": 3336
             }
         },
+        "next": [
+            "无待领取通行证奖励"
+        ],
         "interrupt": [
             "选择通行证"
-        ],
-        "next": [
-            "所有通行证领取完毕"
         ]
     },
     "奖励领取任务完成": {
@@ -1138,7 +1150,7 @@
             }
         }
     },
-    "防御基地奖励领取完毕": {
+    "防御基地奖励领取任务完成": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1169,8 +1181,52 @@
         "focus": "奖励领取任务完成",
         "__mpe_code": {
             "position": {
-                "x": 1428,
-                "y": 3994
+                "x": 1229,
+                "y": 4412
+            }
+        }
+    },
+    "邮件领取任务完成": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "邮件领取"
+                }
+            }
+        },
+        "focus": "邮件领取任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 1212,
+                "y": 2147
+            }
+        }
+    },
+    "通行证领取任务完成": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "通行证领取"
+                }
+            }
+        },
+        "focus": "通行证领取任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 1531,
+                "y": 3188
             }
         }
     }
