@@ -51,7 +51,7 @@ jobs:
 
   install:
     needs: meta
-    runs-on: windows-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         include:
