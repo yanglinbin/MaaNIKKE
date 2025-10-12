@@ -101,7 +101,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": "付费商店识别",
                 "roi_offset": [
@@ -109,7 +109,8 @@
                     0,
                     -30,
                     0
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -346,14 +347,15 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
-                    127,
-                    186,
-                    108,
-                    34
-                ]
+                    216,
+                    179,
+                    26,
+                    27
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -363,8 +365,8 @@
         "timeout": 500,
         "__mpe_code": {
             "position": {
-                "x": 2834,
-                "y": 764
+                "x": 2844,
+                "y": 807
             }
         },
         "next": [
@@ -376,14 +378,15 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
-                    237,
-                    184,
-                    111,
-                    39
-                ]
+                    325,
+                    180,
+                    26,
+                    25
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -406,14 +409,15 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
-                    347,
-                    184,
-                    119,
-                    40
-                ]
+                    437,
+                    180,
+                    26,
+                    26
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -1316,12 +1320,12 @@
                 "y": 1282
             }
         },
-        "interrupt": [
-            "任务执行前检查"
-        ],
         "next": [
             "成功进入百货商店",
             "查找百货商店"
+        ],
+        "interrupt": [
+            "任务执行前检查"
         ]
     },
     "竞技场商店购买完成": {

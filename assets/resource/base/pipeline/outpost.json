@@ -21,12 +21,12 @@
                 "y": -239
             }
         },
-        "interrupt": [
-            "任务执行前检查"
-        ],
         "next": [
             "成功进入前哨基地",
             "进入前哨基地"
+        ],
+        "interrupt": [
+            "任务执行前检查"
         ]
     },
     "前哨基地功能分发": {
@@ -44,13 +44,13 @@
                 "y": -152
             }
         },
+        "next": [
+            "前哨基地任务完成"
+        ],
         "interrupt": [
             "派遣公告栏",
             "循环室",
             "启用前哨基地任务完成节点"
-        ],
-        "next": [
-            "前哨基地任务完成"
         ]
     },
     "派遣公告栏": {
@@ -58,14 +58,15 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     660,
                     631,
                     58,
                     47
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -95,7 +96,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     721,
@@ -157,8 +158,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1419,
-                "y": -281
+                "x": 1381,
+                "y": -434
             }
         },
         "next": [
@@ -257,6 +258,7 @@
             "type": "Click",
             "param": {}
         },
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
                 "x": 3393,
@@ -443,8 +445,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 1675,
-                "y": -279
+                "x": 1663,
+                "y": -215
             }
         },
         "next": [
@@ -499,17 +501,18 @@
             "type": "DoNothing",
             "param": {}
         },
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
                 "x": 3029,
                 "y": 199
             }
         },
-        "interrupt": [
-            "寻找待升级循环室"
-        ],
         "next": [
             "循环室升级完成"
+        ],
+        "interrupt": [
+            "寻找待升级循环室"
         ]
     },
     "寻找待升级循环室": {
@@ -517,29 +520,28 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点1.png"
+                    "common/标准大红点.png"
                 ],
                 "green_mask": true,
                 "threshold": [
-                    0.9
+                    0.7
+                ],
+                "roi": [
+                    221,
+                    3,
+                    826,
+                    712
                 ]
             }
         },
         "action": {
             "type": "Click",
-            "param": {
-                "target_offset": [
-                    -22,
-                    86,
-                    0,
-                    0
-                ]
-            }
+            "param": {}
         },
         "__mpe_code": {
             "position": {
-                "x": 3406,
-                "y": 444
+                "x": 3410,
+                "y": 435
             }
         },
         "next": [
@@ -551,22 +553,29 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点1.png"
+                    "common/标准大红点.png"
                 ],
                 "threshold": [
-                    0.9
-                ]
+                    0.7
+                ],
+                "roi": [
+                    221,
+                    3,
+                    826,
+                    712
+                ],
+                "green_mask": true
             }
         },
         "action": {
-            "type": "Click",
+            "type": "DoNothing",
             "param": {}
         },
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 3396,
-                "y": 172
+                "x": 3398,
+                "y": 128
             }
         },
         "next": [

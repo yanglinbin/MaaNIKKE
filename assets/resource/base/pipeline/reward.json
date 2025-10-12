@@ -21,11 +21,11 @@
                 "y": 3365
             }
         },
-        "interrupt": [
-            "任务执行前检查"
-        ],
         "next": [
             "奖励领取任务执行前检查成功"
+        ],
+        "interrupt": [
+            "任务执行前检查"
         ]
     },
     "__mpe_external_任务执行前检查_reward": {
@@ -68,7 +68,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     1245,
@@ -106,7 +106,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     1210,
@@ -129,6 +129,7 @@
             }
         },
         "focus": "开始邮件领取任务",
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
                 "x": 666,
@@ -305,7 +306,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     1094,
@@ -330,15 +331,15 @@
         "focus": "开始任务领取任务",
         "__mpe_code": {
             "position": {
-                "x": 635,
-                "y": 2616
+                "x": 638,
+                "y": 2601
             }
         },
-        "next": [
-            "关闭任务面板"
-        ],
         "interrupt": [
             "检查任务领取项"
+        ],
+        "next": [
+            "任务领取任务完成"
         ]
     },
     "关闭任务面板": {
@@ -377,13 +378,10 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 940,
-                "y": 2552
+                "x": 1255,
+                "y": 2737
             }
-        },
-        "next": [
-            "任务领取任务完成"
-        ]
+        }
     },
     "检查任务领取项": {
         "recognition": {
@@ -433,28 +431,6 @@
             "点击领取奖励"
         ]
     },
-    "任务领取任务完成": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "任务领取"
-                }
-            }
-        },
-        "focus": "任务领取任务完成",
-        "__mpe_code": {
-            "position": {
-                "x": 1223,
-                "y": 2524
-            }
-        }
-    },
     "友情点赠送任务完成": {
         "recognition": {
             "type": "DirectHit",
@@ -482,13 +458,13 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
-                    1128,
-                    88,
-                    151,
-                    49
+                    1227,
+                    71,
+                    52,
+                    231
                 ],
                 "green_mask": true,
                 "index": 0
@@ -675,7 +651,7 @@
                     203
                 ],
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "green_mask": true
             }
@@ -704,7 +680,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     781,
@@ -740,7 +716,7 @@
                     143
                 ],
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "green_mask": true
             }
@@ -764,7 +740,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     1227,
@@ -865,7 +841,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点1.png"
+                    "reward/防御基地小红点.png"
                 ],
                 "green_mask": true,
                 "roi": [
@@ -907,7 +883,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     610,
@@ -1045,8 +1021,8 @@
         "enabled": false,
         "__mpe_code": {
             "position": {
-                "x": 880,
-                "y": 4522
+                "x": 974,
+                "y": 4488
             }
         },
         "next": [
@@ -1082,7 +1058,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点1.png"
+                    "common/标准小红点.png"
                 ],
                 "roi": [
                     1119,
@@ -1152,20 +1128,16 @@
     },
     "防御基地奖励领取任务完成": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
-                "template": [
-                    "shop/百货商店按钮.png"
-                ],
-                "green_mask": true,
-                "threshold": [
-                    0.7
-                ],
                 "roi": [
-                    269,
-                    406,
-                    219,
-                    134
+                    460,
+                    86,
+                    367,
+                    565
+                ],
+                "expected": [
+                    "REWARD"
                 ]
             }
         },
@@ -1179,10 +1151,11 @@
             }
         },
         "focus": "奖励领取任务完成",
+        "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 1229,
-                "y": 4412
+                "x": 1456,
+                "y": 4255
             }
         }
     },
@@ -1262,5 +1235,34 @@
         "next": [
             "奖励领取任务分发"
         ]
+    },
+    "任务领取任务完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/标准大红点.png"
+                ],
+                "roi": [
+                    1094,
+                    46,
+                    44,
+                    44
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "任务领取任务完成",
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 966,
+                "y": 2565
+            }
+        }
     }
 }

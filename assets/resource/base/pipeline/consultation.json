@@ -21,12 +21,12 @@
                 "y": -121
             }
         },
-        "interrupt": [
-            "任务执行前检查"
-        ],
         "next": [
             "成功进入妮姬页面",
             "进入妮姬页面"
+        ],
+        "interrupt": [
+            "任务执行前检查"
         ]
     },
     "__mpe_external_任务执行前检查_consultation": {
@@ -102,7 +102,7 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/标准大红点.png"
                 ],
                 "roi": [
                     1028,
@@ -324,12 +324,15 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 7323,
-                "y": -59
+                "x": 7268,
+                "y": -47
             }
         },
+        "interrupt": [
+            "好感度升级"
+        ],
         "next": [
-            "切换咨询妮姬"
+            "检查好感度升级"
         ]
     },
     "选择第一个妮姬": {
@@ -354,11 +357,11 @@
                 "y": -219
             }
         },
-        "interrupt": [
-            "开始咨询"
-        ],
         "next": [
             "所有妮姬咨询完毕"
+        ],
+        "interrupt": [
+            "开始咨询"
         ]
     },
     "所有妮姬咨询完毕": {
@@ -411,8 +414,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 7583,
-                "y": -30
+                "x": 8191,
+                "y": -247
             }
         }
     },
@@ -451,6 +454,72 @@
         },
         "next": [
             "推进"
+        ]
+    },
+    "好感度升级": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "RANK"
+                ],
+                "roi": [
+                    503,
+                    172,
+                    269,
+                    60
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 7664,
+                "y": 59
+            }
+        },
+        "next": [
+            "点击进行下一步"
+        ]
+    },
+    "__mpe_external_点击进行下一步_consultation": {
+        "__mpe_code": {
+            "position": {
+                "x": 8064,
+                "y": 121
+            }
+        }
+    },
+    "检查好感度升级": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "RANK"
+                ],
+                "roi": [
+                    491,
+                    403,
+                    81,
+                    27
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 7672,
+                "y": -208
+            }
+        },
+        "next": [
+            "切换咨询妮姬"
         ]
     }
 }
