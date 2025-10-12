@@ -40,8 +40,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 870,
-                "y": 158
+                "x": 888,
+                "y": 153
             }
         }
     },
@@ -67,8 +67,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 882,
-                "y": 322
+                "x": 878,
+                "y": 350
             }
         },
         "next": [
@@ -111,8 +111,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 870,
-                "y": 0
+                "x": 873,
+                "y": -8
             }
         }
     },
@@ -180,8 +180,8 @@
         "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 1213,
-                "y": 209
+                "x": 1217,
+                "y": 162
             }
         }
     },
@@ -251,31 +251,16 @@
                 "y": 489
             }
         },
-        "next": [
-            "大活动任务完成"
-        ],
         "interrupt": [
             "剧情活动关卡",
             "挑战关卡",
             "签到印章",
-            "活动任务"
+            "活动任务",
+            "返回主页"
+        ],
+        "next": [
+            "大活动任务完成"
         ]
-    },
-    "大活动任务完成": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 2084,
-                "y": 280
-            }
-        }
     },
     "剧情活动关卡": {
         "recognition": {
@@ -434,8 +419,8 @@
         "enabled": false,
         "__mpe_code": {
             "position": {
-                "x": 3596,
-                "y": 706
+                "x": 3572,
+                "y": 572
             }
         }
     },
@@ -518,11 +503,11 @@
                 "y": 276
             }
         },
-        "interrupt": [
-            "剧情活动关卡快速战斗"
-        ],
         "next": [
             "剧情活动关卡道具不足"
+        ],
+        "interrupt": [
+            "剧情活动关卡快速战斗"
         ]
     },
     "剧情活动关卡快速战斗": {
@@ -591,8 +576,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 4862,
-                "y": 391
+                "x": 4885,
+                "y": 462
             }
         },
         "next": [
@@ -647,17 +632,18 @@
             "type": "Click",
             "param": {}
         },
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
                 "x": 5482,
                 "y": 399
             }
         },
-        "interrupt": [
-            "点击任意处进行下一步"
-        ],
         "next": [
             "剧情活动关卡快速战斗完成"
+        ],
+        "interrupt": [
+            "点击任意处进行下一步"
         ]
     },
     "__mpe_external_点击任意处进行下一步_events": {
@@ -693,18 +679,18 @@
                 "y": 289
             }
         },
-        "interrupt": [
-            "返回到活动地区"
-        ],
         "next": [
             "剧情活动关卡任务完成"
+        ],
+        "interrupt": [
+            "返回到活动地区"
         ]
     },
     "__mpe_external_返回_events": {
         "__mpe_code": {
             "position": {
-                "x": 6840,
-                "y": 1131
+                "x": 7175,
+                "y": 2651
             }
         }
     },
@@ -719,15 +705,15 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 5719,
-                "y": 1524
+                "x": 6719,
+                "y": 2564
             }
         },
-        "interrupt": [
-            "返回"
-        ],
         "next": [
             "成功返回到活动地区"
+        ],
+        "interrupt": [
+            "返回"
         ]
     },
     "剧情活动关卡道具不足": {
@@ -791,14 +777,19 @@
             "param": {}
         },
         "timeout": 60000,
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 2402,
-                "y": 914
+                "x": 2348,
+                "y": 864
             }
         },
         "next": [
-            "成功进入挑战关卡"
+            "挑战关卡任务完成"
+        ],
+        "interrupt": [
+            "成功进入挑战关卡",
+            "返回到活动地区"
         ]
     },
     "挑战关卡": {
@@ -806,39 +797,30 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/小红点2.png"
                 ],
                 "roi": [
                     432,
                     573,
                     36,
                     32
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    482,
-                    592,
-                    31,
-                    18
-                ]
-            }
+            "type": "DoNothing",
+            "param": {}
         },
         "focus": "开始挑战关卡任务",
         "__mpe_code": {
             "position": {
-                "x": 2065,
-                "y": 761
+                "x": 2071,
+                "y": 767
             }
         },
-        "interrupt": [
-            "进入挑战关卡"
-        ],
         "next": [
-            "挑战关卡任务完成"
+            "进入挑战关卡"
         ]
     },
     "挑战最新挑战关卡": {
@@ -854,10 +836,11 @@
             "type": "Click",
             "param": {}
         },
+        "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 3013,
-                "y": 947
+                "x": 2956,
+                "y": 920
             }
         },
         "next": [
@@ -885,8 +868,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2706,
-                "y": 935
+                "x": 2687,
+                "y": 906
             }
         },
         "next": [
@@ -914,49 +897,21 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 3273,
-                "y": 947
-            }
-        },
-        "interrupt": [
-            "进入挑战关卡boss战",
-            "返回到活动地区"
-        ],
-        "next": [
-            "挑战关卡任务完成"
-        ]
-    },
-    "__mpe_external_boss战开始_events": {
-        "__mpe_code": {
-            "position": {
-                "x": 4074,
-                "y": 1307
-            }
-        }
-    },
-    "进入挑战关卡boss战过渡节点": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "DisableNode",
-                "custom_action_param": {
-                    "node_name": "进入挑战关卡boss战"
-                }
-            }
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 3784,
-                "y": 1156
+                "x": 3261,
+                "y": 924
             }
         },
         "next": [
             "boss战开始"
         ]
+    },
+    "__mpe_external_boss战开始_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 3563,
+                "y": 982
+            }
+        }
     },
     "成功返回到活动地区": {
         "recognition": {
@@ -979,8 +934,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 6830,
-                "y": 889
+                "x": 7210,
+                "y": 2409
             }
         }
     },
@@ -1028,32 +983,23 @@
                     536,
                     32,
                     36
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    763,
-                    559,
-                    57,
-                    16
-                ]
-            }
+            "type": "DoNothing",
+            "param": {}
         },
         "focus": "开始签到印章任务",
         "__mpe_code": {
             "position": {
                 "x": 2062,
-                "y": 1126
+                "y": 1132
             }
         },
-        "interrupt": [
-            "进入签到印章"
-        ],
         "next": [
-            "签到印章任务完成"
+            "进入签到印章"
         ]
     },
     "进入签到印章": {
@@ -1085,16 +1031,16 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 2446,
-                "y": 1300
+                "x": 2357,
+                "y": 1105
             }
         },
+        "next": [
+            "签到印章任务完成"
+        ],
         "interrupt": [
             "签到印章全部领取",
             "返回到活动地区"
-        ],
-        "next": [
-            "签到印章任务完成"
         ]
     },
     "签到印章全部领取": {
@@ -1119,8 +1065,8 @@
         "timeout": 60000,
         "__mpe_code": {
             "position": {
-                "x": 2781,
-                "y": 1468
+                "x": 2716,
+                "y": 1358
             }
         },
         "next": [
@@ -1130,8 +1076,8 @@
     "__mpe_external_点击领取奖励_events": {
         "__mpe_code": {
             "position": {
-                "x": 3907,
-                "y": 1873
+                "x": 4302,
+                "y": 2004
             }
         }
     },
@@ -1151,8 +1097,8 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 3395,
-                "y": 1567
+                "x": 3279,
+                "y": 1390
             }
         },
         "next": [
@@ -1170,31 +1116,12 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 3090,
-                "y": 1559
+                "x": 2993,
+                "y": 1420
             }
         },
         "next": [
             "领取签到奖励过渡节点"
-        ]
-    },
-    "进入挑战关卡boss战": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 3530,
-                "y": 1112
-            }
-        },
-        "next": [
-            "进入挑战关卡boss战过渡节点"
         ]
     },
     "活动任务": {
@@ -1209,67 +1136,23 @@
                     116,
                     50,
                     77
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1238,
-                    135,
-                    27,
-                    23
-                ]
-            }
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 2020,
-                "y": 1710
-            }
-        },
-        "interrupt": [
-            "活动任务每日任务",
-            "活动任务成就",
-            "返回到活动地区"
-        ],
-        "next": [
-            "活动任务任务完成"
-        ]
-    },
-    "已完成所有活动任务": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "已完成所有任务"
                 ],
-                "roi": [
-                    553,
-                    382,
-                    172,
-                    62
-                ]
+                "green_mask": true
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    792,
-                    34,
-                    26,
-                    25
-                ]
-            }
+            "type": "DoNothing",
+            "param": {}
         },
         "__mpe_code": {
             "position": {
-                "x": 2658,
-                "y": 1911
+                "x": 2041,
+                "y": 1489
             }
-        }
+        },
+        "next": [
+            "进入活动任务"
+        ]
     },
     "活动任务全部领取": {
         "recognition": {
@@ -1293,13 +1176,13 @@
         "post_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 2671,
-                "y": 2269
+                "x": 3429,
+                "y": 2132
             }
         },
         "next": [
             "点击领取奖励",
-            "活动任务奖励领取完毕"
+            "活动任务全部领取"
         ]
     },
     "活动任务每日任务": {
@@ -1313,8 +1196,9 @@
                     69
                 ],
                 "template": [
-                    "common/小红点.png"
-                ]
+                    "common/小红点2.png"
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -1330,15 +1214,15 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2373,
-                "y": 2020
+                "x": 2704,
+                "y": 1736
             }
         },
-        "next": [
-            "已完成所有活动任务"
-        ],
         "interrupt": [
-            "活动任务全部领取"
+            "活动任务全部领取按钮激活"
+        ],
+        "next": [
+            "无可领取活动任务每日任务"
         ]
     },
     "活动任务成就": {
@@ -1346,14 +1230,15 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "common/小红点.png"
+                    "common/小红点2.png"
                 ],
                 "roi": [
                     723,
                     110,
                     59,
                     54
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -1369,43 +1254,31 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2290,
-                "y": 2399
+                "x": 2692,
+                "y": 2037
             }
         },
+        "interrupt": [
+            "活动任务全部领取按钮激活"
+        ],
         "next": [
-            "活动任务全部领取"
+            "无可领取活动任务成就"
         ]
-    },
-    "活动任务奖励领取完毕": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 3031,
-                "y": 2469
-            }
-        }
     },
     "活动任务任务完成": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "expected": [
-                    "活动地区"
-                ],
                 "roi": [
-                    0,
-                    0,
-                    98,
-                    53
-                ]
+                    451,
+                    121,
+                    377,
+                    51
+                ],
+                "template": [
+                    "common/小红点2.png"
+                ],
+                "green_mask": true
             }
         },
         "action": {
@@ -1417,10 +1290,11 @@
                 }
             }
         },
+        "inverse": true,
         "__mpe_code": {
             "position": {
-                "x": 2383,
-                "y": 1583
+                "x": 2701,
+                "y": 1417
             }
         }
     },
@@ -1451,8 +1325,8 @@
         "focus": "挑战关卡任务完成",
         "__mpe_code": {
             "position": {
-                "x": 3950,
-                "y": 731
+                "x": 2681,
+                "y": 638
             }
         }
     },
@@ -1482,8 +1356,174 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 2951,
-                "y": 1189
+                "x": 2694,
+                "y": 1090
+            }
+        }
+    },
+    "大活动任务完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    0.7
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2078,
+                "y": 185
+            }
+        }
+    },
+    "活动任务全部领取按钮激活": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "lower": [
+                    24,
+                    25,
+                    26
+                ],
+                "upper": [
+                    26,
+                    27,
+                    28
+                ],
+                "roi": [
+                    687,
+                    632,
+                    26,
+                    21
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 3102,
+                "y": 2165
+            }
+        },
+        "next": [
+            "活动任务全部领取"
+        ]
+    },
+    "无可领取活动任务成就": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点2.png"
+                ],
+                "roi": [
+                    723,
+                    110,
+                    59,
+                    54
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 3064,
+                "y": 1886
+            }
+        }
+    },
+    "无可领取活动任务每日任务": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "common/小红点2.png"
+                ],
+                "roi": [
+                    560,
+                    101,
+                    96,
+                    69
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "inverse": true,
+        "__mpe_code": {
+            "position": {
+                "x": 3073,
+                "y": 1581
+            }
+        }
+    },
+    "进入活动任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "任务"
+                ],
+                "roi": [
+                    1216,
+                    143,
+                    63,
+                    61
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2341,
+                "y": 1572
+            }
+        },
+        "next": [
+            "活动任务任务完成"
+        ],
+        "interrupt": [
+            "活动任务每日任务",
+            "活动任务成就",
+            "返回到活动地区"
+        ]
+    },
+    "__mpe_external_返回主页_events": {
+        "__mpe_code": {
+            "position": {
+                "x": 2002,
+                "y": 1810
             }
         }
     }
