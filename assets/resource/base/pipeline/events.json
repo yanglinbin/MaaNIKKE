@@ -17,16 +17,17 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 580,
-                "y": 158
+                "x": 541,
+                "y": 136
             }
         },
-        "next": [
-            "活动任务完成"
-        ],
         "interrupt": [
             "小活动",
-            "大活动"
+            "大活动",
+            "修改活动任务完成节点"
+        ],
+        "next": [
+            "活动任务完成"
         ]
     },
     "小活动": {
@@ -40,7 +41,7 @@
         },
         "__mpe_code": {
             "position": {
-                "x": 888,
+                "x": 894,
                 "y": 153
             }
         }
@@ -99,22 +100,6 @@
         "interrupt": [
             "任务执行前检查"
         ]
-    },
-    "活动任务完成": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "__mpe_code": {
-            "position": {
-                "x": 873,
-                "y": -8
-            }
-        }
     },
     "__mpe_external_任务执行前检查_events": {
         "__mpe_code": {
@@ -458,10 +443,12 @@
                     1
                 ],
                 "end": [
-                    657,
-                    276,
-                    1,
-                    1
+                    [
+                        657,
+                        276,
+                        1,
+                        1
+                    ]
                 ]
             }
         },
@@ -1552,6 +1539,63 @@
             "position": {
                 "x": 3072,
                 "y": 1495
+            }
+        }
+    },
+    "活动任务完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "shop/百货商店按钮.png"
+                ],
+                "green_mask": true,
+                "threshold": [
+                    1
+                ],
+                "roi": [
+                    269,
+                    406,
+                    219,
+                    134
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": "方舟任务完成",
+        "__mpe_code": {
+            "position": {
+                "x": 1033,
+                "y": -300
+            }
+        }
+    },
+    "修改活动任务完成节点": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "NodeOverride",
+                "custom_action_param": {
+                    "奖励领取任务完成": {
+                        "threshold": [
+                            0.7
+                        ]
+                    }
+                }
+            }
+        },
+        "focus": "启用奖励领取任务完成节点",
+        "__mpe_code": {
+            "position": {
+                "x": 886,
+                "y": 571
             }
         }
     }

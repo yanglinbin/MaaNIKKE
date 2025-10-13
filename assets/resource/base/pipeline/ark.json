@@ -197,6 +197,7 @@
             "param": {}
         },
         "focus": "准备拦截战战斗",
+        "timeout": 300000,
         "__mpe_code": {
             "position": {
                 "x": 2453,
@@ -326,8 +327,8 @@
     "__mpe_external_boss战开始_ark": {
         "__mpe_code": {
             "position": {
-                "x": 6140,
-                "y": 4450
+                "x": 3359,
+                "y": 2416
             }
         }
     },
@@ -439,8 +440,8 @@
     "__mpe_external_返回主页_ark": {
         "__mpe_code": {
             "position": {
-                "x": 6127,
-                "y": 4610
+                "x": 1407,
+                "y": 3153
             }
         }
     },
@@ -1940,8 +1941,8 @@
         "timeout": 30000,
         "__mpe_code": {
             "position": {
-                "x": 2119,
-                "y": 6202
+                "x": 2118,
+                "y": 6201
             }
         },
         "next": [
@@ -2083,7 +2084,7 @@
             "返回竞技场主页"
         ],
         "interrupt": [
-            "延迟节点"
+            "返回"
         ]
     },
     "进入竞技场战斗": {
@@ -2135,7 +2136,7 @@
             "type": "Click",
             "param": {}
         },
-        "pre_delay": 500,
+        "pre_delay": 1000,
         "__mpe_code": {
             "position": {
                 "x": 3635,
@@ -2175,15 +2176,15 @@
         "focus": "特殊竞技场挑战完毕",
         "__mpe_code": {
             "position": {
-                "x": 2504,
-                "y": 6232
+                "x": 2506,
+                "y": 6248
             }
         },
         "next": [
             "返回竞技场主页"
         ],
         "interrupt": [
-            "延迟节点"
+            "返回"
         ]
     },
     "返回竞技场主页": {
@@ -2208,8 +2209,8 @@
         "focus": "返回到竞技场主页",
         "__mpe_code": {
             "position": {
-                "x": 2947,
-                "y": 5647
+                "x": 2935,
+                "y": 5588
             }
         }
     },
@@ -2304,27 +2305,6 @@
                 "y": 5786
             }
         }
-    },
-    "延迟节点": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "DoNothing",
-            "param": {}
-        },
-        "post_wait_freezes": 500,
-        "focus": "返回",
-        "__mpe_code": {
-            "position": {
-                "x": 2958,
-                "y": 6313
-            }
-        },
-        "next": [
-            "返回"
-        ]
     },
     "__mpe_external_返回方舟_ark": {
         "__mpe_code": {

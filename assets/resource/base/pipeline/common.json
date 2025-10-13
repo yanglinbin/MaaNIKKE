@@ -244,7 +244,6 @@
                 ]
             }
         },
-        "pre_delay": 500,
         "focus": "返回",
         "__mpe_code": {
             "position": {
@@ -284,11 +283,11 @@
             "type": "DoNothing",
             "param": {}
         },
-        "pre_wait_freezes": 500,
+        "pre_wait_freezes": 1000,
         "__mpe_code": {
             "position": {
-                "x": 616,
-                "y": 671
+                "x": 601,
+                "y": 806
             }
         }
     },
