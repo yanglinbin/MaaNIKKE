@@ -5,7 +5,9 @@ on:
     tags:
       - "v*"
     branches:
-      - "main"
+      - "master"
+      - "beta"
+      - "alpha"
     paths:
       - ".github/workflows/install.yml"
       - "assets/**"
@@ -43,11 +45,19 @@ jobs:
             tag="$prefix-ci.$suffix"
           fi
 
+          # 检查标签是否包含 beta 或 alpha，决定是否为预发布
+          is_prerelease=false
+          if [[ $tag == *"-beta."* ]] || [[ $tag == *"-alpha."* ]]; then
+            is_prerelease=true
+          fi
+
           echo tag=$tag | tee -a $GITHUB_OUTPUT
           echo is_release=$is_release | tee -a $GITHUB_OUTPUT
+          echo is_prerelease=$is_prerelease | tee -a $GITHUB_OUTPUT
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
+      is_prerelease: ${{ steps.set_tag.outputs.is_prerelease }}
 
   install:
     needs: meta
