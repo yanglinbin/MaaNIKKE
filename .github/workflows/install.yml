@@ -102,6 +102,25 @@ jobs:
               echo "Copying MFA files to install directory..."
               mkdir -p install
               rsync -av --ignore-existing MFA/ install/
+              
+              # Create default config to set GitHub as default download source
+              echo "Creating default config file..."
+              mkdir -p install/config
+              cat > install/config/config.json << 'EOF'
+          {
+            "DownloadSourceIndex": 0
+          }
+          EOF
+              echo "Default config created: GitHub set as default download source"
+              
+              # Create default global settings with hotkey configuration
+              echo "Creating default global settings..."
+              cat > install/appsettings.json << 'EOF'
+          {
+            "LinkStart": "Ctrl\u002BF1",
+          }
+          EOF
+              echo "Default global settings created with Ctrl+F1 hotkey"
             else
               echo "MFA directory not found, skipping copy."
             fi
