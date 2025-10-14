@@ -1,5 +1,7 @@
 {
     "name": "MaaNIKKE",
+    "version": "1.0.0",
+    "custom_title": "MaaNIKKE",
     "url": "https://github.com/yanglinbin/MaaNIKKE",
     "controller": [
         {
