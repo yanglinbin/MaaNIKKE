@@ -1,581 +1,573 @@
 {
-    "name": "MaaNIKKE",
-    "version": "1.0.0",
-    "custom_title": "MaaNIKKE",
-    "url": "https://github.com/yanglinbin/MaaNIKKE",
-    "controller": [
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": "UnityWndClass*",
-                "window_regex": "NIKKE",
-                "input": 1,
-                "screencap": 2
-            }
-        }
-    ],
-    "resource": [
-        {
-            "name": "国际服",
-            "path": [
-                "{PROJECT_DIR}/resource/base"
-            ]
-        }
-    ],
-    "agent": {
-        "child_exec": "python",
-        "child_args": [
-            "-u",
-            "-m",
-            "agent.main"
-        ]
-    },
-    "task": [
-        {
-            "name": "方舟任务",
-            "entry": "方舟",
-            "option": [
-                "拦截战",
-                "异常个体拦截战boss选择",
-                "模拟室",
-                "模拟室_快速模拟",
-                "无限之塔",
-                "竞技场",
-                "竞技场_新人竞技场",
-                "竞技场_特殊竞技场",
-                "竞技场_特殊竞技场_累计奖励领取"
-            ]
-        },
-        {
-            "name": "妮姬咨询",
-            "entry": "妮姬每日咨询"
-        },
-        {
-            "name": "百货商店",
-            "entry": "百货商店",
-            "option": [
-                "普通商店",
-                "竞技场商店",
-                "竞技场商店_代码手册",
-                "竞技场商店_代码手册宝箱",
-                "竞技场商店_公司武器熔炉"
-            ]
-        },
-        {
-            "name": "付费商店",
-            "entry": "付费商店"
-        },
-        {
-            "name": "前哨基地",
-            "entry": "前哨基地",
-            "option": [
-                "派遣公告栏",
-                "循环室"
-            ]
-        },
-        {
-            "name": "活动",
-            "entry": "活动",
-            "option": [
-                "大活动",
-                "大活动_剧情活动关卡",
-                "大活动_挑战关卡",
-                "大活动_签到印章",
-                "大活动_活动任务",
-                "小活动"
-            ]
-        },
-        {
-            "name": "奖励领取",
-            "entry": "奖励领取",
-            "option": [
-                "友情点赠送",
-                "邮件领取",
-                "任务领取",
-                "通行证领取"
-            ]
-        }
-    ],
-    "option": {
-        "大活动_活动任务": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "活动任务": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "大活动_签到印章": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "签到印章": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "大活动_挑战关卡": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "挑战关卡": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "大活动_剧情活动关卡": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "剧情活动关卡": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "小活动": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "小活动": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "大活动": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "大活动": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "派遣公告栏": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "派遣公告栏": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "循环室": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "循环室": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "通行证领取": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "通行证领取": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "任务领取": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "任务领取": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "邮件领取": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "邮件领取": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "友情点赠送": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "友情点赠送": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场_特殊竞技场_累计奖励领取": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "领取特殊竞技场奖励": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场_新人竞技场": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "竞技场_新人竞技场": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场_特殊竞技场": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "竞技场_特殊竞技场": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "竞技场": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "无限之塔": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "无限之塔": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "异常个体拦截战boss选择": {
-            "cases": [
-                {
-                    "name": "茵迪维利亚",
-                    "pipeline_override": {
-                        "选择boss": {
-                            "recognition": {
-                                "type": "OCR",
-                                "param": {
-                                    "expected": [
-                                        "茵迪维利亚"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "过激派",
-                    "pipeline_override": {
-                        "选择boss": {
-                            "recognition": {
-                                "type": "OCR",
-                                "param": {
-                                    "expected": [
-                                        "过激派"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "死神",
-                    "pipeline_override": {
-                        "选择boss": {
-                            "recognition": {
-                                "type": "OCR",
-                                "param": {
-                                    "expected": [
-                                        "死神"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "克拉肯",
-                    "pipeline_override": {
-                        "选择boss": {
-                            "recognition": {
-                                "type": "OCR",
-                                "param": {
-                                    "expected": [
-                                        "克拉肯"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "镜像容器",
-                    "pipeline_override": {
-                        "选择boss": {
-                            "recognition": {
-                                "type": "OCR",
-                                "param": {
-                                    "expected": [
-                                        "镜像容器"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            ]
-        },
-        "模拟室_快速模拟": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "开始模拟": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "模拟室": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "模拟室": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "拦截战": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "拦截战": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "普通商店": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "普通商店": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场商店": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "竞技场商店": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场商店_代码手册": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "代码手册": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场商店_代码手册宝箱": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "代码手册宝箱": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "竞技场商店_公司武器熔炉": {
-            "cases": [
-                {
-                    "name": "Yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "No",
-                    "pipeline_override": {
-                        "公司武器熔炉": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        }
-    }
+	"name": "MaaNIKKE",
+	"version": "1.0.0",
+	"custom_title": "MaaNIKKE",
+	"url": "https://github.com/yanglinbin/MaaNIKKE",
+	"controller": [
+		{
+			"name": "桌面端",
+			"type": "Win32",
+			"win32": {
+				"class_regex": "UnityWndClass*",
+				"window_regex": "NIKKE",
+				"input": 1,
+				"screencap": 2
+			}
+		}
+	],
+	"resource": [
+		{
+			"name": "国际服",
+			"path": ["{PROJECT_DIR}/resource/base"]
+		}
+	],
+	"agent": {
+		"child_exec": "python",
+		"child_args": ["-u", "-m", "agent.main"]
+	},
+	"task": [
+		{
+			"name": "方舟任务",
+			"entry": "方舟",
+			"option": [
+				"拦截战",
+				"异常个体拦截战boss选择",
+				"模拟室",
+				"模拟室_快速模拟",
+				"无限之塔",
+				"竞技场",
+				"竞技场_新人竞技场",
+				"竞技场_特殊竞技场",
+				"竞技场_特殊竞技场_累计奖励领取"
+			]
+		},
+		{
+			"name": "妮姬咨询",
+			"entry": "妮姬每日咨询"
+		},
+		{
+			"name": "百货商店",
+			"entry": "百货商店",
+			"option": [
+				"普通商店",
+				"竞技场商店",
+				"竞技场商店_代码手册",
+				"竞技场商店_代码手册宝箱",
+				"竞技场商店_公司武器熔炉"
+			]
+		},
+		{
+			"name": "付费商店",
+			"entry": "付费商店"
+		},
+		{
+			"name": "前哨基地",
+			"entry": "前哨基地",
+			"option": ["派遣公告栏", "循环室"]
+		},
+		{
+			"name": "活动",
+			"entry": "活动",
+			"option": [
+				"大活动",
+				"大活动_剧情活动关卡",
+				"大活动_挑战关卡",
+				"大活动_签到印章",
+				"大活动_活动任务",
+				"小活动"
+			]
+		},
+		{
+			"name": "奖励领取",
+			"entry": "奖励领取",
+			"option": ["友情点赠送", "防御基地奖励领取", "邮件领取", "任务领取", "通行证领取"]
+		}
+	],
+	"option": {
+		"防御基地奖励领取": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"活防御基地奖励领取": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"大活动_活动任务": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"活动任务": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"大活动_签到印章": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"签到印章": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"大活动_挑战关卡": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"挑战关卡": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"大活动_剧情活动关卡": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"剧情活动关卡": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"小活动": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"小活动": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"大活动": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"大活动": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"派遣公告栏": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"派遣公告栏": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"循环室": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"循环室": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"通行证领取": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"通行证领取": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"任务领取": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"任务领取": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"邮件领取": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"邮件领取": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"友情点赠送": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"友情点赠送": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场_特殊竞技场_累计奖励领取": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"领取特殊竞技场奖励": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场_新人竞技场": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"竞技场_新人竞技场": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场_特殊竞技场": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"竞技场_特殊竞技场": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"竞技场": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"无限之塔": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"无限之塔": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"异常个体拦截战boss选择": {
+			"cases": [
+				{
+					"name": "茵迪维利亚",
+					"pipeline_override": {
+						"选择boss": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["茵迪维利亚"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "过激派",
+					"pipeline_override": {
+						"选择boss": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["过激派"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "死神",
+					"pipeline_override": {
+						"选择boss": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["死神"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "克拉肯",
+					"pipeline_override": {
+						"选择boss": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["克拉肯"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "镜像容器",
+					"pipeline_override": {
+						"选择boss": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["镜像容器"]
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"模拟室_快速模拟": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"开始模拟": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"模拟室": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"模拟室": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"拦截战": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"拦截战": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"普通商店": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"普通商店": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场商店": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"竞技场商店": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场商店_代码手册": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"代码手册": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场商店_代码手册宝箱": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"代码手册宝箱": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		},
+		"竞技场商店_公司武器熔炉": {
+			"cases": [
+				{
+					"name": "Yes",
+					"pipeline_override": {}
+				},
+				{
+					"name": "No",
+					"pipeline_override": {
+						"公司武器熔炉": {
+							"enabled": false
+						}
+					}
+				}
+			]
+		}
+	}
 }
