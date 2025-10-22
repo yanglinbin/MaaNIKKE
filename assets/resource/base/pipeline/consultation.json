@@ -21,8 +21,13 @@
 				"y": -121
 			}
 		},
-		"next": ["成功进入妮姬页面", "进入妮姬页面"],
-		"interrupt": ["任务执行前检查"]
+		"next": [
+			"成功进入妮姬页面",
+			"进入妮姬页面"
+		],
+		"interrupt": [
+			"任务执行前检查"
+		]
 	},
 	"__mpe_external_任务执行前检查_consultation": {
 		"__mpe_code": {
@@ -36,8 +41,15 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["妮姬"],
-				"roi": [456, 631, 81, 77]
+				"expected": [
+					"妮姬"
+				],
+				"roi": [
+					456,
+					631,
+					81,
+					77
+				]
 			}
 		},
 		"action": {
@@ -51,14 +63,24 @@
 				"y": -135
 			}
 		},
-		"next": ["成功进入妮姬页面", "进入妮姬页面"]
+		"next": [
+			"成功进入妮姬页面",
+			"进入妮姬页面"
+		]
 	},
 	"成功进入妮姬页面": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["妮姬"],
-				"roi": [0, 0, 91, 52]
+				"expected": [
+					"妮姬"
+				],
+				"roi": [
+					0,
+					0,
+					91,
+					52
+				]
 			}
 		},
 		"action": {
@@ -71,14 +93,23 @@
 				"y": -142
 			}
 		},
-		"next": ["有待咨询任务"]
+		"next": [
+			"有待咨询任务"
+		]
 	},
 	"有待咨询任务": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": ["common/标准大红点.png"],
-				"roi": [1028, 46, 159, 80],
+				"template": [
+					"common/标准大红点.png"
+				],
+				"roi": [
+					1028,
+					46,
+					159,
+					80
+				],
 				"green_mask": true
 			}
 		},
@@ -92,14 +123,23 @@
 				"y": -156
 			}
 		},
-		"next": ["进入咨询页面"]
+		"next": [
+			"进入咨询页面"
+		]
 	},
 	"进入咨询页面": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["咨询"],
-				"roi": [1018, 50, 164, 77]
+				"expected": [
+					"咨询"
+				],
+				"roi": [
+					1018,
+					50,
+					164,
+					77
+				]
 			}
 		},
 		"action": {
@@ -113,14 +153,24 @@
 				"y": -156
 			}
 		},
-		"next": ["成功进入咨询页面", "进入咨询页面"]
+		"next": [
+			"成功进入咨询页面",
+			"进入咨询页面"
+		]
 	},
 	"成功进入咨询页面": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["咨询"],
-				"roi": [0, 0, 91, 52]
+				"expected": [
+					"咨询"
+				],
+				"roi": [
+					0,
+					0,
+					91,
+					52
+				]
 			}
 		},
 		"action": {
@@ -133,14 +183,23 @@
 				"y": -144
 			}
 		},
-		"next": ["选择第一个妮姬"]
+		"next": [
+			"选择第一个妮姬"
+		]
 	},
 	"开始咨询": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["咨询"],
-				"roi": [642, 561, 170, 67]
+				"expected": [
+					"咨询"
+				],
+				"roi": [
+					642,
+					561,
+					170,
+					67
+				]
 			}
 		},
 		"action": {
@@ -154,14 +213,23 @@
 				"y": -7
 			}
 		},
-		"next": ["确认开始咨询"]
+		"next": [
+			"确认开始咨询"
+		]
 	},
 	"确认开始咨询": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["确认"],
-				"roi": [633, 410, 191, 75]
+				"expected": [
+					"确认"
+				],
+				"roi": [
+					633,
+					410,
+					191,
+					75
+				]
 			}
 		},
 		"action": {
@@ -174,14 +242,23 @@
 				"y": -20
 			}
 		},
-		"next": ["成功进入妮姬咨询页面"]
+		"next": [
+			"成功进入妮姬咨询页面"
+		]
 	},
 	"成功进入妮姬咨询页面": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["HIDE"],
-				"roi": [973, 0, 306, 54]
+				"expected": [
+					"HIDE"
+				],
+				"roi": [
+					973,
+					0,
+					306,
+					54
+				]
 			}
 		},
 		"action": {
@@ -194,7 +271,9 @@
 				"y": -15
 			}
 		},
-		"next": ["推进"]
+		"next": [
+			"推进"
+		]
 	},
 	"推进": {
 		"recognition": {
@@ -204,7 +283,12 @@
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [646, 391, 1, 1]
+				"target": [
+					646,
+					391,
+					1,
+					1
+				]
 			}
 		},
 		"__mpe_code": {
@@ -213,14 +297,25 @@
 				"y": -4
 			}
 		},
-		"next": ["当前妮姬咨询完毕", "随机选择", "推进"]
+		"next": [
+			"当前妮姬咨询完毕",
+			"随机选择",
+			"推进"
+		]
 	},
 	"当前妮姬咨询完毕": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["咨询"],
-				"roi": [0, 0, 91, 52]
+				"expected": [
+					"咨询"
+				],
+				"roi": [
+					0,
+					0,
+					91,
+					52
+				]
 			}
 		},
 		"action": {
@@ -233,8 +328,12 @@
 				"y": -47
 			}
 		},
-		"interrupt": ["好感度升级"],
-		"next": ["检查好感度升级"]
+		"interrupt": [
+			"好感度升级"
+		],
+		"next": [
+			"检查好感度升级"
+		]
 	},
 	"选择第一个妮姬": {
 		"recognition": {
@@ -244,7 +343,12 @@
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [208, 225, 149, 48]
+				"target": [
+					208,
+					225,
+					149,
+					48
+				]
 			}
 		},
 		"__mpe_code": {
@@ -253,17 +357,34 @@
 				"y": -219
 			}
 		},
-		"next": ["所有妮姬咨询完毕"],
-		"interrupt": ["开始咨询"]
+		"next": [
+			"所有妮姬咨询完毕"
+		],
+		"interrupt": [
+			"开始咨询"
+		]
 	},
 	"所有妮姬咨询完毕": {
 		"recognition": {
 			"type": "ColorMatch",
 			"param": {
-				"lower": [63, 63, 63],
-				"upper": [76, 76, 76],
+				"lower": [
+					63,
+					63,
+					63
+				],
+				"upper": [
+					76,
+					76,
+					76
+				],
 				"method": 4,
-				"roi": [663, 598, 19, 17]
+				"roi": [
+					663,
+					598,
+					19,
+					17
+				]
 			}
 		},
 		"action": {
@@ -281,7 +402,9 @@
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": ["consultation/切换咨询妮姬.png"],
+				"template": [
+					"consultation/切换咨询妮姬.png"
+				],
 				"green_mask": true
 			}
 		},
@@ -300,15 +423,27 @@
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"roi": [441, 443, 71, 131],
-				"template": ["consultation/1.png"],
+				"roi": [
+					441,
+					443,
+					71,
+					131
+				],
+				"template": [
+					"consultation/1.png"
+				],
 				"green_mask": true
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target_offset": [0, 20, 0, 0]
+				"target_offset": [
+					0,
+					20,
+					0,
+					0
+				]
 			}
 		},
 		"__mpe_code": {
@@ -317,14 +452,23 @@
 				"y": -257
 			}
 		},
-		"next": ["推进"]
+		"next": [
+			"推进"
+		]
 	},
 	"好感度升级": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["RANK"],
-				"roi": [503, 172, 269, 60]
+				"expected": [
+					"RANK"
+				],
+				"roi": [
+					503,
+					172,
+					269,
+					60
+				]
 			}
 		},
 		"action": {
@@ -337,7 +481,9 @@
 				"y": 59
 			}
 		},
-		"next": ["点击进行下一步"]
+		"next": [
+			"点击进行下一步"
+		]
 	},
 	"__mpe_external_点击进行下一步_consultation": {
 		"__mpe_code": {
@@ -351,8 +497,15 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": ["RANK"],
-				"roi": [491, 403, 81, 27]
+				"expected": [
+					"RANK"
+				],
+				"roi": [
+					491,
+					403,
+					81,
+					27
+				]
 			}
 		},
 		"action": {
@@ -365,6 +518,8 @@
 				"y": -208
 			}
 		},
-		"next": ["切换咨询妮姬"]
+		"next": [
+			"切换咨询妮姬"
+		]
 	}
 }

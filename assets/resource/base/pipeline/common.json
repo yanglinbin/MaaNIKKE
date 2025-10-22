@@ -1,150 +1,526 @@
 {
-	"__mpe_config_common": {"__mpe_code": {"prefix": "", "filename": "common", "version": "v0.5.5"}},
+	"__mpe_config_common": {
+		"__mpe_code": {
+			"prefix": "",
+			"filename": "common",
+			"version": "v0.5.5"
+		}
+	},
 	"返回主页": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/返回主页.png"], "roi": [35, 602, 153, 118], "green_mask": true}
+			"param": {
+				"template": [
+					"common/返回主页.png"
+				],
+				"roi": [
+					35,
+					602,
+					153,
+					118
+				],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "Click", "param": {}},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_delay": 500,
 		"focus": "返回主页",
-		"__mpe_code": {"position": {"x": 126, "y": 518}},
-		"next": ["返回主页成功"]
+		"__mpe_code": {
+			"position": {
+				"x": 126,
+				"y": 518
+			}
+		},
+		"next": [
+			"返回主页成功"
+		]
 	},
 	"跳过boss等待": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [550, 255, 174, 129]}},
-		"__mpe_code": {"position": {"x": 447, "y": -63}},
-		"next": ["确定跳过boss等待", "跳过boss等待"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					550,
+					255,
+					174,
+					129
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 447,
+				"y": -63
+			}
+		},
+		"next": [
+			"确定跳过boss等待",
+			"跳过boss等待"
+		]
 	},
 	"等待战斗结算": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 300000,
-		"__mpe_code": {"position": {"x": 1087, "y": -143}},
-		"next": ["战斗结算"]
+		"__mpe_code": {
+			"position": {
+				"x": 1087,
+				"y": -143
+			}
+		},
+		"next": [
+			"战斗结算"
+		]
 	},
 	"boss战开始": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": -225, "y": -79}},
-		"next": ["进入boss战"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": -225,
+				"y": -79
+			}
+		},
+		"next": [
+			"进入boss战"
+		]
 	},
 	"确定跳过boss等待": {
-		"recognition": {"type": "OCR", "param": {"expected": ["跳过动画"], "roi": [575, 168, 131, 86]}},
-		"action": {"type": "Click", "param": {"target": [672, 435, 104, 28]}},
-		"__mpe_code": {"position": {"x": 739, "y": -99}},
-		"next": ["等待战斗结算"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"跳过动画"
+				],
+				"roi": [
+					575,
+					168,
+					131,
+					86
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					672,
+					435,
+					104,
+					28
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 739,
+				"y": -99
+			}
+		},
+		"next": [
+			"等待战斗结算"
+		]
 	},
 	"进入boss战": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/进入boss战.png"], "roi": [594, 178, 94, 87], "green_mask": true}
+			"param": {
+				"template": [
+					"common/进入boss战.png"
+				],
+				"roi": [
+					594,
+					178,
+					94,
+					87
+				],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 30000,
-		"__mpe_code": {"position": {"x": 142, "y": -118}},
-		"next": ["跳过boss等待"]
+		"__mpe_code": {
+			"position": {
+				"x": 142,
+				"y": -118
+			}
+		},
+		"next": [
+			"跳过boss等待"
+		]
 	},
 	"战斗结算": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处"], "roi": [447, 521, 383, 198]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 1417, "y": -87}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击任意处"
+				],
+				"roi": [
+					447,
+					521,
+					383,
+					198
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1417,
+				"y": -87
+			}
+		}
 	},
 	"返回": {
-		"recognition": {"type": "OCR", "param": {"expected": ["返回"], "roi": [0, 620, 200, 100]}},
-		"action": {"type": "Click", "param": {"target": [9, 667, 26, 25]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"返回"
+				],
+				"roi": [
+					0,
+					620,
+					200,
+					100
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					9,
+					667,
+					26,
+					25
+				]
+			}
+		},
 		"focus": "返回",
-		"__mpe_code": {"position": {"x": 155, "y": 829}},
-		"next": ["等待页面稳定"]
+		"__mpe_code": {
+			"position": {
+				"x": 155,
+				"y": 829
+			}
+		},
+		"next": [
+			"等待页面稳定"
+		]
 	},
 	"普通战开始": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 747, "y": -240}},
-		"next": ["等待战斗结算"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 747,
+				"y": -240
+			}
+		},
+		"next": [
+			"等待战斗结算"
+		]
 	},
 	"等待页面稳定": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"pre_wait_freezes": 1000,
-		"__mpe_code": {"position": {"x": 454, "y": 821}}
+		"__mpe_code": {
+			"position": {
+				"x": 454,
+				"y": 821
+			}
+		}
 	},
 	"返回方舟": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "返回方舟",
-		"__mpe_code": {"position": {"x": 401, "y": 294}},
-		"next": ["成功返回方舟"],
-		"interrupt": ["返回"]
+		"__mpe_code": {
+			"position": {
+				"x": 401,
+				"y": 294
+			}
+		},
+		"next": [
+			"成功返回方舟"
+		],
+		"interrupt": [
+			"返回"
+		]
 	},
 	"成功返回方舟": {
-		"recognition": {"type": "OCR", "param": {"expected": ["方舟"], "roi": [0, 0, 63, 44]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 854, "y": 284}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"方舟"
+				],
+				"roi": [
+					0,
+					0,
+					63,
+					44
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 854,
+				"y": 284
+			}
+		}
 	},
 	"点击领取奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击领取奖励"]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": -244, "y": -329}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击领取奖励"
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": -244,
+				"y": -329
+			}
+		}
 	},
 	"任务执行前检查": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "任务执行前检查",
-		"__mpe_code": {"position": {"x": -276, "y": 397}},
-		"next": ["任务执行前检查成功"],
-		"interrupt": ["返回主页", "返回", "大厅"]
+		"__mpe_code": {
+			"position": {
+				"x": -276,
+				"y": 397
+			}
+		},
+		"next": [
+			"任务执行前检查成功"
+		],
+		"interrupt": [
+			"返回主页",
+			"返回",
+			"大厅"
+		]
 	},
 	"任务执行前检查成功": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": ["shop/百货商店按钮.png"],
+				"template": [
+					"shop/百货商店按钮.png"
+				],
 				"green_mask": true,
-				"threshold": [0.7],
-				"roi": [269, 406, 219, 134]
+				"threshold": [
+					0.7
+				],
+				"roi": [
+					269,
+					406,
+					219,
+					134
+				]
 			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "任务执行前检查成功",
-		"__mpe_code": {"position": {"x": 127, "y": 160}}
+		"__mpe_code": {
+			"position": {
+				"x": 127,
+				"y": 160
+			}
+		}
 	},
 	"点击进行下一步": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击进行下一步"]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 92, "y": -343}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击进行下一步"
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 92,
+				"y": -343
+			}
+		}
 	},
 	"返回主页成功": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": ["shop/百货商店按钮.png"],
+				"template": [
+					"shop/百货商店按钮.png"
+				],
 				"green_mask": true,
-				"threshold": [0.7],
-				"roi": [269, 406, 219, 134]
+				"threshold": [
+					0.7
+				],
+				"roi": [
+					269,
+					406,
+					219,
+					134
+				]
 			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "返回主页成功",
-		"__mpe_code": {"position": {"x": 905, "y": 759}}
+		"__mpe_code": {
+			"position": {
+				"x": 905,
+				"y": 759
+			}
+		}
 	},
 	"大厅": {
-		"recognition": {"type": "OCR", "param": {"expected": ["大厅"], "roi": [597, 671, 83, 48]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"大厅"
+				],
+				"roi": [
+					597,
+					671,
+					83,
+					48
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 500,
 		"focus": "返回大厅",
-		"__mpe_code": {"position": {"x": 139, "y": 1171}},
-		"next": ["返回主页成功"]
+		"__mpe_code": {
+			"position": {
+				"x": 139,
+				"y": 1171
+			}
+		},
+		"next": [
+			"返回主页成功"
+		]
 	},
 	"点击任意处进行下一步": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处进行下一步"]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 437, "y": -354}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击任意处进行下一步"
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 437,
+				"y": -354
+			}
+		}
 	},
 	"ocr测试": {
-		"recognition": {"type": "OCR", "param": {"expected": ["test"], "roi": [449, 241, 383, 476]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 749, "y": -458}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"test"
+				],
+				"roi": [
+					449,
+					241,
+					383,
+					476
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 749,
+				"y": -458
+			}
+		}
 	}
 }

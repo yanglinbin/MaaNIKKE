@@ -1,5 +1,11 @@
 {
-	"__mpe_config_shop": {"__mpe_code": {"prefix": "", "filename": "shop", "version": "v0.5.5"}},
+	"__mpe_config_shop": {
+		"__mpe_code": {
+			"prefix": "",
+			"filename": "shop",
+			"version": "v0.5.5"
+		}
+	},
 	"付费商店识别": {
 		"recognition": {
 			"type": "TemplateMatch",
@@ -10,119 +16,303 @@
 				"roi": [269, 406, 219, 134]
 			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 810, "y": 787}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 810,
+				"y": 787
+			}
+		},
 		"next": ["付费商店已购买"],
 		"interrupt": ["进入付费商店"]
 	},
 	"进入付费商店": {
-		"recognition": {"type": "OCR", "param": {"roi": [327, 416, 114, 59], "expected": ["付费商店"]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"roi": [327, 416, 114, 59],
+				"expected": ["付费商店"]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1000,
-		"__mpe_code": {"position": {"x": 1126, "y": 848}},
+		"__mpe_code": {
+			"position": {
+				"x": 1126,
+				"y": 848
+			}
+		},
 		"next": ["成功进入付费商店"]
 	},
 	"付费商店已购买": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [408, 410, 40, 38], "green_mask": true}
+			"param": {
+				"template": ["common/标准大红点.png"],
+				"roi": [408, 410, 40, 38],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"inverse": true,
-		"__mpe_code": {"position": {"x": 1144, "y": 488}},
+		"__mpe_code": {
+			"position": {
+				"x": 1144,
+				"y": 488
+			}
+		},
 		"next": ["付费商店领取完毕"]
 	},
 	"成功进入付费商店": {
-		"recognition": {"type": "OCR", "param": {"expected": ["付费商店"], "roi": [0, 1, 85, 48]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["付费商店"],
+				"roi": [0, 1, 85, 48]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "成功进入付费商店",
-		"__mpe_code": {"position": {"x": 1414, "y": 828}},
+		"__mpe_code": {
+			"position": {
+				"x": 1414,
+				"y": 828
+			}
+		},
 		"next": ["进入普通礼包页面"]
 	},
 	"进入每日礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [144, 192, 73, 23]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [144, 192, 73, 23]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3144, "y": 892}},
+		"__mpe_code": {
+			"position": {
+				"x": 3144,
+				"y": 892
+			}
+		},
 		"next": ["购买每日免费礼包"]
 	},
 	"购买每日免费礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [27, 264, 89, 171]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [27, 264, 89, 171]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3465, "y": 1027}},
+		"__mpe_code": {
+			"position": {
+				"x": 3465,
+				"y": 1027
+			}
+		},
 		"next": ["点击领取奖励"]
 	},
 	"付费商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 227, "y": 1116}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 227,
+				"y": 1116
+			}
+		},
 		"next": ["付费商店识别"],
 		"interrupt": ["任务执行前检查"]
 	},
 	"购买每周免费礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [27, 264, 89, 171]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [27, 264, 89, 171]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3450, "y": 823}},
+		"__mpe_code": {
+			"position": {
+				"x": 3450,
+				"y": 823
+			}
+		},
 		"next": ["点击领取奖励"]
 	},
 	"购买每月免费礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [27, 264, 89, 171]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [27, 264, 89, 171]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3477, "y": 613}},
+		"__mpe_code": {
+			"position": {
+				"x": 3477,
+				"y": 613
+			}
+		},
 		"next": ["点击领取奖励"]
 	},
 	"进入每周礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [251, 192, 81, 22]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [251, 192, 81, 22]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3177, "y": 706}},
+		"__mpe_code": {
+			"position": {
+				"x": 3177,
+				"y": 706
+			}
+		},
 		"next": ["购买每周免费礼包"]
 	},
 	"进入每月礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [363, 192, 80, 23]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [363, 192, 80, 23]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3172, "y": 508}},
+		"__mpe_code": {
+			"position": {
+				"x": 3172,
+				"y": 508
+			}
+		},
 		"next": ["购买每月免费礼包"]
 	},
 	"每日礼包": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [216, 179, 26, 27], "green_mask": true}
+			"param": {
+				"template": ["common/标准大红点.png"],
+				"roi": [216, 179, 26, 27],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 500,
-		"__mpe_code": {"position": {"x": 2844, "y": 807}},
+		"__mpe_code": {
+			"position": {
+				"x": 2844,
+				"y": 807
+			}
+		},
 		"next": ["进入每日礼包"]
 	},
 	"每周礼包": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [325, 180, 26, 25], "green_mask": true}
+			"param": {
+				"template": ["common/标准大红点.png"],
+				"roi": [325, 180, 26, 25],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 500,
-		"__mpe_code": {"position": {"x": 2846, "y": 553}},
+		"__mpe_code": {
+			"position": {
+				"x": 2846,
+				"y": 553
+			}
+		},
 		"next": ["进入每周礼包"]
 	},
 	"每月礼包": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [437, 180, 26, 26], "green_mask": true}
+			"param": {
+				"template": ["common/标准大红点.png"],
+				"roi": [437, 180, 26, 26],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 500,
-		"__mpe_code": {"position": {"x": 2848, "y": 331}},
+		"__mpe_code": {
+			"position": {
+				"x": 2848,
+				"y": 331
+			}
+		},
 		"next": ["进入每月礼包"]
 	},
 	"普通商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "开始普通商店任务",
-		"__mpe_code": {"position": {"x": 2107, "y": 2438}},
+		"__mpe_code": {
+			"position": {
+				"x": 2107,
+				"y": 2438
+			}
+		},
 		"next": ["成功进入普通商店"]
 	},
 	"查找百货商店": {
@@ -135,258 +325,709 @@
 				"roi": [269, 406, 219, 134]
 			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 771, "y": 1474}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 771,
+				"y": 1474
+			}
+		},
 		"next": ["进入百货商店"]
 	},
 	"进入百货商店": {
-		"recognition": {"type": "OCR", "param": {"expected": ["商店"], "roi": [352, 464, 81, 56]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 1013, "y": 1504}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["商店"],
+				"roi": [352, 464, 81, 56]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1013,
+				"y": 1504
+			}
+		},
 		"next": ["成功进入百货商店"]
 	},
 	"成功进入百货商店": {
-		"recognition": {"type": "OCR", "param": {"expected": ["百货商店"], "roi": [0, 1, 85, 48]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["百货商店"],
+				"roi": [0, 1, 85, 48]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 20000,
 		"focus": "成功进入百货商店",
-		"__mpe_code": {"position": {"x": 1283, "y": 1480}},
+		"__mpe_code": {
+			"position": {
+				"x": 1283,
+				"y": 1480
+			}
+		},
 		"next": ["百货商店功能列表"]
 	},
 	"购买免费物品": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/小红点.png"], "roi": [142, 337, 59, 47], "green_mask": true}
+			"param": {
+				"template": ["common/小红点.png"],
+				"roi": [142, 337, 59, 47],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "Click", "param": {"target": [92, 370, 73, 111]}},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [92, 370, 73, 111]
+			}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 3183, "y": 3283}},
+		"__mpe_code": {
+			"position": {
+				"x": 3183,
+				"y": 3283
+			}
+		},
 		"next": ["确认购买"]
 	},
 	"无免费刷新": {
-		"recognition": {"type": "OCR", "param": {"roi": [196, 273, 95, 77], "expected": ["\\bFR\\w*\\b"]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"roi": [196, 273, 95, 77],
+				"expected": ["\\bFR\\w*\\b"]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"inverse": true,
-		"__mpe_code": {"position": {"x": 3224, "y": 2527}},
+		"__mpe_code": {
+			"position": {
+				"x": 3224,
+				"y": 2527
+			}
+		},
 		"next": ["普通商店购买完成"]
 	},
 	"确定免费刷新": {
-		"recognition": {"type": "OCR", "param": {"expected": ["通知"], "roi": [602, 191, 81, 39]}},
-		"action": {"type": "Click", "param": {"target": [664, 436, 117, 27]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["通知"],
+				"roi": [602, 191, 81, 39]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [664, 436, 117, 27]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3226, "y": 2992}},
+		"__mpe_code": {
+			"position": {
+				"x": 3226,
+				"y": 2992
+			}
+		},
 		"next": ["购买免费物品"]
 	},
 	"付费商店领取完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "付费商店领取成功",
-		"__mpe_code": {"position": {"x": 1431, "y": 632}}
+		"__mpe_code": {
+			"position": {
+				"x": 1431,
+				"y": 632
+			}
+		}
 	},
 	"无普通礼包": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/小红点.png"], "roi": [123, 183, 348, 38], "green_mask": true}
+			"param": {
+				"template": ["common/小红点.png"],
+				"roi": [123, 183, 348, 38],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"inverse": true,
-		"__mpe_code": {"position": {"x": 2241, "y": 578}},
+		"__mpe_code": {
+			"position": {
+				"x": 2241,
+				"y": 578
+			}
+		},
 		"next": ["返回主页"]
 	},
 	"无免费物品": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/小红点.png"], "roi": [142, 337, 59, 47], "green_mask": true}
+			"param": {
+				"template": ["common/小红点.png"],
+				"roi": [142, 337, 59, 47],
+				"green_mask": true
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"inverse": true,
-		"__mpe_code": {"position": {"x": 2896, "y": 2494}},
+		"__mpe_code": {
+			"position": {
+				"x": 2896,
+				"y": 2494
+			}
+		},
 		"next": ["无免费刷新"],
 		"interrupt": ["免费刷新"]
 	},
 	"免费刷新": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [82, 319, 141, 13]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [82, 319, 141, 13]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 3241, "y": 2768}},
+		"__mpe_code": {
+			"position": {
+				"x": 3241,
+				"y": 2768
+			}
+		},
 		"next": ["确定免费刷新"]
 	},
 	"普通商店购买完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "普通商店"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "普通商店"
+				}
+			}
 		},
 		"focus": "普通商店任务完成",
-		"__mpe_code": {"position": {"x": 3550, "y": 2559}}
+		"__mpe_code": {
+			"position": {
+				"x": 3550,
+				"y": 2559
+			}
+		}
 	},
 	"竞技场商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 1876, "y": 1620}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1876,
+				"y": 1620
+			}
+		},
 		"next": ["成功进入竞技场商店"],
 		"interrupt": ["进入竞技场商店"]
 	},
 	"进入竞技场商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [7, 431, 37, 41]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [7, 431, 37, 41]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 2174, "y": 1817}}
+		"__mpe_code": {
+			"position": {
+				"x": 2174,
+				"y": 1817
+			}
+		}
 	},
 	"成功进入竞技场商店": {
-		"recognition": {"type": "OCR", "param": {"expected": ["竞技场"], "roi": [58, 256, 132, 38]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["竞技场"],
+				"roi": [58, 256, 132, 38]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 20000,
-		"__mpe_code": {"position": {"x": 2173, "y": 1591}},
+		"__mpe_code": {
+			"position": {
+				"x": 2173,
+				"y": 1591
+			}
+		},
 		"next": ["竞技场商店购买完成"],
 		"interrupt": ["代码手册", "代码手册宝箱", "公司武器熔炉", "返回普通商店"]
 	},
 	"无代码手册1": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OUT"], "roi": [83, 415, 87, 29]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2921, "y": 2069}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["OUT"],
+				"roi": [83, 415, 87, 29]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2921,
+				"y": 2069
+			}
+		},
 		"next": ["无代码手册2"],
 		"interrupt": ["购买代码手册2"]
 	},
 	"代码手册": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2504, "y": 1934}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2504,
+				"y": 1934
+			}
+		},
 		"next": ["无代码手册1"],
 		"interrupt": ["购买代码手册1"]
 	},
 	"代码手册宝箱": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2519, "y": 1740}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2519,
+				"y": 1740
+			}
+		},
 		"next": ["无代码手册宝箱"],
 		"interrupt": ["点击代码手册宝箱"]
 	},
 	"公司武器熔炉": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2544, "y": 1548}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2544,
+				"y": 1548
+			}
+		},
 		"next": ["无公司武器熔炉"],
 		"interrupt": ["点击公司武器熔炉"]
 	},
 	"购买代码手册1": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [94, 375, 73, 102]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [94, 375, 73, 102]
+			}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 2921, "y": 2258}},
+		"__mpe_code": {
+			"position": {
+				"x": 2921,
+				"y": 2258
+			}
+		},
 		"next": ["确认购买"]
 	},
 	"点击公司武器熔炉": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [633, 369, 72, 110]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [633, 369, 72, 110]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 2921, "y": 1519}},
+		"__mpe_code": {
+			"position": {
+				"x": 2921,
+				"y": 1519
+			}
+		},
 		"next": ["确认购买"]
 	},
 	"无代码手册宝箱": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OUT"], "roi": [405, 417, 96, 32]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2921, "y": 1699}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["OUT"],
+				"roi": [405, 417, 96, 32]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2921,
+				"y": 1699
+			}
+		},
 		"next": ["代码手册宝箱购买完毕"]
 	},
 	"无公司武器熔炉": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OUT"], "roi": [623, 411, 92, 35]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2911, "y": 1333}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["OUT"],
+				"roi": [623, 411, 92, 35]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2911,
+				"y": 1333
+			}
+		},
 		"next": ["公司武器熔炉购买完毕"]
 	},
 	"无代码手册2": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OUT"], "roi": [192, 414, 84, 37]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 3220, "y": 2037}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["OUT"],
+				"roi": [192, 414, 84, 37]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 3220,
+				"y": 2037
+			}
+		},
 		"next": ["无代码手册3"],
 		"interrupt": ["购买代码手册3"]
 	},
 	"无代码手册3": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OUT"], "roi": [303, 416, 85, 34]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 3523, "y": 2032}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["OUT"],
+				"roi": [303, 416, 85, 34]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 3523,
+				"y": 2032
+			}
+		},
 		"next": ["代码手册购买完毕"]
 	},
 	"购买代码手册2": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [203, 381, 69, 88]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [203, 381, 69, 88]
+			}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 3220, "y": 2255}},
+		"__mpe_code": {
+			"position": {
+				"x": 3220,
+				"y": 2255
+			}
+		},
 		"next": ["确认购买"]
 	},
 	"购买代码手册3": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [311, 375, 68, 98]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [311, 375, 68, 98]
+			}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 3525, "y": 2255}},
+		"__mpe_code": {
+			"position": {
+				"x": 3525,
+				"y": 2255
+			}
+		},
 		"next": ["确认购买"]
 	},
 	"代码手册购买完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "代码手册"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "代码手册"
+				}
+			}
 		},
-		"__mpe_code": {"position": {"x": 3809, "y": 2043}}
+		"__mpe_code": {
+			"position": {
+				"x": 3809,
+				"y": 2043
+			}
+		}
 	},
 	"代码手册宝箱购买完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "代码手册宝箱"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "代码手册宝箱"
+				}
+			}
 		},
-		"__mpe_code": {"position": {"x": 3182, "y": 1602}}
+		"__mpe_code": {
+			"position": {
+				"x": 3182,
+				"y": 1602
+			}
+		}
 	},
 	"公司武器熔炉购买完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "公司武器熔炉"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "公司武器熔炉"
+				}
+			}
 		},
-		"__mpe_code": {"position": {"x": 3162, "y": 1288}}
+		"__mpe_code": {
+			"position": {
+				"x": 3162,
+				"y": 1288
+			}
+		}
 	},
 	"点击代码手册宝箱": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [422, 375, 64, 89]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [422, 375, 64, 89]
+			}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 2917, "y": 1874}},
+		"__mpe_code": {
+			"position": {
+				"x": 2917,
+				"y": 1874
+			}
+		},
 		"next": ["确认购买"]
 	},
 	"百货商店功能列表": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 1525, "y": 1556}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1525,
+				"y": 1556
+			}
+		},
 		"next": ["百货商店购买完成"],
 		"interrupt": ["普通商店", "竞技场商店", "返回主页"]
 	},
 	"百货商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 230, "y": 1282}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 230,
+				"y": 1282
+			}
+		},
 		"next": ["成功进入百货商店", "查找百货商店"],
 		"interrupt": ["任务执行前检查"]
 	},
 	"竞技场商店购买完成": {
-		"recognition": {"type": "OCR", "param": {"expected": ["普通商店"], "roi": [63, 259, 85, 32]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["普通商店"],
+				"roi": [63, 259, 85, 32]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "竞技场商店"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "竞技场商店"
+				}
+			}
 		},
 		"focus": "竞技场商店购买完成",
-		"__mpe_code": {"position": {"x": 2491, "y": 1254}}
+		"__mpe_code": {
+			"position": {
+				"x": 2491,
+				"y": 1254
+			}
+		}
 	},
 	"确认购买": {
-		"recognition": {"type": "OCR", "param": {"expected": ["购买"], "roi": [633, 549, 152, 100]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 4356, "y": 1885}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["购买"],
+				"roi": [633, 549, 152, 100]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 4356,
+				"y": 1885
+			}
+		},
 		"next": ["确认购买", "点击领取奖励"]
 	},
 	"返回普通商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [7, 261, 41, 42]}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [7, 261, 41, 42]
+			}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 2507, "y": 2081}}
+		"__mpe_code": {
+			"position": {
+				"x": 2507,
+				"y": 2081
+			}
+		}
 	},
 	"百货商店购买完成": {
 		"recognition": {
@@ -398,36 +1039,104 @@
 				"roi": [269, 406, 219, 134]
 			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "百货商店任务完成",
-		"__mpe_code": {"position": {"x": 1875, "y": 1256}}
+		"__mpe_code": {
+			"position": {
+				"x": 1875,
+				"y": 1256
+			}
+		}
 	},
-	"__mpe_external_返回主页_shop": {"__mpe_code": {"position": {"x": 2611, "y": 1129}}},
+	"__mpe_external_返回主页_shop": {
+		"__mpe_code": {
+			"position": {
+				"x": 2611,
+				"y": 1129
+			}
+		}
+	},
 	"成功进入普通礼包页面": {
-		"recognition": {"type": "OCR", "param": {"expected": ["普通礼包"], "roi": [610, 53, 86, 34]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["普通礼包"],
+				"roi": [610, 53, 86, 34]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "成功进入普通礼包",
-		"__mpe_code": {"position": {"x": 1982, "y": 790}},
+		"__mpe_code": {
+			"position": {
+				"x": 1982,
+				"y": 790
+			}
+		},
 		"next": ["无普通礼包"],
 		"interrupt": ["每日礼包", "每周礼包", "每月礼包"]
 	},
-	"__mpe_external_任务执行前检查_shop": {"__mpe_code": {"position": {"x": 793, "y": 1240}}},
-	"__mpe_external_点击领取奖励_shop": {"__mpe_code": {"position": {"x": 4961, "y": 1898}}},
+	"__mpe_external_任务执行前检查_shop": {
+		"__mpe_code": {
+			"position": {
+				"x": 793,
+				"y": 1240
+			}
+		}
+	},
+	"__mpe_external_点击领取奖励_shop": {
+		"__mpe_code": {
+			"position": {
+				"x": 4961,
+				"y": 1898
+			}
+		}
+	},
 	"成功进入普通商店": {
-		"recognition": {"type": "OCR", "param": {"expected": ["普通商店"], "roi": [42, 235, 154, 75]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2450, "y": 2445}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["普通商店"],
+				"roi": [42, 235, 154, 75]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2450,
+				"y": 2445
+			}
+		},
 		"next": ["无免费物品"],
 		"interrupt": ["购买免费物品"]
 	},
 	"进入普通礼包页面": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["shop/普通礼包.png"], "roi": [57, 128, 192, 63]}
+			"param": {
+				"template": ["shop/普通礼包.png"],
+				"roi": [57, 128, 192, 63]
+			}
 		},
-		"action": {"type": "Click", "param": {}},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1000,
-		"__mpe_code": {"position": {"x": 1682, "y": 835}},
+		"__mpe_code": {
+			"position": {
+				"x": 1682,
+				"y": 835
+			}
+		},
 		"next": ["成功进入普通礼包页面", "进入普通礼包页面"]
 	}
 }

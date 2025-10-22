@@ -1,599 +1,2449 @@
 {
-	"__mpe_config_ark": {"__mpe_code": {"prefix": "", "filename": "ark", "version": "v0.5.5"}},
+	"__mpe_config_ark": {
+		"__mpe_code": {
+			"prefix": "",
+			"filename": "ark",
+			"version": "v0.5.5"
+		}
+	},
 	"方舟": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": -96, "y": 2351}},
-		"next": ["成功进入方舟", "进入方舟"],
-		"interrupt": ["任务执行前检查"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": -96,
+				"y": 2351
+			}
+		},
+		"next": [
+			"成功进入方舟",
+			"进入方舟"
+		],
+		"interrupt": [
+			"任务执行前检查"
+		]
 	},
 	"拦截战": {
-		"recognition": {"type": "OCR", "param": {"expected": ["拦截战"], "roi": [517, 567, 72, 61]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"拦截战"
+				],
+				"roi": [
+					517,
+					567,
+					72,
+					61
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1500,
 		"focus": "开始拦截战任务",
-		"__mpe_code": {"position": {"x": 1231, "y": 2258}},
-		"next": ["成功进入拦截战", "拦截战"]
+		"__mpe_code": {
+			"position": {
+				"x": 1231,
+				"y": 2258
+			}
+		},
+		"next": [
+			"成功进入拦截战",
+			"拦截战"
+		]
 	},
 	"成功进入拦截战": {
-		"recognition": {"type": "OCR", "param": {"expected": ["异常个体", "拦截战"], "roi": [0, 8, 83, 28]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"异常个体",
+					"拦截战"
+				],
+				"roi": [
+					0,
+					8,
+					83,
+					28
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "成功进入拦截战",
-		"__mpe_code": {"position": {"x": 1501, "y": 2276}},
-		"next": ["成功进入异常个体拦截战"],
-		"interrupt": ["异常个体拦截战"]
+		"__mpe_code": {
+			"position": {
+				"x": 1501,
+				"y": 2276
+			}
+		},
+		"next": [
+			"成功进入异常个体拦截战"
+		],
+		"interrupt": [
+			"异常个体拦截战"
+		]
 	},
 	"异常个体拦截战": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [772, 631, 29, 40]}},
-		"__mpe_code": {"position": {"x": 1834, "y": 2362}}
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					772,
+					631,
+					29,
+					40
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1834,
+				"y": 2362
+			}
+		}
 	},
 	"成功进入异常个体拦截战": {
-		"recognition": {"type": "OCR", "param": {"expected": ["持有装备情况"], "roi": [1128, 94, 141, 47]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"持有装备情况"
+				],
+				"roi": [
+					1128,
+					94,
+					141,
+					47
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"pre_wait_freezes": 1500,
-		"__mpe_code": {"position": {"x": 1839, "y": 2137}},
-		"next": ["选择boss"],
-		"interrupt": ["切换boss"]
+		"__mpe_code": {
+			"position": {
+				"x": 1839,
+				"y": 2137
+			}
+		},
+		"next": [
+			"选择boss"
+		],
+		"interrupt": [
+			"切换boss"
+		]
 	},
 	"选择boss": {
-		"recognition": {"type": "OCR", "param": {"expected": ["镜像容器"], "roi": [530, 517, 224, 44]}},
-		"action": {"type": "Click", "param": {"target": [590, 571, 102, 32]}},
-		"__mpe_code": {"position": {"x": 2165, "y": 2120}},
-		"next": ["准备战斗"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"镜像容器"
+				],
+				"roi": [
+					530,
+					517,
+					224,
+					44
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					590,
+					571,
+					102,
+					32
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2165,
+				"y": 2120
+			}
+		},
+		"next": [
+			"准备战斗"
+		]
 	},
 	"准备战斗": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"focus": "准备拦截战战斗",
 		"timeout": 300000,
-		"__mpe_code": {"position": {"x": 2481, "y": 2158}},
-		"next": ["拦截战任务完成"],
-		"interrupt": ["快速战斗", "进入拦截战战斗"]
+		"__mpe_code": {
+			"position": {
+				"x": 2481,
+				"y": 2158
+			}
+		},
+		"next": [
+			"拦截战任务完成"
+		],
+		"interrupt": [
+			"快速战斗",
+			"进入拦截战战斗"
+		]
 	},
 	"切换boss": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [754, 530, 19, 21]}},
-		"__mpe_code": {"position": {"x": 2156, "y": 2356}}
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					754,
+					530,
+					19,
+					21
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2156,
+				"y": 2356
+			}
+		}
 	},
 	"快速战斗": {
 		"recognition": {
 			"type": "ColorMatch",
-			"param": {"lower": [250, 106, 47], "upper": [250, 107, 48], "method": 4, "roi": [655, 598, 39, 30]}
+			"param": {
+				"lower": [
+					250,
+					106,
+					47
+				],
+				"upper": [
+					250,
+					107,
+					48
+				],
+				"method": 4,
+				"roi": [
+					655,
+					598,
+					39,
+					30
+				]
+			}
 		},
-		"action": {"type": "Click", "param": {"target": [664, 598, 154, 25]}},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					664,
+					598,
+					154,
+					25
+				]
+			}
+		},
 		"post_delay": 1500,
-		"__mpe_code": {"position": {"x": 2789, "y": 2029}},
-		"next": ["战斗结算"]
+		"__mpe_code": {
+			"position": {
+				"x": 2789,
+				"y": 2029
+			}
+		},
+		"next": [
+			"战斗结算"
+		]
 	},
 	"进入拦截战战斗": {
 		"recognition": {
 			"type": "ColorMatch",
-			"param": {"lower": [220, 30, 20], "upper": [250, 70, 50], "roi": [663, 644, 29, 36], "method": 4}
+			"param": {
+				"lower": [
+					220,
+					30,
+					20
+				],
+				"upper": [
+					250,
+					70,
+					50
+				],
+				"roi": [
+					663,
+					644,
+					29,
+					36
+				],
+				"method": 4
+			}
 		},
-		"action": {"type": "Click", "param": {"target": [681, 646, 120, 37]}},
-		"__mpe_code": {"position": {"x": 2785, "y": 2337}},
-		"next": ["boss战开始"]
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					681,
+					646,
+					120,
+					37
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2785,
+				"y": 2337
+			}
+		},
+		"next": [
+			"boss战开始"
+		]
 	},
-	"__mpe_external_boss战开始_ark": {"__mpe_code": {"position": {"x": 3359, "y": 2416}}},
+	"__mpe_external_boss战开始_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 3359,
+				"y": 2416
+			}
+		}
+	},
 	"拦截战任务完成": {
 		"recognition": {
 			"type": "ColorMatch",
-			"param": {"lower": [101, 102, 104], "upper": [101, 103, 105], "roi": [651, 595, 47, 34], "method": 4}
+			"param": {
+				"lower": [
+					101,
+					102,
+					104
+				],
+				"upper": [
+					101,
+					103,
+					105
+				],
+				"roi": [
+					651,
+					595,
+					47,
+					34
+				],
+				"method": 4
+			}
 		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "拦截战"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "拦截战"
+				}
+			}
 		},
 		"focus": "拦截战完成",
-		"__mpe_code": {"position": {"x": 2778, "y": 1686}},
-		"next": ["返回方舟"],
-		"interrupt": ["返回"]
+		"__mpe_code": {
+			"position": {
+				"x": 2778,
+				"y": 1686
+			}
+		},
+		"next": [
+			"返回方舟"
+		],
+		"interrupt": [
+			"返回"
+		]
 	},
 	"成功进入方舟": {
-		"recognition": {"type": "OCR", "param": {"expected": ["方舟"], "roi": [0, 1, 65, 56]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 615, "y": 2226}},
-		"next": ["方舟任务分发"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"方舟"
+				],
+				"roi": [
+					0,
+					1,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 615,
+				"y": 2226
+			}
+		},
+		"next": [
+			"方舟任务分发"
+		]
 	},
 	"进入方舟": {
-		"recognition": {"type": "OCR", "param": {"expected": ["方舟"], "roi": [816, 427, 182, 105]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 328, "y": 2358}},
-		"next": ["成功进入方舟", "进入方舟"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"方舟"
+				],
+				"roi": [
+					816,
+					427,
+					182,
+					105
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 328,
+				"y": 2358
+			}
+		},
+		"next": [
+			"成功进入方舟",
+			"进入方舟"
+		]
 	},
-	"__mpe_external_返回主页_ark": {"__mpe_code": {"position": {"x": 1407, "y": 3153}}},
+	"__mpe_external_返回主页_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 1407,
+				"y": 3153
+			}
+		}
+	},
 	"方舟任务分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 882, "y": 2212}},
-		"next": ["方舟任务完成"],
-		"interrupt": ["拦截战", "模拟室", "无限之塔", "竞技场", "返回主页"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 882,
+				"y": 2212
+			}
+		},
+		"next": [
+			"方舟任务完成"
+		],
+		"interrupt": [
+			"拦截战",
+			"模拟室",
+			"无限之塔",
+			"竞技场",
+			"返回主页"
+		]
 	},
 	"模拟室": {
-		"recognition": {"type": "OCR", "param": {"expected": ["模拟室"], "roi": [443, 362, 153, 71]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"模拟室"
+				],
+				"roi": [
+					443,
+					362,
+					153,
+					71
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1500,
 		"focus": "开始模拟室任务",
-		"__mpe_code": {"position": {"x": 1221, "y": 2553}},
-		"next": ["成功进入模拟室", "模拟室"],
-		"interrupt": ["模拟室重置"]
+		"__mpe_code": {
+			"position": {
+				"x": 1221,
+				"y": 2553
+			}
+		},
+		"next": [
+			"成功进入模拟室",
+			"模拟室"
+		],
+		"interrupt": [
+			"模拟室重置"
+		]
 	},
 	"无限之塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["无限之塔"], "roi": [649, 230, 162, 86]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"无限之塔"
+				],
+				"roi": [
+					649,
+					230,
+					162,
+					86
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1500,
 		"focus": "开始无限之塔任务",
-		"__mpe_code": {"position": {"x": 1245, "y": 4133}},
-		"next": ["成功进入无限之塔", "无限之塔"]
+		"__mpe_code": {
+			"position": {
+				"x": 1245,
+				"y": 4133
+			}
+		},
+		"next": [
+			"成功进入无限之塔",
+			"无限之塔"
+		]
 	},
 	"模拟室重置": {
-		"recognition": {"type": "OCR", "param": {"expected": ["模拟室超频的奖励"], "roi": [551, 340, 173, 54]}},
-		"action": {"type": "Click", "param": {"target": [602, 414, 73, 19]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"模拟室超频的奖励"
+				],
+				"roi": [
+					551,
+					340,
+					173,
+					54
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					602,
+					414,
+					73,
+					19
+				]
+			}
+		},
 		"focus": "检测到模拟室重置信息",
-		"__mpe_code": {"position": {"x": 1492, "y": 2811}}
+		"__mpe_code": {
+			"position": {
+				"x": 1492,
+				"y": 2811
+			}
+		}
 	},
 	"成功进入模拟室": {
-		"recognition": {"type": "OCR", "param": {"expected": ["ROOM"], "roi": [570, 352, 143, 45]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"ROOM"
+				],
+				"roi": [
+					570,
+					352,
+					143,
+					45
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "成功进入模拟室",
-		"__mpe_code": {"position": {"x": 1496, "y": 2557}},
-		"next": ["模拟室已完成"],
-		"interrupt": ["开始模拟"]
+		"__mpe_code": {
+			"position": {
+				"x": 1496,
+				"y": 2557
+			}
+		},
+		"next": [
+			"模拟室已完成"
+		],
+		"interrupt": [
+			"开始模拟"
+		]
 	},
 	"开始模拟": {
-		"recognition": {"type": "OCR", "param": {"expected": ["开始模拟"], "roi": [570, 395, 150, 56]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"开始模拟"
+				],
+				"roi": [
+					570,
+					395,
+					150,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 300,
-		"__mpe_code": {"position": {"x": 1833, "y": 2829}},
-		"next": ["快速模拟"],
-		"interrupt": ["选择难度5", "选择c区"]
+		"__mpe_code": {
+			"position": {
+				"x": 1833,
+				"y": 2829
+			}
+		},
+		"next": [
+			"快速模拟"
+		],
+		"interrupt": [
+			"选择难度5",
+			"选择c区"
+		]
 	},
 	"快速模拟": {
 		"recognition": {
 			"type": "ColorMatch",
-			"param": {"lower": [250, 125, 25], "upper": [250, 127, 30], "roi": [644, 602, 47, 40], "method": 4}
+			"param": {
+				"lower": [
+					250,
+					125,
+					25
+				],
+				"upper": [
+					250,
+					127,
+					30
+				],
+				"roi": [
+					644,
+					602,
+					47,
+					40
+				],
+				"method": 4
+			}
 		},
-		"action": {"type": "Click", "param": {"target": [666, 607, 130, 28]}},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					666,
+					607,
+					130,
+					28
+				]
+			}
+		},
 		"post_wait_freezes": 1500,
 		"focus": "开始快速模拟",
-		"__mpe_code": {"position": {"x": 2170, "y": 2566}},
-		"next": ["跳过增益效果选择"]
+		"__mpe_code": {
+			"position": {
+				"x": 2170,
+				"y": 2566
+			}
+		},
+		"next": [
+			"跳过增益效果选择"
+		]
 	},
 	"选择难度5": {
-		"recognition": {"type": "TemplateMatch", "param": {"template": ["ark/难度5.png"], "roi": [690, 174, 166, 164]}},
-		"action": {"type": "Click", "param": {"target": [740, 224, 66, 64]}},
-		"__mpe_code": {"position": {"x": 2177, "y": 2914}}
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": [
+					"ark/难度5.png"
+				],
+				"roi": [
+					690,
+					174,
+					166,
+					164
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					740,
+					224,
+					66,
+					64
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2177,
+				"y": 2914
+			}
+		}
 	},
 	"选择c区": {
-		"recognition": {"type": "OCR", "param": {"expected": ["SELECTED"], "roi": [710, 460, 96, 23]}},
-		"action": {"type": "Click", "param": {"target": [728, 351, 52, 89]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"SELECTED"
+				],
+				"roi": [
+					710,
+					460,
+					96,
+					23
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					728,
+					351,
+					52,
+					89
+				]
+			}
+		},
 		"inverse": true,
-		"__mpe_code": {"position": {"x": 2182, "y": 3127}}
+		"__mpe_code": {
+			"position": {
+				"x": 2182,
+				"y": 3127
+			}
+		}
 	},
-	"__mpe_external_返回_ark": {"__mpe_code": {"position": {"x": 5128, "y": 4327}}},
+	"__mpe_external_返回_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 5128,
+				"y": 4327
+			}
+		}
+	},
 	"跳过增益效果选择": {
-		"recognition": {"type": "OCR", "param": {"expected": ["跳过增益效果选择"], "roi": [459, 557, 357, 143]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"跳过增益效果选择"
+				],
+				"roi": [
+					459,
+					557,
+					357,
+					143
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 2450, "y": 2613}},
-		"next": ["进入快速模拟战斗", "跳过增益效果选择"]
+		"__mpe_code": {
+			"position": {
+				"x": 2450,
+				"y": 2613
+			}
+		},
+		"next": [
+			"进入快速模拟战斗",
+			"跳过增益效果选择"
+		]
 	},
 	"进入快速模拟战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进入战斗"], "roi": [668, 637, 166, 61]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"进入战斗"
+				],
+				"roi": [
+					668,
+					637,
+					166,
+					61
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"focus": "进入快速模拟战斗",
 		"timeout": 240000,
-		"__mpe_code": {"position": {"x": 2790, "y": 2621}},
-		"next": ["等待战斗结束并结算", "进入快速模拟战斗"]
+		"__mpe_code": {
+			"position": {
+				"x": 2790,
+				"y": 2621
+			}
+		},
+		"next": [
+			"等待战斗结束并结算",
+			"进入快速模拟战斗"
+		]
 	},
 	"模拟室快速模拟任务完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "模拟室"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "模拟室"
+				}
+			}
 		},
 		"focus": "模拟室快速模拟完成",
-		"__mpe_code": {"position": {"x": 4006, "y": 2638}},
-		"next": ["返回方舟"],
-		"interrupt": ["返回"]
+		"__mpe_code": {
+			"position": {
+				"x": 4006,
+				"y": 2638
+			}
+		},
+		"next": [
+			"返回方舟"
+		],
+		"interrupt": [
+			"返回"
+		]
 	},
 	"等待战斗结束并结算": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处进行下一步"], "roi": [572, 604, 138, 54]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击任意处进行下一步"
+				],
+				"roi": [
+					572,
+					604,
+					138,
+					54
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"focus": "战斗结束",
-		"__mpe_code": {"position": {"x": 3116, "y": 2627}},
-		"next": ["模拟结束"]
+		"__mpe_code": {
+			"position": {
+				"x": 3116,
+				"y": 2627
+			}
+		},
+		"next": [
+			"模拟结束"
+		]
 	},
 	"模拟结束": {
-		"recognition": {"type": "OCR", "param": {"expected": ["模拟结束"], "roi": [441, 294, 392, 422]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"模拟结束"
+				],
+				"roi": [
+					441,
+					294,
+					392,
+					422
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 500,
-		"__mpe_code": {"position": {"x": 3428, "y": 2628}},
-		"next": ["确认模拟结束", "模拟结束"]
+		"__mpe_code": {
+			"position": {
+				"x": 3428,
+				"y": 2628
+			}
+		},
+		"next": [
+			"确认模拟结束",
+			"模拟结束"
+		]
 	},
 	"确认模拟结束": {
-		"recognition": {"type": "OCR", "param": {"expected": ["模拟结束"], "roi": [553, 161, 172, 93]}},
-		"action": {"type": "Click", "param": {"target": [579, 435, 120, 28]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"模拟结束"
+				],
+				"roi": [
+					553,
+					161,
+					172,
+					93
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					579,
+					435,
+					120,
+					28
+				]
+			}
+		},
 		"post_wait_freezes": 1500,
-		"__mpe_code": {"position": {"x": 3730, "y": 2624}},
-		"next": ["模拟室快速模拟任务完成"]
+		"__mpe_code": {
+			"position": {
+				"x": 3730,
+				"y": 2624
+			}
+		},
+		"next": [
+			"模拟室快速模拟任务完成"
+		]
 	},
 	"方舟任务完成": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": ["shop/百货商店按钮.png"],
+				"template": [
+					"shop/百货商店按钮.png"
+				],
 				"green_mask": true,
-				"threshold": [0.7],
-				"roi": [269, 406, 219, 134]
+				"threshold": [
+					0.7
+				],
+				"roi": [
+					269,
+					406,
+					219,
+					134
+				]
 			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "方舟任务完成",
-		"__mpe_code": {"position": {"x": 1215, "y": 1967}}
+		"__mpe_code": {
+			"position": {
+				"x": 1215,
+				"y": 1967
+			}
+		}
 	},
-	"__mpe_external_战斗结算_ark": {"__mpe_code": {"position": {"x": 6125, "y": 4541}}},
+	"__mpe_external_战斗结算_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 6125,
+				"y": 4541
+			}
+		}
+	},
 	"成功进入无限之塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["无限之塔"], "roi": [0, 8, 83, 28]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"无限之塔"
+				],
+				"roi": [
+					0,
+					8,
+					83,
+					28
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "成功进入无限之塔",
-		"__mpe_code": {"position": {"x": 1543, "y": 4150}},
-		"next": ["企业塔"]
+		"__mpe_code": {
+			"position": {
+				"x": 1543,
+				"y": 4150
+			}
+		},
+		"next": [
+			"企业塔"
+		]
 	},
 	"极乐净土塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [457, 362, 89, 52]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"OPEN"
+				],
+				"roi": [
+					457,
+					362,
+					89,
+					52
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "检查极乐净土塔",
-		"__mpe_code": {"position": {"x": 2198, "y": 3727}},
-		"next": ["极乐净土塔挑战完毕"],
-		"interrupt": ["进入极乐净土塔"]
+		"__mpe_code": {
+			"position": {
+				"x": 2198,
+				"y": 3727
+			}
+		},
+		"next": [
+			"极乐净土塔挑战完毕"
+		],
+		"interrupt": [
+			"进入极乐净土塔"
+		]
 	},
 	"米西利斯塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [548, 362, 92, 40]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"OPEN"
+				],
+				"roi": [
+					548,
+					362,
+					92,
+					40
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "检查米西利斯塔",
-		"__mpe_code": {"position": {"x": 2196, "y": 4143}},
-		"next": ["米西利斯塔挑战完毕"],
-		"interrupt": ["进入米西利斯塔"]
+		"__mpe_code": {
+			"position": {
+				"x": 2196,
+				"y": 4143
+			}
+		},
+		"next": [
+			"米西利斯塔挑战完毕"
+		],
+		"interrupt": [
+			"进入米西利斯塔"
+		]
 	},
 	"泰特拉塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [642, 363, 91, 50]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"OPEN"
+				],
+				"roi": [
+					642,
+					363,
+					91,
+					50
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "检查泰特拉塔",
-		"__mpe_code": {"position": {"x": 2202, "y": 4561}},
-		"next": ["泰特拉塔挑战完毕"],
-		"interrupt": ["进入泰特拉塔"]
+		"__mpe_code": {
+			"position": {
+				"x": 2202,
+				"y": 4561
+			}
+		},
+		"next": [
+			"泰特拉塔挑战完毕"
+		],
+		"interrupt": [
+			"进入泰特拉塔"
+		]
 	},
 	"朝圣塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [733, 362, 91, 37]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"OPEN"
+				],
+				"roi": [
+					733,
+					362,
+					91,
+					37
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "检查朝圣塔",
-		"__mpe_code": {"position": {"x": 2190, "y": 5009}},
-		"next": ["朝圣塔挑战完毕"],
-		"interrupt": ["进入朝圣塔"]
+		"__mpe_code": {
+			"position": {
+				"x": 2190,
+				"y": 5009
+			}
+		},
+		"next": [
+			"朝圣塔挑战完毕"
+		],
+		"interrupt": [
+			"进入朝圣塔"
+		]
 	},
 	"企业塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "开始企业塔任务",
-		"__mpe_code": {"position": {"x": 1792, "y": 4186}},
-		"next": ["无限之塔任务完成"],
-		"interrupt": ["极乐净土塔", "米西利斯塔", "泰特拉塔", "朝圣塔", "返回方舟"]
+		"__mpe_code": {
+			"position": {
+				"x": 1792,
+				"y": 4186
+			}
+		},
+		"next": [
+			"无限之塔任务完成"
+		],
+		"interrupt": [
+			"极乐净土塔",
+			"米西利斯塔",
+			"泰特拉塔",
+			"朝圣塔",
+			"返回方舟"
+		]
 	},
 	"无限之塔任务完成": {
-		"recognition": {"type": "OCR", "param": {"expected": ["方舟"], "roi": [0, 0, 65, 56]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"方舟"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "无限之塔"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "无限之塔"
+				}
+			}
 		},
-		"__mpe_code": {"position": {"x": 2185, "y": 3391}}
+		"__mpe_code": {
+			"position": {
+				"x": 2185,
+				"y": 3391
+			}
+		}
 	},
 	"下一关卡": {
 		"recognition": {
 			"type": "ColorMatch",
-			"param": {"lower": [0, 155, 240], "upper": [0, 180, 255], "roi": [1165, 661, 21, 37], "method": 4}
+			"param": {
+				"lower": [
+					0,
+					155,
+					240
+				],
+				"upper": [
+					0,
+					180,
+					255
+				],
+				"roi": [
+					1165,
+					661,
+					21,
+					37
+				],
+				"method": 4
+			}
 		},
-		"action": {"type": "Click", "param": {"target": [1161, 667, 83, 25]}},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					1161,
+					667,
+					83,
+					25
+				]
+			}
+		},
 		"post_delay": 1000,
 		"timeout": 300000,
 		"focus": "下一关，等待战斗结束",
-		"__mpe_code": {"position": {"x": 3948, "y": 4778}},
-		"next": ["企业塔战斗结束"]
+		"__mpe_code": {
+			"position": {
+				"x": 3948,
+				"y": 4778
+			}
+		},
+		"next": [
+			"企业塔战斗结束"
+		]
 	},
 	"进入企业塔战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进入战斗"], "roi": [662, 623, 183, 83]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"进入战斗"
+				],
+				"roi": [
+					662,
+					623,
+					183,
+					83
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"timeout": 240000,
 		"focus": "进入企业塔战斗，等待战斗结束",
-		"__mpe_code": {"position": {"x": 3631, "y": 4488}},
-		"next": ["企业塔战斗结束"]
+		"__mpe_code": {
+			"position": {
+				"x": 3631,
+				"y": 4488
+			}
+		},
+		"next": [
+			"企业塔战斗结束"
+		]
 	},
 	"进入企业塔战斗准备": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [589, 251, 101, 92]}},
-		"__mpe_code": {"position": {"x": 3328, "y": 4511}},
-		"next": ["进入企业塔战斗"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					589,
+					251,
+					101,
+					92
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 3328,
+				"y": 4511
+			}
+		},
+		"next": [
+			"进入企业塔战斗"
+		]
 	},
 	"当前企业塔战斗次数耗尽": {
-		"recognition": {"type": "OCR", "param": {"expected": ["0"], "roi": [582, 573, 124, 25]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 4261, "y": 4253}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"0"
+				],
+				"roi": [
+					582,
+					573,
+					124,
+					25
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 4261,
+				"y": 4253
+			}
+		}
 	},
 	"极乐净土塔挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["每日通关0/3"], "roi": [464, 592, 71, 34]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"每日通关0/3"
+				],
+				"roi": [
+					464,
+					592,
+					71,
+					34
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "极乐净土塔"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "极乐净土塔"
+				}
+			}
 		},
 		"focus": "极乐净土塔挑战完毕",
-		"__mpe_code": {"position": {"x": 2489, "y": 3576}}
+		"__mpe_code": {
+			"position": {
+				"x": 2489,
+				"y": 3576
+			}
+		}
 	},
 	"米西利斯塔挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["每日通关0/3"], "roi": [551, 593, 85, 31]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"每日通关0/3"
+				],
+				"roi": [
+					551,
+					593,
+					85,
+					31
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "米西利斯塔"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "米西利斯塔"
+				}
+			}
 		},
 		"focus": "米西利斯塔挑战完毕",
-		"__mpe_code": {"position": {"x": 2490, "y": 3990}}
+		"__mpe_code": {
+			"position": {
+				"x": 2490,
+				"y": 3990
+			}
+		}
 	},
 	"泰特拉塔挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["每日通关0/3"], "roi": [647, 588, 79, 40]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"每日通关0/3"
+				],
+				"roi": [
+					647,
+					588,
+					79,
+					40
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "泰特拉塔"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "泰特拉塔"
+				}
+			}
 		},
 		"focus": "泰特拉塔挑战完毕",
-		"__mpe_code": {"position": {"x": 2490, "y": 4415}}
+		"__mpe_code": {
+			"position": {
+				"x": 2490,
+				"y": 4415
+			}
+		}
 	},
 	"朝圣塔挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["每日通关0/3"], "roi": [732, 594, 91, 34]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"每日通关0/3"
+				],
+				"roi": [
+					732,
+					594,
+					91,
+					34
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "朝圣塔"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "朝圣塔"
+				}
+			}
 		},
 		"focus": "朝圣塔挑战完毕",
-		"__mpe_code": {"position": {"x": 2492, "y": 4853}}
+		"__mpe_code": {
+			"position": {
+				"x": 2492,
+				"y": 4853
+			}
+		}
 	},
 	"成功进入企业塔": {
-		"recognition": {"type": "TemplateMatch", "param": {"template": ["ark/企业塔内部楼层跳转按钮.png"]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": [
+					"ark/企业塔内部楼层跳转按钮.png"
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1500,
-		"__mpe_code": {"position": {"x": 2942, "y": 4372}},
-		"next": ["当前企业塔战斗完毕"],
-		"interrupt": ["进入企业塔战斗准备"]
+		"__mpe_code": {
+			"position": {
+				"x": 2942,
+				"y": 4372
+			}
+		},
+		"next": [
+			"当前企业塔战斗完毕"
+		],
+		"interrupt": [
+			"进入企业塔战斗准备"
+		]
 	},
 	"企业塔战斗结束": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处进行下一步"], "roi": [555, 579, 170, 116]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击任意处进行下一步"
+				],
+				"roi": [
+					555,
+					579,
+					170,
+					116
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "战斗结束",
-		"__mpe_code": {"position": {"x": 3938, "y": 4528}},
-		"next": ["当前企业塔战斗次数耗尽"],
-		"interrupt": ["下一关卡", "企业塔战斗结算"]
+		"__mpe_code": {
+			"position": {
+				"x": 3938,
+				"y": 4528
+			}
+		},
+		"next": [
+			"当前企业塔战斗次数耗尽"
+		],
+		"interrupt": [
+			"下一关卡",
+			"企业塔战斗结算"
+		]
 	},
 	"进入极乐净土塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [466, 468, 69, 79]}},
-		"__mpe_code": {"position": {"x": 2490, "y": 3845}},
-		"next": ["成功进入企业塔"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					466,
+					468,
+					69,
+					79
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2490,
+				"y": 3845
+			}
+		},
+		"next": [
+			"成功进入企业塔"
+		]
 	},
 	"进入米西利斯塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [559, 464, 67, 68]}},
-		"__mpe_code": {"position": {"x": 2487, "y": 4256}},
-		"next": ["成功进入企业塔"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					559,
+					464,
+					67,
+					68
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2487,
+				"y": 4256
+			}
+		},
+		"next": [
+			"成功进入企业塔"
+		]
 	},
 	"进入泰特拉塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [651, 468, 73, 76]}},
-		"__mpe_code": {"position": {"x": 2487, "y": 4692}},
-		"next": ["成功进入企业塔"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					651,
+					468,
+					73,
+					76
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2487,
+				"y": 4692
+			}
+		},
+		"next": [
+			"成功进入企业塔"
+		]
 	},
 	"进入朝圣塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [739, 455, 79, 83]}},
-		"__mpe_code": {"position": {"x": 2495, "y": 5132}},
-		"next": ["成功进入企业塔"]
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					739,
+					455,
+					79,
+					83
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2495,
+				"y": 5132
+			}
+		},
+		"next": [
+			"成功进入企业塔"
+		]
 	},
 	"返回到无限之塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["可选择任一"], "roi": [587, 101, 111, 26]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 4077, "y": 3816}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"可选择任一"
+				],
+				"roi": [
+					587,
+					101,
+					111,
+					26
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 4077,
+				"y": 3816
+			}
+		}
 	},
 	"企业塔战斗结算": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处进行下一步"], "roi": [555, 579, 170, 116]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击任意处进行下一步"
+				],
+				"roi": [
+					555,
+					579,
+					170,
+					116
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1500,
 		"focus": "当前企业塔战斗结束",
-		"__mpe_code": {"position": {"x": 4280, "y": 4548}},
-		"next": ["返回到企业塔"],
-		"interrupt": ["关闭无限之塔战斗准备页面"]
+		"__mpe_code": {
+			"position": {
+				"x": 4280,
+				"y": 4548
+			}
+		},
+		"next": [
+			"返回到企业塔"
+		],
+		"interrupt": [
+			"关闭无限之塔战斗准备页面"
+		]
 	},
 	"关闭无限之塔战斗准备页面": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["ark/无限之塔战斗准备关闭按钮.png"], "green_mask": true, "roi": [741, 292, 179, 171]}
+			"param": {
+				"template": [
+					"ark/无限之塔战斗准备关闭按钮.png"
+				],
+				"green_mask": true,
+				"roi": [
+					741,
+					292,
+					179,
+					171
+				]
+			}
 		},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 4627, "y": 4677}}
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 4627,
+				"y": 4677
+			}
+		}
 	},
 	"返回到企业塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["剩余次数"], "roi": [582, 573, 124, 25]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 4643, "y": 4444}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"剩余次数"
+				],
+				"roi": [
+					582,
+					573,
+					124,
+					25
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 4643,
+				"y": 4444
+			}
+		}
 	},
 	"竞技场": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^竞技场$"], "roi": [700, 454, 108, 30]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^竞技场$"
+				],
+				"roi": [
+					700,
+					454,
+					108,
+					30
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"post_wait_freezes": 1500,
 		"focus": "开始竞技场任务",
-		"__mpe_code": {"position": {"x": 1173, "y": 5785}},
-		"next": ["竞技场", "成功进入竞技场"]
+		"__mpe_code": {
+			"position": {
+				"x": 1173,
+				"y": 5785
+			}
+		},
+		"next": [
+			"竞技场",
+			"成功进入竞技场"
+		]
 	},
 	"新人竞技场": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^新人竞技场$"], "roi": [439, 313, 200, 141]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 1732, "y": 5871}},
-		"next": ["成功进入新人竞技场", "新人竞技场"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^新人竞技场$"
+				],
+				"roi": [
+					439,
+					313,
+					200,
+					141
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1732,
+				"y": 5871
+			}
+		},
+		"next": [
+			"成功进入新人竞技场",
+			"新人竞技场"
+		]
 	},
 	"特殊竞技场": {
 		"recognition": {
 			"type": "OCR",
-			"param": {"expected": ["^特殊竞技场$"], "roi": [639, 313, 189, 139], "replace": [["寺", "特"]]}
+			"param": {
+				"expected": [
+					"^特殊竞技场$"
+				],
+				"roi": [
+					639,
+					313,
+					189,
+					139
+				],
+				"replace": [
+					[
+						"寺",
+						"特"
+					]
+				]
+			}
 		},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 1736, "y": 6061}},
-		"next": ["成功进入特殊竞技场", "特殊竞技场"]
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1736,
+				"y": 6061
+			}
+		},
+		"next": [
+			"成功进入特殊竞技场",
+			"特殊竞技场"
+		]
 	},
 	"成功进入新人竞技场": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^新人竞技场$"], "roi": [0, 0, 73, 44]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^新人竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					73,
+					44
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 30000,
-		"__mpe_code": {"position": {"x": 2116, "y": 5835}},
-		"next": ["新人竞技场挑战完毕"],
-		"interrupt": ["开始挑战竞技场"]
+		"__mpe_code": {
+			"position": {
+				"x": 2116,
+				"y": 5835
+			}
+		},
+		"next": [
+			"新人竞技场挑战完毕"
+		],
+		"interrupt": [
+			"开始挑战竞技场"
+		]
 	},
 	"成功进入特殊竞技场": {
 		"recognition": {
 			"type": "OCR",
-			"param": {"expected": ["^特殊竞技场$"], "roi": [0, 0, 73, 44], "replace": [["寺", "特"]]}
+			"param": {
+				"expected": [
+					"^特殊竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					73,
+					44
+				],
+				"replace": [
+					[
+						"寺",
+						"特"
+					]
+				]
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"timeout": 30000,
-		"__mpe_code": {"position": {"x": 2118, "y": 6201}},
-		"next": ["特殊竞技场挑战完毕"],
-		"interrupt": ["领取特殊竞技场奖励", "开始挑战竞技场"]
+		"__mpe_code": {
+			"position": {
+				"x": 2118,
+				"y": 6201
+			}
+		},
+		"next": [
+			"特殊竞技场挑战完毕"
+		],
+		"interrupt": [
+			"领取特殊竞技场奖励",
+			"开始挑战竞技场"
+		]
 	},
 	"开始挑战竞技场": {
-		"recognition": {"type": "OCR", "param": {"expected": ["免费"], "roi": [737, 467, 85, 109]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"免费"
+				],
+				"roi": [
+					737,
+					467,
+					85,
+					109
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"focus": "准备挑战",
-		"__mpe_code": {"position": {"x": 2505, "y": 6017}},
-		"next": ["竞技场快速战斗"],
-		"interrupt": ["开启竞技场快速战斗"]
+		"__mpe_code": {
+			"position": {
+				"x": 2505,
+				"y": 6017
+			}
+		},
+		"next": [
+			"竞技场快速战斗"
+		],
+		"interrupt": [
+			"开启竞技场快速战斗"
+		]
 	},
 	"竞技场快速战斗": {
 		"recognition": {
 			"type": "OCR",
-			"param": {"expected": ["ON"], "roi": [495, 562, 116, 58], "replace": [["0", "O"]]}
+			"param": {
+				"expected": [
+					"ON"
+				],
+				"roi": [
+					495,
+					562,
+					116,
+					58
+				],
+				"replace": [
+					[
+						"0",
+						"O"
+					]
+				]
+			}
 		},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 2942, "y": 5870}},
-		"next": ["进入竞技场战斗"]
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2942,
+				"y": 5870
+			}
+		},
+		"next": [
+			"进入竞技场战斗"
+		]
 	},
 	"开启竞技场快速战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OFF"], "roi": [493, 580, 120, 42]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"OFF"
+				],
+				"roi": [
+					493,
+					580,
+					120,
+					42
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"focus": "开启快速战斗",
-		"__mpe_code": {"position": {"x": 2950, "y": 6088}}
+		"__mpe_code": {
+			"position": {
+				"x": 2950,
+				"y": 6088
+			}
+		}
 	},
 	"新人竞技场挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["免费"], "roi": [737, 467, 85, 109]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"免费"
+				],
+				"roi": [
+					737,
+					467,
+					85,
+					109
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "新人竞技场"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "新人竞技场"
+				}
+			}
 		},
 		"inverse": true,
 		"focus": "新人竞技场挑战完毕",
-		"__mpe_code": {"position": {"x": 2491, "y": 5712}},
-		"next": ["返回竞技场主页"],
-		"interrupt": ["返回"]
+		"__mpe_code": {
+			"position": {
+				"x": 2491,
+				"y": 5712
+			}
+		},
+		"next": [
+			"返回竞技场主页"
+		],
+		"interrupt": [
+			"返回"
+		]
 	},
 	"进入竞技场战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进入战斗"], "roi": [639, 561, 154, 59]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"进入战斗"
+				],
+				"roi": [
+					639,
+					561,
+					154,
+					59
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"timeout": 240000,
-		"__mpe_code": {"position": {"x": 3289, "y": 5852}},
-		"next": ["竞技场战斗完毕"]
+		"__mpe_code": {
+			"position": {
+				"x": 3289,
+				"y": 5852
+			}
+		},
+		"next": [
+			"竞技场战斗完毕"
+		]
 	},
 	"竞技场战斗完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击进行下一步"], "roi": [511, 571, 250, 127]}},
-		"action": {"type": "Click", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"点击进行下一步"
+				],
+				"roi": [
+					511,
+					571,
+					250,
+					127
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
 		"pre_delay": 1000,
-		"__mpe_code": {"position": {"x": 3635, "y": 5803}},
-		"next": ["返回竞技场准备页面", "竞技场战斗完毕"]
+		"__mpe_code": {
+			"position": {
+				"x": 3635,
+				"y": 5803
+			}
+		},
+		"next": [
+			"返回竞技场准备页面",
+			"竞技场战斗完毕"
+		]
 	},
 	"特殊竞技场挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["免费"], "roi": [737, 467, 85, 109]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"免费"
+				],
+				"roi": [
+					737,
+					467,
+					85,
+					109
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "特殊竞技场"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "特殊竞技场"
+				}
+			}
 		},
 		"inverse": true,
 		"focus": "特殊竞技场挑战完毕",
-		"__mpe_code": {"position": {"x": 2506, "y": 6248}},
-		"next": ["返回竞技场主页"],
-		"interrupt": ["返回"]
+		"__mpe_code": {
+			"position": {
+				"x": 2506,
+				"y": 6248
+			}
+		},
+		"next": [
+			"返回竞技场主页"
+		],
+		"interrupt": [
+			"返回"
+		]
 	},
 	"返回竞技场主页": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^竞技场$"], "roi": [0, 0, 73, 44]}},
-		"action": {"type": "DoNothing", "param": {}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					73,
+					44
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
 		"focus": "返回到竞技场主页",
-		"__mpe_code": {"position": {"x": 2935, "y": 5588}}
+		"__mpe_code": {
+			"position": {
+				"x": 2935,
+				"y": 5588
+			}
+		}
 	},
 	"成功进入竞技场": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^竞技场$"], "roi": [0, 0, 73, 44]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 1440, "y": 5803}},
-		"next": ["竞技场任务完成"],
-		"interrupt": ["新人竞技场", "特殊竞技场", "返回方舟"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					73,
+					44
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 1440,
+				"y": 5803
+			}
+		},
+		"next": [
+			"竞技场任务完成"
+		],
+		"interrupt": [
+			"新人竞技场",
+			"特殊竞技场",
+			"返回方舟"
+		]
 	},
 	"竞技场任务完成": {
-		"recognition": {"type": "OCR", "param": {"expected": ["方舟"], "roi": [0, 0, 63, 44]}},
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"方舟"
+				],
+				"roi": [
+					0,
+					0,
+					63,
+					44
+				]
+			}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "竞技场"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "竞技场"
+				}
+			}
 		},
 		"focus": "竞技场任务完成",
-		"__mpe_code": {"position": {"x": 1734, "y": 5583}}
+		"__mpe_code": {
+			"position": {
+				"x": 1734,
+				"y": 5583
+			}
+		}
 	},
 	"返回竞技场准备页面": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进入战斗"], "roi": [737, 467, 85, 109]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 3942, "y": 5786}}
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"进入战斗"
+				],
+				"roi": [
+					737,
+					467,
+					85,
+					109
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 3942,
+				"y": 5786
+			}
+		}
 	},
-	"__mpe_external_返回方舟_ark": {"__mpe_code": {"position": {"x": 6138, "y": 4692}}},
+	"__mpe_external_返回方舟_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 6138,
+				"y": 4692
+			}
+		}
+	},
 	"领取特殊竞技场奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["TOUCH"], "roi": [536, 104, 65, 61]}},
-		"action": {"type": "Click", "param": {"target": [621, 134, 38, 43]}},
-		"__mpe_code": {"position": {"x": 2487, "y": 6552}},
-		"next": ["确定领取特殊竞技场奖励"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"TOUCH"
+				],
+				"roi": [
+					536,
+					104,
+					65,
+					61
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					621,
+					134,
+					38,
+					43
+				]
+			}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2487,
+				"y": 6552
+			}
+		},
+		"next": [
+			"确定领取特殊竞技场奖励"
+		]
 	},
 	"确定领取特殊竞技场奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["领取奖励"], "roi": [375, 511, 531, 197]}},
-		"action": {"type": "Click", "param": {}},
-		"__mpe_code": {"position": {"x": 2959, "y": 6520}},
-		"next": ["完成特殊竞技场奖励领取任务"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"领取奖励"
+				],
+				"roi": [
+					375,
+					511,
+					531,
+					197
+				]
+			}
+		},
+		"action": {
+			"type": "Click",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 2959,
+				"y": 6520
+			}
+		},
+		"next": [
+			"完成特殊竞技场奖励领取任务"
+		]
 	},
-	"__mpe_external_点击领取奖励_ark": {"__mpe_code": {"position": {"x": 3589, "y": 6491}}},
+	"__mpe_external_点击领取奖励_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 3589,
+				"y": 6491
+			}
+		}
+	},
 	"完成特殊竞技场奖励领取任务": {
-		"recognition": {"type": "DirectHit", "param": {}},
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "领取特殊竞技场奖励"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "领取特殊竞技场奖励"
+				}
+			}
 		},
-		"__mpe_code": {"position": {"x": 3264, "y": 6456}},
-		"next": ["点击领取奖励"]
+		"__mpe_code": {
+			"position": {
+				"x": 3264,
+				"y": 6456
+			}
+		},
+		"next": [
+			"点击领取奖励"
+		]
 	},
-	"__mpe_external_任务执行前检查_ark": {"__mpe_code": {"position": {"x": 320, "y": 2570}}},
+	"__mpe_external_任务执行前检查_ark": {
+		"__mpe_code": {
+			"position": {
+				"x": 320,
+				"y": 2570
+			}
+		}
+	},
 	"模拟室已完成": {
 		"recognition": {
 			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "green_mask": true, "roi": [679, 381, 54, 50]}
+			"param": {
+				"template": [
+					"common/标准大红点.png"
+				],
+				"green_mask": true,
+				"roi": [
+					679,
+					381,
+					54,
+					50
+				]
+			}
 		},
 		"action": {
 			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "模拟室"}}
+			"param": {
+				"custom_action": "DisableNode",
+				"custom_action_param": {
+					"node_name": "模拟室"
+				}
+			}
 		},
 		"inverse": true,
-		"__mpe_code": {"position": {"x": 1833, "y": 2518}}
+		"__mpe_code": {
+			"position": {
+				"x": 1833,
+				"y": 2518
+			}
+		}
 	},
 	"当前企业塔战斗完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["0"], "roi": [582, 573, 124, 25]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"__mpe_code": {"position": {"x": 3655, "y": 3915}},
-		"next": ["返回到无限之塔"],
-		"interrupt": ["返回"]
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"0"
+				],
+				"roi": [
+					582,
+					573,
+					124,
+					25
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"__mpe_code": {
+			"position": {
+				"x": 3655,
+				"y": 3915
+			}
+		},
+		"next": [
+			"返回到无限之塔"
+		],
+		"interrupt": [
+			"返回"
+		]
 	}
 }
