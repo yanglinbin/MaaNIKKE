@@ -127,7 +127,7 @@ jobs:
               echo "Creating default global settings..."
               cat > install/appsettings.json << 'EOF'
           {
-            "LinkStart": "Ctrl\u002BF1",
+            "LinkStart": "Ctrl\u002BF1"
           }
           EOF
               echo "Default global settings created with Ctrl+F1 hotkey"
