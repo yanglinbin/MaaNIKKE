@@ -21,13 +21,8 @@
 				"y": -239
 			}
 		},
-		"next": [
-			"成功进入前哨基地",
-			"进入前哨基地"
-		],
-		"interrupt": [
-			"任务执行前检查"
-		]
+		"next": ["成功进入前哨基地", "进入前哨基地"],
+		"interrupt": ["任务执行前检查"]
 	},
 	"前哨基地功能分发": {
 		"recognition": {
@@ -44,40 +39,22 @@
 				"y": -152
 			}
 		},
-		"next": [
-			"前哨基地任务完成"
-		],
-		"interrupt": [
-			"派遣公告栏",
-			"循环室",
-			"启用前哨基地任务完成节点"
-		]
+		"next": ["前哨基地任务完成"],
+		"interrupt": ["派遣公告栏", "循环室", "启用前哨基地任务完成节点"]
 	},
 	"派遣公告栏": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"common/标准大红点.png"
-				],
-				"roi": [
-					660,
-					631,
-					58,
-					47
-				],
+				"template": ["common/标准大红点.png"],
+				"roi": [660, 631, 58, 47],
 				"green_mask": true
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					648,
-					656,
-					38,
-					40
-				]
+				"target": [648, 656, 38, 40]
 			}
 		},
 		"focus": "开始派遣公告栏任务",
@@ -87,35 +64,21 @@
 				"y": -211
 			}
 		},
-		"next": [
-			"成功进入派遣公告栏"
-		]
+		"next": ["成功进入派遣公告栏"]
 	},
 	"循环室": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"common/标准大红点.png"
-				],
-				"roi": [
-					721,
-					562,
-					60,
-					60
-				],
+				"template": ["common/标准大红点.png"],
+				"roi": [721, 562, 60, 60],
 				"green_mask": true
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					707,
-					591,
-					42,
-					43
-				]
+				"target": [707, 591, 42, 43]
 			}
 		},
 		"focus": "开始循环室任务",
@@ -125,9 +88,7 @@
 				"y": 85
 			}
 		},
-		"next": [
-			"进入循环室"
-		]
+		"next": ["进入循环室"]
 	},
 	"__mpe_external_任务执行前检查_outpost": {
 		"__mpe_code": {
@@ -141,15 +102,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"前哨基地"
-				],
-				"roi": [
-					281,
-					506,
-					227,
-					103
-				]
+				"expected": ["前哨基地"],
+				"roi": [281, 506, 227, 103]
 			}
 		},
 		"action": {
@@ -162,23 +116,14 @@
 				"y": -434
 			}
 		},
-		"next": [
-			"成功进入前哨基地"
-		]
+		"next": ["成功进入前哨基地"]
 	},
 	"成功进入派遣公告栏": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"派遣公告栏"
-				],
-				"roi": [
-					456,
-					81,
-					152,
-					54
-				]
+				"expected": ["派遣公告栏"],
+				"roi": [456, 81, 152, 54]
 			}
 		},
 		"action": {
@@ -192,34 +137,17 @@
 				"y": -192
 			}
 		},
-		"next": [
-			"无已完成派遣"
-		],
-		"interrupt": [
-			"派遣任务全部领取"
-		]
+		"next": ["无已完成派遣"],
+		"interrupt": ["派遣任务全部领取"]
 	},
 	"无已完成派遣": {
 		"recognition": {
 			"type": "ColorMatch",
 			"param": {
-				"lower": [
-					205,
-					205,
-					205
-				],
-				"upper": [
-					210,
-					210,
-					210
-				],
+				"lower": [205, 205, 205],
+				"upper": [210, 210, 210],
 				"method": 4,
-				"roi": [
-					706,
-					584,
-					98,
-					16
-				]
+				"roi": [706, 584, 98, 16]
 			}
 		},
 		"action": {
@@ -232,26 +160,15 @@
 				"y": -608
 			}
 		},
-		"next": [
-			"无可派遣任务"
-		],
-		"interrupt": [
-			"全部派遣"
-		]
+		"next": ["无可派遣任务"],
+		"interrupt": ["全部派遣"]
 	},
 	"全部派遣": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"全部派遣"
-				],
-				"roi": [
-					575,
-					569,
-					245,
-					70
-				]
+				"expected": ["全部派遣"],
+				"roi": [575, 569, 245, 70]
 			}
 		},
 		"action": {
@@ -265,23 +182,14 @@
 				"y": -329
 			}
 		},
-		"next": [
-			"确认派遣"
-		]
+		"next": ["确认派遣"]
 	},
 	"确认派遣": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"派遣"
-				],
-				"roi": [
-					510,
-					569,
-					264,
-					71
-				]
+				"expected": ["派遣"],
+				"roi": [510, 569, 264, 71]
 			}
 		},
 		"action": {
@@ -300,23 +208,10 @@
 		"recognition": {
 			"type": "ColorMatch",
 			"param": {
-				"lower": [
-					205,
-					205,
-					205
-				],
-				"upper": [
-					210,
-					210,
-					210
-				],
+				"lower": [205, 205, 205],
+				"upper": [210, 210, 210],
 				"method": 4,
-				"roi": [
-					619,
-					589,
-					63,
-					7
-				]
+				"roi": [619, 589, 63, 7]
 			}
 		},
 		"action": {
@@ -329,23 +224,14 @@
 				"y": -632
 			}
 		},
-		"next": [
-			"退出派遣公告栏"
-		]
+		"next": ["退出派遣公告栏"]
 	},
 	"派遣任务全部领取": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"roi": [
-					575,
-					569,
-					245,
-					70
-				],
-				"expected": [
-					"全部领取"
-				]
+				"roi": [575, 569, 245, 70],
+				"expected": ["全部领取"]
 			}
 		},
 		"action": {
@@ -359,9 +245,7 @@
 				"y": -87
 			}
 		},
-		"next": [
-			"点击领取奖励"
-		]
+		"next": ["点击领取奖励"]
 	},
 	"__mpe_external_点击领取奖励_outpost": {
 		"__mpe_code": {
@@ -375,26 +259,14 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"派遣公告栏"
-				],
-				"roi": [
-					456,
-					81,
-					152,
-					54
-				]
+				"expected": ["派遣公告栏"],
+				"roi": [456, 81, 152, 54]
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					797,
-					85,
-					18,
-					19
-				]
+				"target": [797, 85, 18, 19]
 			}
 		},
 		"__mpe_code": {
@@ -403,9 +275,7 @@
 				"y": -600
 			}
 		},
-		"next": [
-			"派遣公告栏任务完成"
-		]
+		"next": ["派遣公告栏任务完成"]
 	},
 	"派遣公告栏任务完成": {
 		"recognition": {
@@ -428,15 +298,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"前哨基地"
-				],
-				"roi": [
-					0,
-					0,
-					80,
-					47
-				]
+				"expected": ["前哨基地"],
+				"roi": [0, 0, 80, 47]
 			}
 		},
 		"action": {
@@ -449,23 +312,14 @@
 				"y": -215
 			}
 		},
-		"next": [
-			"前哨基地功能分发"
-		]
+		"next": ["前哨基地功能分发"]
 	},
 	"进入循环室": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"进入"
-				],
-				"roi": [
-					624,
-					613,
-					220,
-					106
-				]
+				"expected": ["进入"],
+				"roi": [624, 613, 220, 106]
 			}
 		},
 		"action": {
@@ -478,23 +332,14 @@
 				"y": 137
 			}
 		},
-		"next": [
-			"成功进入循环室"
-		]
+		"next": ["成功进入循环室"]
 	},
 	"成功进入循环室": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"循环室"
-				],
-				"roi": [
-					0,
-					0,
-					106,
-					64
-				]
+				"expected": ["循环室"],
+				"roi": [0, 0, 106, 64]
 			}
 		},
 		"action": {
@@ -508,41 +353,23 @@
 				"y": 199
 			}
 		},
-		"next": [
-			"循环室升级完成"
-		],
-		"interrupt": [
-			"寻找并进入待升级循环室"
-		]
+		"next": ["循环室升级完成"],
+		"interrupt": ["寻找并进入待升级循环室"]
 	},
 	"寻找并进入待升级循环室": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"common/标准大红点.png"
-				],
+				"template": ["common/标准大红点.png"],
 				"green_mask": true,
-				"threshold": [
-					0.7
-				],
-				"roi": [
-					221,
-					3,
-					826,
-					712
-				]
+				"threshold": [0.7],
+				"roi": [221, 3, 826, 712]
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target_offset": [
-					-35,
-					90,
-					0,
-					0
-				]
+				"target_offset": [-35, 90, 0, 0]
 			}
 		},
 		"__mpe_code": {
@@ -551,27 +378,15 @@
 				"y": 435
 			}
 		},
-		"next": [
-			"成功进入循环室通用研究页面",
-			"成功进入循环室研究页面"
-		]
+		"next": ["成功进入循环室通用研究页面", "成功进入循环室研究页面"]
 	},
 	"循环室升级完成": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"common/标准大红点.png"
-				],
-				"threshold": [
-					0.7
-				],
-				"roi": [
-					221,
-					3,
-					826,
-					712
-				],
+				"template": ["common/标准大红点.png"],
+				"threshold": [0.7],
+				"roi": [221, 3, 826, 712],
 				"green_mask": true
 			}
 		},
@@ -586,26 +401,15 @@
 				"y": 128
 			}
 		},
-		"next": [
-			"成功退出循环室"
-		],
-		"interrupt": [
-			"返回"
-		]
+		"next": ["成功退出循环室"],
+		"interrupt": ["返回"]
 	},
 	"成功退出循环室": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"前哨基地"
-				],
-				"roi": [
-					0,
-					0,
-					88,
-					45
-				]
+				"expected": ["前哨基地"],
+				"roi": [0, 0, 88, 45]
 			}
 		},
 		"action": {
@@ -618,9 +422,7 @@
 				"y": 28
 			}
 		},
-		"next": [
-			"关闭循环室进入页面"
-		]
+		"next": ["关闭循环室进入页面"]
 	},
 	"__mpe_external_返回_outpost": {
 		"__mpe_code": {
@@ -634,15 +436,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"关闭"
-				],
-				"roi": [
-					445,
-					616,
-					405,
-					103
-				]
+				"expected": ["关闭"],
+				"roi": [445, 616, 405, 103]
 			}
 		},
 		"action": {
@@ -660,15 +455,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"自动选择"
-				],
-				"roi": [
-					493,
-					521,
-					141,
-					100
-				]
+				"expected": ["自动选择"],
+				"roi": [493, 521, 141, 100]
 			}
 		},
 		"action": {
@@ -681,23 +469,14 @@
 				"y": 668
 			}
 		},
-		"next": [
-			"确认循环室研究升级"
-		]
+		"next": ["确认循环室研究升级"]
 	},
 	"成功进入循环室研究页面": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"研究"
-				],
-				"roi": [
-					590,
-					114,
-					120,
-					38
-				]
+				"expected": ["研究"],
+				"roi": [590, 114, 120, 38]
 			}
 		},
 		"action": {
@@ -710,23 +489,14 @@
 				"y": 657
 			}
 		},
-		"next": [
-			"自动选择循环室升级材料"
-		]
+		"next": ["自动选择循环室升级材料"]
 	},
 	"确认循环室研究升级": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"升级"
-				],
-				"roi": [
-					621,
-					541,
-					222,
-					78
-				]
+				"expected": ["升级"],
+				"roi": [621, 541, 222, 78]
 			}
 		},
 		"action": {
@@ -740,12 +510,8 @@
 				"y": 638
 			}
 		},
-		"next": [
-			"退出循环室研究页面"
-		],
-		"interrupt": [
-			"循环室升级成功"
-		]
+		"next": ["退出循环室研究页面"],
+		"interrupt": ["循环室升级成功"]
 	},
 	"__mpe_external_点击进行下一步_outpost": {
 		"__mpe_code": {
@@ -759,26 +525,14 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"研究成功"
-				],
-				"roi": [
-					591,
-					166,
-					93,
-					45
-				]
+				"expected": ["研究成功"],
+				"roi": [591, 166, 93, 45]
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					797,
-					127,
-					17,
-					16
-				]
+				"target": [797, 127, 17, 16]
 			}
 		},
 		"inverse": true,
@@ -793,15 +547,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"研究成功"
-				],
-				"roi": [
-					591,
-					166,
-					93,
-					45
-				]
+				"expected": ["研究成功"],
+				"roi": [591, 166, 93, 45]
 			}
 		},
 		"action": {
@@ -814,9 +561,7 @@
 				"y": 667
 			}
 		},
-		"next": [
-			"点击进行下一步"
-		]
+		"next": ["点击进行下一步"]
 	},
 	"启用前哨基地任务完成节点": {
 		"recognition": {
@@ -829,9 +574,7 @@
 				"custom_action": "NodeOverride",
 				"custom_action_param": {
 					"前哨基地任务完成": {
-						"threshold": [
-							0.7
-						]
+						"threshold": [0.7]
 					}
 				}
 			}
@@ -842,9 +585,7 @@
 				"y": 388
 			}
 		},
-		"next": [
-			"返回主页"
-		]
+		"next": ["返回主页"]
 	},
 	"__mpe_external_返回主页_outpost": {
 		"__mpe_code": {
@@ -858,19 +599,10 @@
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"shop/百货商店按钮.png"
-				],
+				"template": ["shop/百货商店按钮.png"],
 				"green_mask": true,
-				"threshold": [
-					1
-				],
-				"roi": [
-					269,
-					406,
-					219,
-					134
-				]
+				"threshold": [1],
+				"roi": [269, 406, 219, 134]
 			}
 		},
 		"action": {
@@ -889,15 +621,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"[575,89,134,56]"
-				],
-				"roi": [
-					590,
-					114,
-					120,
-					38
-				]
+				"expected": ["[575,89,134,56]"],
+				"roi": [590, 114, 120, 38]
 			}
 		},
 		"action": {
@@ -910,23 +635,14 @@
 				"y": 389
 			}
 		},
-		"next": [
-			"确认循环室通用研究升级"
-		]
+		"next": ["确认循环室通用研究升级"]
 	},
 	"确认循环室通用研究升级": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"升级"
-				],
-				"roi": [
-					621,
-					541,
-					222,
-					78
-				]
+				"expected": ["升级"],
+				"roi": [621, 541, 222, 78]
 			}
 		},
 		"action": {
@@ -940,11 +656,7 @@
 				"y": 353
 			}
 		},
-		"next": [
-			"退出循环室研究页面"
-		],
-		"interrupt": [
-			"循环室升级成功"
-		]
+		"next": ["退出循环室研究页面"],
+		"interrupt": ["循环室升级成功"]
 	}
 }

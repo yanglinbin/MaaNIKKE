@@ -10,15 +10,8 @@
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"common/返回主页.png"
-				],
-				"roi": [
-					35,
-					602,
-					153,
-					118
-				],
+				"template": ["common/返回主页.png"],
+				"roi": [35, 602, 153, 118],
 				"green_mask": true
 			}
 		},
@@ -31,12 +24,10 @@
 		"__mpe_code": {
 			"position": {
 				"x": 126,
-				"y": 518
+				"y": 517
 			}
 		},
-		"next": [
-			"返回主页成功"
-		]
+		"next": ["返回主页成功"]
 	},
 	"跳过boss等待": {
 		"recognition": {
@@ -46,12 +37,7 @@
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					550,
-					255,
-					174,
-					129
-				]
+				"target": [550, 255, 174, 129]
 			}
 		},
 		"__mpe_code": {
@@ -60,10 +46,7 @@
 				"y": -63
 			}
 		},
-		"next": [
-			"确定跳过boss等待",
-			"跳过boss等待"
-		]
+		"next": ["确定跳过boss等待", "跳过boss等待"]
 	},
 	"等待战斗结算": {
 		"recognition": {
@@ -81,9 +64,7 @@
 				"y": -143
 			}
 		},
-		"next": [
-			"战斗结算"
-		]
+		"next": ["战斗结算"]
 	},
 	"boss战开始": {
 		"recognition": {
@@ -100,34 +81,20 @@
 				"y": -79
 			}
 		},
-		"next": [
-			"进入boss战"
-		]
+		"next": ["进入boss战"]
 	},
 	"确定跳过boss等待": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"跳过动画"
-				],
-				"roi": [
-					575,
-					168,
-					131,
-					86
-				]
+				"expected": ["跳过动画"],
+				"roi": [575, 168, 131, 86]
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					672,
-					435,
-					104,
-					28
-				]
+				"target": [672, 435, 104, 28]
 			}
 		},
 		"__mpe_code": {
@@ -136,23 +103,14 @@
 				"y": -99
 			}
 		},
-		"next": [
-			"等待战斗结算"
-		]
+		"next": ["等待战斗结算"]
 	},
 	"进入boss战": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"common/进入boss战.png"
-				],
-				"roi": [
-					594,
-					178,
-					94,
-					87
-				],
+				"template": ["common/进入boss战.png"],
+				"roi": [594, 178, 94, 87],
 				"green_mask": true
 			}
 		},
@@ -167,23 +125,14 @@
 				"y": -118
 			}
 		},
-		"next": [
-			"跳过boss等待"
-		]
+		"next": ["跳过boss等待"]
 	},
 	"战斗结算": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"点击任意处"
-				],
-				"roi": [
-					447,
-					521,
-					383,
-					198
-				]
+				"expected": ["点击任意处"],
+				"roi": [447, 521, 383, 198]
 			}
 		},
 		"action": {
@@ -201,26 +150,14 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"返回"
-				],
-				"roi": [
-					0,
-					620,
-					200,
-					100
-				]
+				"expected": ["返回"],
+				"roi": [0, 620, 200, 100]
 			}
 		},
 		"action": {
 			"type": "Click",
 			"param": {
-				"target": [
-					9,
-					667,
-					26,
-					25
-				]
+				"target": [9, 667, 26, 25]
 			}
 		},
 		"focus": "返回",
@@ -230,9 +167,7 @@
 				"y": 829
 			}
 		},
-		"next": [
-			"等待页面稳定"
-		]
+		"next": ["等待页面稳定"]
 	},
 	"普通战开始": {
 		"recognition": {
@@ -249,9 +184,7 @@
 				"y": -240
 			}
 		},
-		"next": [
-			"等待战斗结算"
-		]
+		"next": ["等待战斗结算"]
 	},
 	"等待页面稳定": {
 		"recognition": {
@@ -286,26 +219,15 @@
 				"y": 294
 			}
 		},
-		"next": [
-			"成功返回方舟"
-		],
-		"interrupt": [
-			"返回"
-		]
+		"next": ["成功返回方舟"],
+		"interrupt": ["返回"]
 	},
 	"成功返回方舟": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"方舟"
-				],
-				"roi": [
-					0,
-					0,
-					63,
-					44
-				]
+				"expected": ["方舟"],
+				"roi": [0, 0, 63, 44]
 			}
 		},
 		"action": {
@@ -323,9 +245,7 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"点击领取奖励"
-				]
+				"expected": ["点击领取奖励"]
 			}
 		},
 		"action": {
@@ -355,32 +275,17 @@
 				"y": 397
 			}
 		},
-		"next": [
-			"任务执行前检查成功"
-		],
-		"interrupt": [
-			"返回主页",
-			"返回",
-			"大厅"
-		]
+		"next": ["任务执行前检查成功"],
+		"interrupt": ["返回主页", "返回", "大厅"]
 	},
 	"任务执行前检查成功": {
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"shop/百货商店按钮.png"
-				],
+				"template": ["shop/百货商店按钮.png"],
 				"green_mask": true,
-				"threshold": [
-					0.7
-				],
-				"roi": [
-					269,
-					406,
-					219,
-					134
-				]
+				"threshold": [0.7],
+				"roi": [269, 406, 219, 134]
 			}
 		},
 		"action": {
@@ -399,9 +304,7 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"点击进行下一步"
-				]
+				"expected": ["点击进行下一步"]
 			}
 		},
 		"action": {
@@ -419,19 +322,10 @@
 		"recognition": {
 			"type": "TemplateMatch",
 			"param": {
-				"template": [
-					"shop/百货商店按钮.png"
-				],
+				"template": ["shop/百货商店按钮.png"],
 				"green_mask": true,
-				"threshold": [
-					0.7
-				],
-				"roi": [
-					269,
-					406,
-					219,
-					134
-				]
+				"threshold": [0.7],
+				"roi": [269, 406, 219, 134]
 			}
 		},
 		"action": {
@@ -450,15 +344,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"大厅"
-				],
-				"roi": [
-					597,
-					671,
-					83,
-					48
-				]
+				"expected": ["大厅"],
+				"roi": [597, 671, 83, 48]
 			}
 		},
 		"action": {
@@ -473,17 +360,13 @@
 				"y": 1171
 			}
 		},
-		"next": [
-			"返回主页成功"
-		]
+		"next": ["返回主页成功"]
 	},
 	"点击任意处进行下一步": {
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"点击任意处进行下一步"
-				]
+				"expected": ["点击任意处进行下一步"]
 			}
 		},
 		"action": {
@@ -501,15 +384,8 @@
 		"recognition": {
 			"type": "OCR",
 			"param": {
-				"expected": [
-					"test"
-				],
-				"roi": [
-					449,
-					241,
-					383,
-					476
-				]
+				"expected": ["test"],
+				"roi": [449, 241, 383, 476]
 			}
 		},
 		"action": {
