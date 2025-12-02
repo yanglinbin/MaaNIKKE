@@ -368,8 +368,7 @@ __pycache__/
 *.pyc
 
 # Cake - Uncomment if you are using it
-# tools/**
-# !tools/packages.config
+
 
 # Tabs Studio
 *.tss
@@ -444,18 +443,5 @@ enc_temp_folder/*
 
 # Build
 deps/*
-build
-install
-
-# Tools
-tools/ImageCropper/**/*.png
 
 config
-debug
-buckup.md
-
-!deps/tools/
-
-configure.py
-install.py
-my_reco.py

@@ -78,35 +78,37 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MaaFramework
-          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
-          latest: true
+          fileName: "MAA-win-${{ matrix.arch }}*"
+          tag: "v5.1.0"
           out-file-path: "deps"
           extract: true
 
-      - name: Remove built-in runtime in MFA
-        if: matrix.os != 'android'
-        shell: bash
-        run: |
-          rm -rf MFA/runtimes
-
       - name: Download MFAAvalonia
-        if: matrix.os != 'android'
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
           repository: SweetSmellFox/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
-          latest: true
+          fileName: "MFAAvalonia-*-win-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
+          tag: "v2.0.5"
           out-file-path: "MFA"
           extract: true
 
-      - name: Clean up MFAAvalonia archive
-        if: matrix.os != 'android'
+      - name: Clean up MFAAvalonia archive on Windows
         shell: bash
         run: |
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
-          echo "Archive cleanup command executed for MFAAvalonia."
+          echo "Archive cleanup command executed for MFAAvalonia on Windows."
+
+      - name: Setup Embed Python on Windows
+        shell: bash
+        run: |
+          python tools/ci/setup_embed_python.py
+
+      - name: Download Python dependencies
+        shell: bash
+        run: |
+          ./install/python/python.exe tools/ci/download_deps.py --deps-dir install/deps
 
       - name: Install
         shell: bash

@@ -1,4 +1,0 @@
-# 地图可视化工具依赖
-networkx>=3.0
-matplotlib>=3.5.0
-
