@@ -1,0 +1,25 @@
+# MaaNIKKE Project Requirements
+
+# Core Maa Framework dependencies
+maa-framework>=1.0.0
+
+# OpenCV for image processing
+opencv-python>=4.8.0
+
+# NumPy for numerical computations
+numpy>=1.24.0
+
+# Other standard library dependencies (these are usually included with Python)
+# But listing them for completeness
+typing>=3.7.4
+pathlib>=1.0.1
+heapq>=1.0.0
+json>=2.0.9
+time>=1.0.0
+os>=1.0.0
+sys>=1.0.0
+collections>=1.0.0
+traceback>=1.0.0
+
+# For ImageCropper tool
+# Note: This tool seems to be a separate utility, not core to the main agent
