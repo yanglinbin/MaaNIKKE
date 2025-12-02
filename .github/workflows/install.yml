@@ -108,12 +108,12 @@ jobs:
       - name: Download Python dependencies
         shell: bash
         run: |
-          ./install/python/python.exe tools/ci/download_deps.py --deps-dir install/deps
+          python tools/ci/download_deps.py --deps-dir install/deps
 
       - name: Install
         shell: bash
         run: |
-          python ./install.py ${{ needs.meta.outputs.tag }}
+          python ./tools/ci/install.py ${{ needs.meta.outputs.tag }}
 
           if [[ "${{ matrix.os }}" != "android" ]]; then
             if [ -d "MFA" ]; then
