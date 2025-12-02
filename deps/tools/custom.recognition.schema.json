@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "custom_recognition": {
+            "type": "string",
+            "enum": [
+                "counter_check"
+            ],
+            "description": "自定义识别名称"
+        },
+        "custom_recognition_param": {
+            "type": "object",
+            "description": "自定义识别参数",
+            "oneOf": [
+                {
+                    "title": "counter_check - 计数器检测",
+                    "description": "检测计数器是否满足条件",
+                    "properties": {
+                        "counter_name": {
+                            "type": "string",
+                            "description": "计数器名称（必需）"
+                        },
+                        "count": {
+                            "type": "integer",
+                            "description": "目标计数（必需）"
+                        },
+                        "operator": {
+                            "type": "string",
+                            "enum": [
+                                "==",
+                                "!=",
+                                ">",
+                                "<",
+                                ">=",
+                                "<="
+                            ],
+                            "description": "比较运算符（默认 ==）",
+                            "default": "=="
+                        }
+                    },
+                    "required": [
+                        "counter_name",
+                        "count"
+                    ]
+                }
+            ]
+        }
+    }
+}

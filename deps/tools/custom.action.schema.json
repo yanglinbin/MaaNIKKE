@@ -1,0 +1,160 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "custom_action": {
+            "type": "string",
+            "enum": [
+                "DisableNode",
+                "EnableNode",
+                "NodeOverride",
+                "counter_increment",
+                "counter_reset",
+                "task_dispatcher",
+                "node_caller",
+                "map_movement"
+            ],
+            "description": "自定义动作名称"
+        },
+        "custom_action_param": {
+            "type": "object",
+            "description": "自定义动作参数",
+            "oneOf": [
+                {
+                    "title": "DisableNode - 禁用节点",
+                    "description": "将特定节点设置为禁用状态",
+                    "properties": {
+                        "node_name": {
+                            "type": "string",
+                            "description": "要禁用的节点名称"
+                        }
+                    },
+                    "required": [
+                        "node_name"
+                    ]
+                },
+                {
+                    "title": "EnableNode - 启用节点",
+                    "description": "将特定节点设置为启用状态",
+                    "properties": {
+                        "node_name": {
+                            "type": "string",
+                            "description": "要启用的节点名称"
+                        }
+                    },
+                    "required": [
+                        "node_name"
+                    ]
+                },
+                {
+                    "title": "NodeOverride - 批量覆盖节点配置",
+                    "description": "批量覆盖节点配置",
+                    "patternProperties": {
+                        ".*": {
+                            "type": "object",
+                            "description": "节点配置"
+                        }
+                    }
+                },
+                {
+                    "title": "counter_increment - 计数器递增",
+                    "description": "每次调用将指定计数器 +1",
+                    "properties": {
+                        "counter_name": {
+                            "type": "string",
+                            "description": "计数器名称（必需）"
+                        }
+                    },
+                    "required": [
+                        "counter_name"
+                    ]
+                },
+                {
+                    "title": "counter_reset - 重置计数器",
+                    "description": "重置计数器",
+                    "properties": {
+                        "counter_name": {
+                            "type": "string",
+                            "description": "计数器名称（可选，不指定则重置所有）"
+                        }
+                    }
+                },
+                {
+                    "title": "task_dispatcher - 任务分发器",
+                    "description": "按顺序依次执行多个任务（智能验证：非DirectHit节点自动验证）",
+                    "properties": {
+                        "tasks": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "任务列表"
+                        },
+                        "stop_on_error": {
+                            "type": "boolean",
+                            "description": "遇到错误是否停止（默认false）",
+                            "default": false
+                        },
+                        "retry_on_fail": {
+                            "type": "boolean",
+                            "description": "失败是否重试（默认false）",
+                            "default": false
+                        },
+                        "max_retries": {
+                            "type": "integer",
+                            "description": "最大重试次数（默认3）",
+                            "default": 3
+                        }
+                    },
+                    "required": [
+                        "tasks"
+                    ]
+                },
+                {
+                    "title": "node_caller - 节点调用器",
+                    "description": "调用指定节点并执行，完成后继续pipeline",
+                    "properties": {
+                        "node_name": {
+                            "type": "string",
+                            "description": "要调用的节点名称（必需）"
+                        },
+                        "override_node": {
+                            "type": "object",
+                            "description": "覆盖节点配置（可选）"
+                        }
+                    },
+                    "required": [
+                        "node_name"
+                    ]
+                },
+                {
+                    "title": "map_movement - 地图移动",
+                    "description": "自动寻路并执行地图移动",
+                    "properties": {
+                        "move_destination": {
+                            "type": "string",
+                            "description": "目标节点名称（必需）"
+                        },
+                        "current_location": {
+                            "type": "string",
+                            "description": "当前节点名称（可选，不提供则自动检测）"
+                        },
+                        "verify_arrival": {
+                            "type": "boolean",
+                            "description": "是否验证到达（默认true）",
+                            "default": true
+                        },
+                        "detection_timeout": {
+                            "type": "integer",
+                            "description": "自动检测超时时间/秒（默认15）",
+                            "default": 15
+                        }
+                    },
+                    "required": [
+                        "move_destination"
+                    ]
+                }
+            ]
+        }
+    }
+}

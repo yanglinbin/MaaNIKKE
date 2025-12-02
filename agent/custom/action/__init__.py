@@ -1,6 +1,7 @@
 # 动作处理器模块
-# 如需添加自定义动作，在此导入
+# 自动导入所有自定义动作
 
-__all__ = [
-    # 在此添加动作类名
-]
+from .node_control import *
+from .counter import *
+from .task_control import *
+from .map import *

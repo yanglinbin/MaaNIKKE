@@ -443,7 +443,7 @@ enc_temp_folder/*
 .nuke/temp/*
 
 # Build
-deps
+deps/*
 build
 install
 
@@ -453,3 +453,9 @@ tools/ImageCropper/**/*.png
 config
 debug
 buckup.md
+
+!deps/tools/
+
+configure.py
+install.py
+my_reco.py

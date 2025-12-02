@@ -1,0 +1,1840 @@
+{
+	"map主页": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"roi": [
+					269,
+					406,
+					219,
+					134
+				],
+				"expected": [
+					"商店"
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map方舟"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								910,
+								485,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map百货商店"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								390,
+								493,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map付费商店"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								387,
+								449,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map妮姬"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								499,
+								661,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map前哨基地"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								396,
+								555,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map邮箱"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								1216,
+								15,
+								20,
+								19
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map防御前哨基地"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								325,
+								589,
+								73,
+								37
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map任务面板"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								1105,
+								60,
+								17,
+								21
+							]
+						}
+					},
+					"action_delay": 3000
+				},
+				{
+					"next_map": [
+						"map通行证"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								0,
+								0,
+								0,
+								0
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map好友"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								1243,
+								173,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map方舟": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"方舟"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map无限之塔"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								728,
+								208,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map模拟室"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								518,
+								333,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map竞技场"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								749,
+								394,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map拦截战"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								554,
+								524,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map无限之塔": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"可选择任"
+				],
+				"roi": [
+					594,
+					103,
+					91,
+					24
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map极乐净土塔"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								499,
+								495,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map米西利斯塔"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								592,
+								495,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map泰特拉塔"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								686,
+								495,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map朝圣塔"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								778,
+								497,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map模拟室": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"模拟室"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map竞技场": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map新人竞技场"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								540,
+								383,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map特殊竞技场"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								735,
+								379,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map百货商店": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"百货商店"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"include_node": [
+			"map普通商店",
+			"map竞技场商店"
+		],
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map普通商店"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								29,
+								282,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map竞技场商店"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								27,
+								453,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map付费商店": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"付费商店"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"include_node": [
+			"map普通礼包"
+		],
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map普通礼包"
+					],
+					"recognition": {
+						"type": "TemplateMatch",
+						"param": {
+							"template": [
+								"shop/普通礼包.png"
+							],
+							"roi": [
+								57,
+								128,
+								192,
+								63
+							],
+							"green_mask": true
+						}
+					},
+					"action": {
+						"type": "Click",
+						"param": {}
+					}
+				}
+			]
+		}
+	},
+	"map妮姬": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"妮姬"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map咨询"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								1115,
+								85,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map主页"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								639,
+								664,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map咨询": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"咨询"
+				],
+				"roi": [
+					592,
+					53,
+					92,
+					36
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map妮姬咨询"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								208,
+								225,
+								149,
+								48
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map极乐净土塔": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"ELYSION"
+				],
+				"roi": [
+					584,
+					598,
+					110,
+					29
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map米西利斯塔": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"米西利斯"
+				],
+				"roi": [
+					592,
+					611,
+					94,
+					46
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map泰特拉塔": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"泰特拉"
+				],
+				"roi": [
+					592,
+					611,
+					94,
+					46
+				],
+				"replace": [
+					[
+						"E",
+						"泰"
+					]
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map朝圣塔": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"朝圣"
+				],
+				"roi": [
+					592,
+					611,
+					94,
+					46
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map新人竞技场": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^新人竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map特殊竞技场": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^特殊竞技场$"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				],
+				"replace": [
+					[
+						"寺",
+						"特"
+					]
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map普通商店": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"普通商店"
+				],
+				"roi": [
+					67,
+					257,
+					100,
+					36
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map竞技场商店"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								27,
+								453,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map竞技场商店": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"竞技场商店"
+				],
+				"roi": [
+					67,
+					257,
+					100,
+					36
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map普通商店"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								29,
+								282,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map普通礼包": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"普通礼包"
+				],
+				"roi": [
+					575,
+					46,
+					131,
+					42
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"include_node": [
+			"map每日",
+			"map每周",
+			"map每月"
+		],
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每日"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								182,
+								201,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每周"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								292,
+								203,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每月"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								403,
+								205,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map每日": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"lower": [
+					15,
+					195,
+					240
+				],
+				"upper": [
+					20,
+					200,
+					245
+				],
+				"roi": [
+					139,
+					193,
+					26,
+					18
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每周"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								292,
+								203,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每月"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								403,
+								205,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map拦截战": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"(异常个体|拦截战)"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"include_node": [
+			"map异常个体拦截战",
+			"map普通拦截战"
+		],
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map异常个体拦截战"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								785,
+								650,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map普通拦截战"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								708,
+								651,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map异常个体拦截战": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"异常个体"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map普通拦截战"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								708,
+								651,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map普通拦截战": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"^拦截战$"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map异常个体拦截战"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								785,
+								650,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"->map主页": {
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					110,
+					677,
+					1,
+					1
+				]
+			}
+		},
+		"cutscene": "cutscene"
+	},
+	"map每周": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"lower": [
+					15,
+					195,
+					240
+				],
+				"upper": [
+					20,
+					200,
+					245
+				],
+				"roi": [
+					250,
+					195,
+					27,
+					17
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每日"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								182,
+								201,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每月"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								403,
+								205,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map每月": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"lower": [
+					15,
+					195,
+					240
+				],
+				"upper": [
+					20,
+					200,
+					245
+				],
+				"roi": [
+					361,
+					195,
+					27,
+					16
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每日"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								182,
+								201,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每周"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								292,
+								203,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"->上一级": {
+		"action": {
+			"type": "Click",
+			"param": {
+				"target": [
+					21,
+					678,
+					1,
+					1
+				]
+			}
+		},
+		"cutscene": "cutscene"
+	},
+	"map前哨基地": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"前哨基地"
+				],
+				"roi": [
+					0,
+					0,
+					65,
+					56
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map派遣公告栏"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								666,
+								679,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map派遣公告栏": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"派遣公告栏"
+				],
+				"roi": [
+					482,
+					92,
+					111,
+					34
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"back_map": [
+						"map前哨基地"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								807,
+								94,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map妮姬咨询": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"咨询日志"
+				],
+				"roi": [
+					759,
+					442,
+					56,
+					25
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true
+	},
+	"map邮箱": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"邮箱"
+				],
+				"roi": [
+					588,
+					41,
+					113,
+					89
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"back_map": [
+						"map主页"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								797,
+								94,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map防御前哨基地": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"防御前哨基地"
+				],
+				"roi": [
+					482,
+					69,
+					160,
+					47
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"back_map": [
+						"map主页"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								799,
+								87,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map任务面板": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"mission"
+				],
+				"roi": [
+					590,
+					57,
+					101,
+					45
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"include_node": [
+			"map每日任务",
+			"map每周任务",
+			"map成就"
+		],
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每日任务"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								508,
+								130,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每周任务"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								601,
+								130,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map成就"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								787,
+								132,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"back_map": [
+						"map主页"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								807,
+								49,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map好友": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"好友"
+				],
+				"roi": [
+					605,
+					71,
+					80,
+					37
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"back_map": [
+						"map主页"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								799,
+								87,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map通行证": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"通行证"
+				],
+				"roi": [
+					0,
+					0,
+					0,
+					0
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"path": {
+			"path_list": [
+				{
+					"back_map": [
+						"map主页"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								778,
+								70,
+								42,
+								37
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map每日任务": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"DAILY"
+				],
+				"roi": [
+					464,
+					173,
+					64,
+					54
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每周任务"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								601,
+								130,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map成就"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								787,
+								132,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map每周任务": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"WEEKLY"
+				],
+				"roi": [
+					470,
+					176,
+					74,
+					46
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每日任务"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								508,
+								130,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map成就"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								787,
+								132,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"map成就": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": [
+					"CHALLENGE"
+				],
+				"roi": [
+					470,
+					178,
+					118,
+					48
+				]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"return_home": true,
+		"path": {
+			"path_list": [
+				{
+					"next_map": [
+						"map每日任务"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								508,
+								130,
+								1,
+								1
+							]
+						}
+					}
+				},
+				{
+					"next_map": [
+						"map每周任务"
+					],
+					"action": {
+						"type": "Click",
+						"param": {
+							"target": [
+								601,
+								130,
+								1,
+								1
+							]
+						}
+					}
+				}
+			]
+		}
+	}
+}
