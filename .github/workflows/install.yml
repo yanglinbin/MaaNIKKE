@@ -83,7 +83,7 @@ jobs:
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-win-${{ matrix.arch }}*"
-          tag: "v5.1.3"
+          tag: "v5.2.0"
           out-file-path: "deps"
           extract: true
 
