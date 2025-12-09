@@ -114,7 +114,7 @@ jobs:
         run: |
           ./install/python/python.exe tools/ci/download_deps.py --deps-dir install/deps
 
-      - name: Install
+      - name: Install Application
         shell: bash
         run: |
           ./install/python/python.exe ./tools/ci/install.py ${{ needs.meta.outputs.tag }}

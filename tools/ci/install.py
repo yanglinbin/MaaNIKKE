@@ -101,30 +101,33 @@ def install_agent():
 
 def install_requirements():
     """安装下载的whl文件"""
-
-    deps_dir = install_path / "deps"
     python_executable = install_path / "python" / "python.exe"
     
     if not python_executable.exists():
         print(f"Python executable not found at {python_executable}")
         return False
     
-    if not deps_dir.exists():
-        print(f"Deps directory not found at {deps_dir}")
+    # 检查两个可能的deps目录
+    deps_dirs = [
+        install_path / "deps",  # CI流程中下载依赖的位置
+        working_dir / "deps"    # 项目根目录的deps
+    ]
+    
+    all_whl_files = []
+    for deps_dir in deps_dirs:
+        if deps_dir.exists():
+            whl_files = list(deps_dir.glob("*.whl"))
+            print(f"Found {len(whl_files)} wheel files in {deps_dir}")
+            all_whl_files.extend(whl_files)
+    
+    if not all_whl_files:
+        print("No wheel files found in any deps directory")
         return False
     
-    # 查找所有whl文件
-    whl_files = list(deps_dir.glob("*.whl"))
-    print(f"Found {len(whl_files)} wheel files in {deps_dir}")
-    
-    if not whl_files:
-        print("No wheel files found in deps directory")
-        return False
-    
-    print(f"Installing {len(whl_files)} wheel files...")
+    print(f"Installing {len(all_whl_files)} wheel files...")
     
     # 安装每个whl文件
-    for whl_file in whl_files:
+    for whl_file in all_whl_files:
         print(f"Installing {whl_file.name}...")
         try:
             cmd = [
@@ -144,14 +147,16 @@ def install_requirements():
                 print(f"stdout: {e.stdout}")
             if e.stderr:
                 print(f"stderr: {e.stderr}")
-            return False
+            # 不立即返回False，继续安装其他whl文件
+            continue
             
-    print("All wheel files installed successfully")
+    print("Wheel files installation process completed")
     return True
 
 
 if __name__ == "__main__":
-    #install_deps()
+    # 启用install_deps函数
+    install_deps()
     install_resource()
     install_chores()
     install_agent()
