@@ -101,19 +101,22 @@ def install_agent():
 
 def install_requirements():
     """安装下载的whl文件"""
-    deps_dir = working_dir / "deps"
+
+    deps_dir = install_path / "deps"
     python_executable = install_path / "python" / "python.exe"
     
     if not python_executable.exists():
         print(f"Python executable not found at {python_executable}")
         return False
-        
+    
     if not deps_dir.exists():
         print(f"Deps directory not found at {deps_dir}")
         return False
     
     # 查找所有whl文件
     whl_files = list(deps_dir.glob("*.whl"))
+    print(f"Found {len(whl_files)} wheel files in {deps_dir}")
+    
     if not whl_files:
         print("No wheel files found in deps directory")
         return False
