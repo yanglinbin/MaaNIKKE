@@ -3,6 +3,7 @@ from pathlib import Path
 import shutil
 import sys
 import json
+import subprocess
 
 import os
 import sys
@@ -97,10 +98,62 @@ def install_agent():
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         json.dump(interface, f, ensure_ascii=False, indent=4)
 
+
+def install_requirements():
+    """安装下载的whl文件"""
+    deps_dir = working_dir / "deps"
+    python_executable = install_path / "python" / "python.exe"
+    
+    if not python_executable.exists():
+        print(f"Python executable not found at {python_executable}")
+        return False
+        
+    if not deps_dir.exists():
+        print(f"Deps directory not found at {deps_dir}")
+        return False
+    
+    # 查找所有whl文件
+    whl_files = list(deps_dir.glob("*.whl"))
+    if not whl_files:
+        print("No wheel files found in deps directory")
+        return False
+    
+    print(f"Installing {len(whl_files)} wheel files...")
+    
+    # 安装每个whl文件
+    for whl_file in whl_files:
+        print(f"Installing {whl_file.name}...")
+        try:
+            cmd = [
+                str(python_executable),
+                "-m", "pip", "install",
+                str(whl_file),
+                "--no-deps",  # 不安装依赖，因为我们已经下载了所有依赖
+                "--force-reinstall",  # 强制重新安装
+                "--no-index",  # 不连接PyPI
+            ]
+            
+            result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+            print(f"Successfully installed {whl_file.name}")
+        except subprocess.CalledProcessError as e:
+            print(f"Failed to install {whl_file.name}: {e}")
+            if e.stdout:
+                print(f"stdout: {e.stdout}")
+            if e.stderr:
+                print(f"stderr: {e.stderr}")
+            return False
+            
+    print("All wheel files installed successfully")
+    return True
+
+
 if __name__ == "__main__":
     #install_deps()
     install_resource()
     install_chores()
     install_agent()
+    
+    # 安装whl文件
+    install_requirements()
 
     print(f"Install to {install_path} successfully.")
