@@ -1,113 +1,400 @@
 {
-	"妮姬": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map妮姬"}}
-		},
-		"next": ["待咨询任务检测"]
-	},
-	"待咨询任务检测": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [1028, 46, 159, 80], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入咨询页面"]
-	},
-	"开始妮姬咨询": {
-		"recognition": {"type": "OCR", "param": {"expected": ["咨询"], "roi": [642, 561, 170, 67]}},
-		"action": {"type": "Click", "param": {}},
-		"post_delay": 500,
-		"next": ["确认开始咨询", "开始妮姬咨询"]
-	},
-	"确认开始咨询": {
-		"recognition": {"type": "OCR", "param": {"expected": ["确认"], "roi": [633, 410, 191, 75]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["成功进入妮姬咨询页面"]
-	},
-	"成功进入妮姬咨询页面": {
-		"recognition": {"type": "OCR", "param": {"expected": ["HIDE"], "roi": [973, 0, 306, 54]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["推进"]
-	},
-	"推进": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [646, 391, 1, 1]}},
-		"next": ["当前妮姬咨询完毕", "随机选择", "推进"]
-	},
-	"当前妮姬咨询完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["咨询"], "roi": [0, 0, 91, 52]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"post_delay": 1000,
-		"next": [
-			"检查好感度升级",
-			"[JumpBack]好感度升级"
-		]
-	},
-	"妮姬已咨询": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [63, 63, 63], "upper": [76, 76, 76], "roi": [663, 598, 19, 17]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["切换咨询妮姬"]
-	},
-	"切换咨询妮姬": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["consultation/切换咨询妮姬.png"], "green_mask": true}
-		},
-		"action": {"type": "Click", "param": {}}
-	},
-	"随机选择": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"roi": [441, 443, 71, 131], "template": ["consultation/1.png"], "green_mask": true}
-		},
-		"action": {"type": "Click", "param": {"target_offset": [40, 0, 0, 0]}},
-		"next": ["推进"]
-	},
-	"好感度升级": {
-		"recognition": {"type": "OCR", "param": {"expected": ["RANK"], "roi": [503, 172, 269, 60]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["点击xx"]
-	},
-	"检查好感度升级": {
-		"recognition": {"type": "OCR", "param": {"expected": ["RANK"], "roi": [491, 403, 81, 27]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["切换咨询妮姬"]
-	},
-	"进入咨询页面": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map妮姬咨询", "current_location": "map妮姬"}
-			}
-		},
-		"next": ["妮姬咨询分支"]
-	},
-	"妮姬咨询分支": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": [
-			"妮姬咨询完成",
-			"[JumpBack]妮姬未咨询",
-			"[JumpBack]妮姬已咨询"
-		]
-	},
-	"妮姬未咨询": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [50, 125, 190], "upper": [55, 132, 200], "roi": [663, 598, 19, 17]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["开始妮姬咨询"]
-	},
-	"妮姬咨询完成": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^0/10$"], "roi": [731, 598, 26, 14]}},
-		"action": {"type": "DoNothing", "param": {}}
-	}
+  "切换咨询妮姬": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "template": [
+          "consultation/切换咨询妮姬.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "好感度升级": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "RANK"
+        ],
+        "roi": [
+          503,
+          172,
+          269,
+          60
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "妮姬咨询": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map妮姬"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "待咨询任务检测",
+      "妮姬咨询任务完成_1"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "妮姬咨询任务完成_1": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "妮姬咨询分支": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "妮姬咨询次数到达上限",
+      {
+        "jump_back": true,
+        "name": "妮姬未咨询"
+      },
+      {
+        "jump_back": true,
+        "name": "妮姬已咨询"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "妮姬咨询次数到达上限": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {
+        "expected": [
+          "^0/10$"
+        ],
+        "replace": [
+          [
+            "0/0",
+            "0/10"
+          ]
+        ],
+        "roi": [
+          733,
+          597,
+          32,
+          20
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "妮姬已咨询": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "切换咨询妮姬"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          63,
+          63,
+          63
+        ],
+        "roi": [
+          663,
+          598,
+          19,
+          17
+        ],
+        "upper": [
+          76,
+          76,
+          76
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "妮姬未咨询": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "开始妮姬咨询"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          50,
+          125,
+          190
+        ],
+        "roi": [
+          663,
+          598,
+          19,
+          17
+        ],
+        "upper": [
+          55,
+          132,
+          200
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "开始妮姬咨询": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "确认开始咨询",
+      "开始妮姬咨询"
+    ],
+    "post_delay": 500,
+    "recognition": {
+      "param": {
+        "expected": [
+          "咨询"
+        ],
+        "roi": [
+          642,
+          561,
+          170,
+          67
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "当前妮姬咨询完毕": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "检查好感度升级",
+      {
+        "jump_back": true,
+        "name": "好感度升级"
+      }
+    ],
+    "post_delay": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "咨询"
+        ],
+        "roi": [
+          0,
+          0,
+          91,
+          52
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "待咨询任务检测": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入咨询页面"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          250,
+          90,
+          20
+        ],
+        "roi": [
+          1148,
+          69,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          100,
+          30
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "成功进入妮姬咨询页面": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "推进"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "HIDE"
+        ],
+        "roi": [
+          973,
+          0,
+          306,
+          54
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "推进": {
+    "action": {
+      "param": {
+        "target": [
+          646,
+          391,
+          1,
+          1
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "当前妮姬咨询完毕",
+      "随机选择",
+      "推进"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "检查好感度升级": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "切换咨询妮姬"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "RANK"
+        ],
+        "roi": [
+          491,
+          403,
+          81,
+          27
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "确认开始咨询": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "成功进入妮姬咨询页面"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "确认"
+        ],
+        "roi": [
+          633,
+          410,
+          191,
+          75
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "进入咨询页面": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map妮姬",
+          "move_destination": "map妮姬咨询"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "妮姬咨询分支"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "随机选择": {
+    "action": {
+      "param": {
+        "target_offset": [
+          40,
+          0,
+          0,
+          0
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "推进"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          441,
+          443,
+          71,
+          131
+        ],
+        "template": [
+          "consultation/1.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  }
 }

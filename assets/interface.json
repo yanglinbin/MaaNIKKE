@@ -27,10 +27,6 @@
 	},
 	"task": [
 		{
-			"name": "test",
-			"entry": "test"
-		},
-		{
 			"name": "方舟",
 			"entry": "方舟",
 			"option": [
@@ -45,9 +41,9 @@
 			]
 		},
 		{
-			"name": "妮姬",
-			"entry": "妮姬",
-			"option": ["妮姬咨询"]
+			"name": "妮姬咨询",
+			"entry": "妮姬咨询",
+			"option": ["妮姬咨询次数上限"]
 		},
 		{
 			"name": "百货商店",
@@ -88,6 +84,88 @@
 		}
 	],
 	"option": {
+		"妮姬咨询次数上限": {
+			"cases": [
+				{
+					"name": "5",
+					"pipeline_override": {
+						"妮姬咨询次数到达上限": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["^0/5$"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "6",
+					"pipeline_override": {
+						"妮姬咨询次数到达上限": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["^0/6$"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "7",
+					"pipeline_override": {
+						"妮姬咨询次数到达上限": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["^0/7$"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "8",
+					"pipeline_override": {
+						"妮姬咨询次数到达上限": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["^0/8$"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "9",
+					"pipeline_override": {
+						"妮姬咨询次数到达上限": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["^0/9$"]
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "10",
+					"pipeline_override": {
+						"妮姬咨询次数到达上限": {
+							"recognition": {
+								"type": "OCR",
+								"param": {
+									"expected": ["^0/10$"]
+								}
+							}
+						}
+					}
+				}
+			]
+		},
 		"防御基地奖励领取": {
 			"cases": [
 				{
@@ -97,7 +175,7 @@
 				{
 					"name": "No",
 					"pipeline_override": {
-						"活防御基地奖励领取": {
+						"防御基地奖励领取": {
 							"enabled": false
 						}
 					}

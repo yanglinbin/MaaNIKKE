@@ -1,601 +1,1806 @@
 {
-	"拦截战": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map拦截战"}}
-		},
-		"focus": "开始拦截战任务",
-		"next": ["异常个体拦截战"]
-	},
-	"选择boss": {
-		"recognition": {"type": "OCR", "param": {"expected": ["克拉肯"], "roi": [530, 517, 224, 44]}},
-		"action": {"type": "Click", "param": {"target": [590, 571, 102, 32]}},
-		"next": ["准备战斗"]
-	},
-	"准备战斗": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {}},
-		"focus": "准备拦截战战斗",
-		"timeout": 300000,
-		"next": ["拦截战任务完成", "[JumpBack]快速战斗", "[JumpBack]进入拦截战战斗"]
-	},
-	"切换boss": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [754, 530, 19, 21]}}
-	},
-	"快速战斗": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [250, 106, 47], "upper": [250, 107, 48], "method": 4, "roi": [655, 598, 39, 30]}
-		},
-		"action": {"type": "Click", "param": {"target": [664, 598, 154, 25]}},
-		"post_delay": 1500,
-		"next": ["点击xx"]
-	},
-	"进入拦截战战斗": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [220, 30, 20], "upper": [250, 70, 50], "roi": [663, 644, 29, 36], "method": 4}
-		},
-		"action": {"type": "Click", "param": {"target": [681, 646, 120, 37]}},
-		"next": ["boss战开始"]
-	},
-	"拦截战任务完成": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [101, 102, 104], "upper": [101, 103, 105], "roi": [651, 595, 47, 34]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["拦截战_调用通用返回"]
-	},
-	"方舟任务分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["方舟任务完成", "[JumpBack]无限之塔", "[JumpBack]拦截战", "[JumpBack]模拟室", "[JumpBack]竞技场"]
-	},
-	"模拟室": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map模拟室"}}
-		},
-		"focus": "开始模拟室任务",
-		"next": ["首次模拟室检测"]
-	},
-	"无限之塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map无限之塔"}}
-		},
-		"pre_delay": 1000,
-		"next": ["无限之塔任务分发"]
-	},
-	"模拟室重置": {
-		"recognition": {"type": "OCR", "param": {"expected": ["模拟室超频的奖励"], "roi": [551, 340, 173, 54]}},
-		"action": {"type": "Click", "param": {"target": [602, 414, 73, 19]}}
-	},
-	"模拟室快速模拟": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["开始模拟", "[JumpBack]模拟室重置"]
-	},
-	"开始模拟": {
-		"recognition": {"type": "OCR", "param": {"expected": ["开始模拟"], "roi": [570, 395, 150, 56]}},
-		"action": {"type": "Click", "param": {}},
-		"post_delay": 1000,
-		"next": ["快速模拟", "[JumpBack]选择难度5", "[JumpBack]选择c区"]
-	},
-	"快速模拟": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [250, 125, 25], "upper": [250, 127, 30], "roi": [644, 602, 47, 40], "method": 4}
-		},
-		"action": {"type": "Click", "param": {"target": [666, 607, 130, 28]}},
-		"focus": "开始快速模拟",
-		"post_delay": 1500,
-		"next": ["模拟结束"]
-	},
-	"选择难度5": {
-		"recognition": {"type": "TemplateMatch", "param": {"template": ["ark/难度5.png"], "roi": [690, 174, 166, 164]}},
-		"action": {"type": "Click", "param": {"target": [740, 224, 66, 64]}}
-	},
-	"选择c区": {
-		"recognition": {"type": "OCR", "param": {"expected": ["SELECTED"], "roi": [710, 460, 96, 23]}},
-		"action": {"type": "Click", "param": {"target": [728, 351, 52, 89]}},
-		"inverse": true
-	},
-	"模拟结束": {
-		"recognition": {"type": "OCR", "param": {"expected": ["模拟结束"], "roi": [441, 294, 392, 422]}},
-		"action": {"type": "Click", "param": {}},
-		"post_delay": 1000,
-		"next": ["模拟结束", "模拟室返回方舟"]
-	},
-	"企业塔战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进入战斗"], "roi": [662, 623, 183, 83]}},
-		"action": {"type": "Click", "param": {}},
-		"timeout": 240000,
-		"next": ["企业塔战斗结束"]
-	},
-	"企业塔备战": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [589, 251, 101, 92]}},
-		"post_delay": 500,
-		"next": ["企业塔战斗", "企业塔备战"]
-	},
-	"极乐净土塔未挑战完毕": {
-		"recognition": {
-			"type": "OCR",
-			"param": {"expected": ["(每日通关1/3|每日通关2/3|每日通关3/3)"], "roi": [464, 592, 71, 34]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入极乐净土塔"]
-	},
-	"企业塔楼层跳转": {
-		"recognition": {"type": "TemplateMatch", "param": {"template": ["ark/企业塔内部楼层跳转按钮.png"]}},
-		"action": {"type": "Click", "param": {}},
-		"post_wait_freezes": 500,
-		"next": ["企业塔备战"]
-	},
-	"企业塔战斗结束": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处进行下"], "roi": [555, 579, 170, 116]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"pre_delay": 500,
-		"rate_limit": 2000,
-		"next": ["企业塔下一关", "企业塔战斗结算"]
-	},
-	"进入极乐净土塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map极乐净土塔", "current_location": "map无限之塔"}
-			}
-		},
-		"next": ["企业塔楼层跳转"]
-	},
-	"进入米西利斯塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map米西利斯塔", "current_location": "map无限之塔"}
-			}
-		},
-		"next": ["企业塔楼层跳转"]
-	},
-	"进入泰特拉塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map泰特拉塔", "current_location": "map无限之塔"}
-			}
-		},
-		"next": ["企业塔楼层跳转"]
-	},
-	"进入朝圣塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map朝圣塔", "current_location": "map无限之塔"}
-			}
-		},
-		"next": ["企业塔楼层跳转"]
-	},
-	"企业塔战斗结算": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "点击xx"}}
-		},
-		"next": ["关闭无限之塔战斗准备页面", "返回无限之塔"]
-	},
-	"关闭无限之塔战斗准备页面": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["ark/无限之塔战斗准备关闭按钮.png"], "green_mask": true, "roi": [741, 292, 179, 171]}
-		},
-		"action": {"type": "Click", "param": {}},
-		"next": ["返回无限之塔"]
-	},
-	"竞技场": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map竞技场"}}
-		},
-		"focus": "开始竞技场任务",
-		"next": ["竞技场任务分发"]
-	},
-	"开始挑战竞技场": {
-		"recognition": {"type": "OCR", "param": {"expected": ["免费"], "roi": [737, 467, 85, 109]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["竞技场快速战斗", "[JumpBack]开启竞技场快速战斗"]
-	},
-	"竞技场快速战斗": {
-		"recognition": {
-			"type": "OCR",
-			"param": {"expected": ["ON"], "roi": [495, 562, 116, 58], "replace": [["0", "O"]]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入竞技场战斗"]
-	},
-	"开启竞技场快速战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OFF"], "roi": [493, 580, 120, 42]}},
-		"action": {"type": "Click", "param": {}},
-		"focus": "开启快速战斗"
-	},
-	"新人竞技场挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["免费"], "roi": [737, 467, 85, 109]}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "counter_increment", "custom_action_param": {"counter_name": "竞技场"}}
-		},
-		"inverse": true,
-		"next": ["关闭新人竞技场入口_调用"]
-	},
-	"进入竞技场战斗": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进入战斗"], "roi": [639, 561, 154, 59]}},
-		"action": {"type": "Click", "param": {}},
-		"timeout": 240000,
-		"next": ["新人竞技场_调用点击xx"]
-	},
-	"特殊竞技场挑战完毕": {
-		"recognition": {"type": "OCR", "param": {"expected": ["免费"], "roi": [737, 467, 85, 109]}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "counter_increment", "custom_action_param": {"counter_name": "竞技场"}}
-		},
-		"inverse": true,
-		"next": ["关闭特殊竞技场入口_调用"]
-	},
-	"竞技场任务分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "counter_reset", "custom_action_param": {"counter_name": "竞技场"}}
-		},
-		"next": ["竞技场返回到方舟", "[JumpBack]新人竞技场", "[JumpBack]特殊竞技场"]
-	},
-	"领取特殊竞技场奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["TOUCH"], "roi": [536, 104, 65, 61]}},
-		"action": {"type": "Click", "param": {"target": [621, 134, 38, 43]}},
-		"next": ["确定领取特殊竞技场奖励"]
-	},
-	"确定领取特殊竞技场奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["领取奖励"], "roi": [375, 511, 531, 197]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["完成特殊竞技场奖励领取任务"]
-	},
-	"完成特殊竞技场奖励领取任务": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "领取特殊竞技场奖励"}}
-		},
-		"next": ["特殊竞技场_调用点击xx"]
-	},
-	"首次模拟室检测": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "green_mask": true, "roi": [679, 381, 54, 50]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["模拟室快速模拟", "模拟室返回方舟"]
-	},
-	"新人竞技场": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["新人竞技场未完成", "新人竞技场已完成"]
-	},
-	"新人竞技场未完成": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [611, 307, 30, 38], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入新人竞技场"]
-	},
-	"异常个体拦截战": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map异常个体拦截战", "current_location": "map拦截战"}
-			}
-		},
-		"next": ["选择boss", "[JumpBack]切换boss"]
-	},
-	"无限之塔任务分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": [
-			"[JumpBack]极乐净土塔",
-			"[JumpBack]米西利斯塔",
-			"[JumpBack]泰特拉塔",
-			"[JumpBack]朝圣塔",
-			"无限之塔任务完成"
-		]
-	},
-	"进入新人竞技场": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map新人竞技场", "current_location": "map竞技场"}
-			}
-		},
-		"next": ["新人竞技场挑战完毕", "[JumpBack]开始挑战竞技场"]
-	},
-	"进入特殊竞技场": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map特殊竞技场", "current_location": "map竞技场"}
-			}
-		},
-		"next": ["特殊竞技场挑战完毕", "[JumpBack]领取特殊竞技场奖励", "[JumpBack]开始挑战竞技场"]
-	},
-	"极乐净土塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [457, 362, 89, 52]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["极乐净土塔未挑战完毕", "极乐净土塔挑战完毕"]
-	},
-	"返回到map竞技场": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map竞技场"}}
-		},
-		"post_delay": 1000
-	},
-	"方舟": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["方舟任务分发"]
-	},
-	"企业塔下一关": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [0, 155, 240], "upper": [0, 180, 255], "roi": [1165, 661, 21, 37]}
-		},
-		"action": {"type": "Click", "param": {"target": [1161, 667, 83, 25]}},
-		"timeout": 240000,
-		"post_delay": 5000,
-		"next": ["企业塔战斗结束"]
-	},
-	"新人竞技场_调用点击xx": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "点击xx"}}
-		},
-		"next": ["map新人竞技场", "map特殊竞技场"]
-	},
-	"特殊竞技场_调用点击xx": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "点击xx"}}
-		}
-	},
-	"模拟室返回方舟": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map方舟", "current_location": "map模拟室"}
-			}
-		},
-		"next": ["模拟室完成"]
-	},
-	"拦截战_调用通用返回": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "->上一级"}}
-		},
-		"post_delay": 1000,
-		"next": ["拦截战返回方舟"]
-	},
-	"拦截战返回方舟": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map方舟", "current_location": "map拦截战"}
-			}
-		},
-		"next": ["拦截战完成"]
-	},
-	"竞技场返回到方舟": {
-		"recognition": {
-			"type": "Custom",
-			"param": {
-				"custom_recognition": "counter_check",
-				"custom_recognition_param": {"counter_name": "竞技场", "count": 2}
-			}
-		},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map方舟", "current_location": "map竞技场"}
-			}
-		},
-		"next": ["竞技场完成"]
-	},
-	"泰特拉塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [642, 363, 91, 50]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["泰特拉塔未挑战完毕", "泰特拉塔挑战完毕"]
-	},
-	"米西利斯塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [548, 362, 92, 40]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["米西利斯塔未挑战完毕", "米西利斯塔挑战完毕"]
-	},
-	"朝圣塔": {
-		"recognition": {"type": "OCR", "param": {"expected": ["OPEN"], "roi": [733, 362, 91, 37]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["朝圣塔未挑战完毕", "朝圣塔挑战完毕"]
-	},
-	"米西利斯塔未挑战完毕": {
-		"recognition": {
-			"type": "OCR",
-			"param": {"expected": ["(每日通关1/3|每日通关2/3|每日通关3/3)"], "roi": [551, 593, 85, 31]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入米西利斯塔"]
-	},
-	"泰特拉塔未挑战完毕": {
-		"recognition": {
-			"type": "OCR",
-			"param": {"expected": ["(每日通关1/3|每日通关2/3|每日通关3/3)"], "roi": [647, 588, 79, 40]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入泰特拉塔"]
-	},
-	"朝圣塔未挑战完毕": {
-		"recognition": {
-			"type": "OCR",
-			"param": {"expected": ["(每日通关1/3|每日通关2/3|每日通关3/3)"], "roi": [732, 594, 91, 34]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入朝圣塔"]
-	},
-	"极乐净土塔挑战完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "极乐净土塔"}}
-		}
-	},
-	"米西利斯塔挑战完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "米西利斯塔"}}
-		}
-	},
-	"泰特拉塔挑战完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "泰特拉塔"}}
-		}
-	},
-	"朝圣塔挑战完毕": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "朝圣塔"}}
-		}
-	},
-	"返回无限之塔": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map无限之塔"}}
-		},
-		"next": ["map无限之塔"]
-	},
-	"特殊竞技场未完成": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [793, 307, 43, 42], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入特殊竞技场"]
-	},
-	"特殊竞技场": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["特殊竞技场未完成", "特殊竞技场已完成"]
-	},
-	"新人竞技场已完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "counter_increment", "custom_action_param": {"counter_name": "竞技场"}}
-		},
-		"next": ["关闭新人竞技场入口"]
-	},
-	"特殊竞技场已完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "counter_increment", "custom_action_param": {"counter_name": "竞技场"}}
-		},
-		"next": ["关闭特殊竞技场入口"]
-	},
-	"关闭新人竞技场入口": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "新人竞技场"}}
-		}
-	},
-	"关闭特殊竞技场入口": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "特殊竞技场"}}
-		}
-	},
-	"关闭新人竞技场入口_调用": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "关闭新人竞技场入口"}}
-		},
-		"next": ["返回到map竞技场"]
-	},
-	"关闭特殊竞技场入口_调用": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "关闭特殊竞技场入口"}}
-		},
-		"next": ["返回到map竞技场"]
-	},
-	"方舟任务完成": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"无限之塔任务完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}}
-	},
-	"模拟室完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "模拟室"}}
-		}
-	},
-	"竞技场完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "竞技场"}}
-		}
-	},
-	"拦截战完成": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "拦截战"}}
-		}
-	}
+  "企业塔下一关": {
+    "action": {
+      "param": {
+        "target": [
+          1161,
+          667,
+          83,
+          25
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "企业塔战斗结束"
+    ],
+    "post_delay": 5000,
+    "recognition": {
+      "param": {
+        "lower": [
+          0,
+          155,
+          240
+        ],
+        "roi": [
+          1165,
+          661,
+          21,
+          37
+        ],
+        "upper": [
+          0,
+          180,
+          255
+        ]
+      },
+      "type": "ColorMatch"
+    },
+    "timeout": 240000
+  },
+  "企业塔备战": {
+    "action": {
+      "param": {
+        "target": [
+          589,
+          251,
+          101,
+          92
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "企业塔战斗",
+      "企业塔备战"
+    ],
+    "post_delay": 500,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "企业塔战斗": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "企业塔战斗结束"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "进入战斗"
+        ],
+        "roi": [
+          662,
+          623,
+          183,
+          83
+        ]
+      },
+      "type": "OCR"
+    },
+    "timeout": 240000
+  },
+  "企业塔战斗结束": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "企业塔下一关",
+      "企业塔战斗结算"
+    ],
+    "pre_delay": 500,
+    "rate_limit": 2000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "点击任意处进行下"
+        ],
+        "roi": [
+          555,
+          579,
+          170,
+          116
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "企业塔战斗结算": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "点击xx"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "关闭无限之塔战斗准备页面",
+      "返回无限之塔"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "企业塔楼层跳转": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "企业塔备战"
+    ],
+    "post_wait_freezes": 500,
+    "recognition": {
+      "param": {
+        "template": [
+          "ark/企业塔内部楼层跳转按钮.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "关闭新人竞技场入口": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "新人竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "关闭新人竞技场入口_调用": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "关闭新人竞技场入口"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "新人竞技场返回竞技场"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "关闭无限之塔战斗准备页面": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "返回无限之塔"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          741,
+          292,
+          179,
+          171
+        ],
+        "template": [
+          "ark/无限之塔战斗准备关闭按钮.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "关闭特殊竞技场入口": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "特殊竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "关闭特殊竞技场入口_调用": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "关闭特殊竞技场入口"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "特殊竞技场返回到竞技场"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "准备战斗": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "focus": "准备拦截战战斗",
+    "next": [
+      "拦截战任务完成",
+      {
+        "jump_back": true,
+        "name": "快速战斗"
+      },
+      {
+        "jump_back": true,
+        "name": "进入拦截战战斗"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    },
+    "timeout": 300000
+  },
+  "切换boss": {
+    "action": {
+      "param": {
+        "target": [
+          754,
+          530,
+          19,
+          21
+        ]
+      },
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "完成特殊竞技场奖励领取任务": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "领取特殊竞技场奖励"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "特殊竞技场_调用点击xx"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "开启竞技场快速战斗": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "focus": "开启快速战斗",
+    "recognition": {
+      "param": {
+        "expected": [
+          "OFF"
+        ],
+        "roi": [
+          493,
+          580,
+          120,
+          42
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "开始挑战竞技场": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "竞技场快速战斗",
+      {
+        "jump_back": true,
+        "name": "开启竞技场快速战斗"
+      }
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "免费"
+        ],
+        "roi": [
+          737,
+          467,
+          85,
+          109
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "开始模拟": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "快速模拟",
+      {
+        "jump_back": true,
+        "name": "选择难度5"
+      },
+      {
+        "jump_back": true,
+        "name": "选择c区"
+      }
+    ],
+    "post_delay": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "开始模拟"
+        ],
+        "roi": [
+          570,
+          395,
+          150,
+          56
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "异常个体拦截战": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map拦截战",
+          "move_destination": "map异常个体拦截战"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "选择boss",
+      {
+        "jump_back": true,
+        "name": "切换boss"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "快速战斗": {
+    "action": {
+      "param": {
+        "target": [
+          664,
+          598,
+          154,
+          25
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "点击xx"
+    ],
+    "post_delay": 1500,
+    "recognition": {
+      "param": {
+        "lower": [
+          250,
+          106,
+          47
+        ],
+        "method": 4,
+        "roi": [
+          655,
+          598,
+          39,
+          30
+        ],
+        "upper": [
+          250,
+          107,
+          48
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "快速模拟": {
+    "action": {
+      "param": {
+        "target": [
+          666,
+          607,
+          130,
+          28
+        ]
+      },
+      "type": "Click"
+    },
+    "focus": "开始快速模拟",
+    "next": [
+      "模拟结束"
+    ],
+    "post_delay": 1500,
+    "recognition": {
+      "param": {
+        "lower": [
+          250,
+          125,
+          25
+        ],
+        "method": 4,
+        "roi": [
+          644,
+          602,
+          47,
+          40
+        ],
+        "upper": [
+          250,
+          127,
+          30
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "拦截战": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map拦截战"
+        }
+      },
+      "type": "Custom"
+    },
+    "focus": "开始拦截战任务",
+    "next": [
+      "异常个体拦截战"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "拦截战_调用通用返回": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "-\u003e上一级"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "拦截战返回方舟"
+    ],
+    "post_delay": 1000,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "拦截战任务完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "拦截战_调用通用返回"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          101,
+          102,
+          104
+        ],
+        "roi": [
+          651,
+          595,
+          47,
+          34
+        ],
+        "upper": [
+          101,
+          103,
+          105
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "拦截战完成": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "拦截战"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "拦截战返回方舟": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map拦截战",
+          "move_destination": "map方舟"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "拦截战完成"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "新人竞技场": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "新人竞技场未完成",
+      "新人竞技场已完成"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "新人竞技场已完成": {
+    "action": {
+      "param": {
+        "custom_action": "counter_increment",
+        "custom_action_param": {
+          "counter_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "关闭新人竞技场入口"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "新人竞技场挑战完毕": {
+    "action": {
+      "param": {
+        "custom_action": "counter_increment",
+        "custom_action_param": {
+          "counter_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "inverse": true,
+    "next": [
+      "关闭新人竞技场入口_调用"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "免费"
+        ],
+        "roi": [
+          737,
+          467,
+          85,
+          109
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "新人竞技场未完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入新人竞技场"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          611,
+          307,
+          30,
+          38
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "新人竞技场返回竞技场": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map新人竞技场",
+          "move_destination": "map竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "方舟": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "方舟任务分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "方舟任务分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "无限之塔"
+      },
+      {
+        "jump_back": true,
+        "name": "拦截战"
+      },
+      {
+        "jump_back": true,
+        "name": "模拟室"
+      },
+      {
+        "jump_back": true,
+        "name": "竞技场"
+      },
+      "方舟任务完成",
+      {
+        "jump_back": true,
+        "name": "方舟任务分发终点"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "方舟任务分发终点": {
+    "action": {
+      "param": {
+        "custom_action": "EnableNode",
+        "custom_action_param": {
+          "node_name": "方舟任务完成"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "方舟任务完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "enabled": false,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无限之塔": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map无限之塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "无限之塔任务分发"
+    ],
+    "pre_delay": 1000,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无限之塔任务分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "极乐净土塔"
+      },
+      {
+        "jump_back": true,
+        "name": "米西利斯塔"
+      },
+      {
+        "jump_back": true,
+        "name": "泰特拉塔"
+      },
+      {
+        "jump_back": true,
+        "name": "朝圣塔"
+      },
+      "无限之塔任务完成"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无限之塔任务完成": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "无限之塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "朝圣塔": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "朝圣塔未挑战完毕",
+      "朝圣塔挑战完毕"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "OPEN"
+        ],
+        "roi": [
+          733,
+          362,
+          91,
+          37
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "朝圣塔挑战完毕": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "朝圣塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "朝圣塔未挑战完毕": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入朝圣塔"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "(每日通关1/3|每日通关2/3|每日通关3/3)"
+        ],
+        "roi": [
+          732,
+          594,
+          91,
+          34
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "极乐净土塔": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "极乐净土塔未挑战完毕",
+      "极乐净土塔挑战完毕"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "OPEN"
+        ],
+        "roi": [
+          457,
+          362,
+          89,
+          52
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "极乐净土塔挑战完毕": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "极乐净土塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "极乐净土塔未挑战完毕": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入极乐净土塔"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "(每日通关1/3|每日通关2/3|每日通关3/3)"
+        ],
+        "roi": [
+          464,
+          592,
+          71,
+          34
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "模拟室": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map模拟室"
+        }
+      },
+      "type": "Custom"
+    },
+    "focus": "开始模拟室任务",
+    "next": [
+      "首次模拟室检测"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "模拟室完成": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "模拟室"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "模拟室快速模拟": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "开始模拟",
+      {
+        "jump_back": true,
+        "name": "模拟室重置"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "模拟室返回方舟": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map模拟室",
+          "move_destination": "map方舟"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "模拟室完成"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "模拟室重置": {
+    "action": {
+      "param": {
+        "target": [
+          602,
+          414,
+          73,
+          19
+        ]
+      },
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {
+        "expected": [
+          "模拟室超频的奖励"
+        ],
+        "roi": [
+          551,
+          340,
+          173,
+          54
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "模拟结束": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "模拟结束",
+      "模拟室返回方舟"
+    ],
+    "post_delay": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "模拟结束"
+        ],
+        "roi": [
+          441,
+          294,
+          392,
+          422
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "泰特拉塔": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "泰特拉塔未挑战完毕",
+      "泰特拉塔挑战完毕"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "OPEN"
+        ],
+        "roi": [
+          642,
+          363,
+          91,
+          50
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "泰特拉塔挑战完毕": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "泰特拉塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "泰特拉塔未挑战完毕": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入泰特拉塔"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "(每日通关1/3|每日通关2/3|每日通关3/3)"
+        ],
+        "roi": [
+          647,
+          588,
+          79,
+          40
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "特殊竞技场": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "特殊竞技场未完成",
+      "特殊竞技场已完成"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "特殊竞技场_调用点击xx": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "点击xx"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "特殊竞技场已完成": {
+    "action": {
+      "param": {
+        "custom_action": "counter_increment",
+        "custom_action_param": {
+          "counter_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "关闭特殊竞技场入口"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "特殊竞技场挑战完毕": {
+    "action": {
+      "param": {
+        "custom_action": "counter_increment",
+        "custom_action_param": {
+          "counter_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "inverse": true,
+    "next": [
+      "关闭特殊竞技场入口_调用"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "免费"
+        ],
+        "roi": [
+          737,
+          467,
+          85,
+          109
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "特殊竞技场未完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入特殊竞技场"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          793,
+          307,
+          43,
+          42
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "特殊竞技场返回到竞技场": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map特殊竞技场",
+          "move_destination": "map竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "确定领取特殊竞技场奖励": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "完成特殊竞技场奖励领取任务"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "领取奖励"
+        ],
+        "roi": [
+          375,
+          511,
+          531,
+          197
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "竞技场": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "focus": "开始竞技场任务",
+    "next": [
+      "竞技场任务分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "竞技场_调用点击xx": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "点击xx"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "map新人竞技场",
+      "map特殊竞技场"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "竞技场任务分发": {
+    "action": {
+      "param": {
+        "custom_action": "counter_reset",
+        "custom_action_param": {
+          "counter_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "竞技场返回到方舟",
+      {
+        "jump_back": true,
+        "name": "新人竞技场"
+      },
+      {
+        "jump_back": true,
+        "name": "特殊竞技场"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "竞技场完成": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "竞技场快速战斗": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入竞技场战斗"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "ON"
+        ],
+        "replace": [
+          [
+            "0",
+            "O"
+          ]
+        ],
+        "roi": [
+          495,
+          562,
+          116,
+          58
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "竞技场返回到方舟": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map竞技场",
+          "move_destination": "map方舟"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "竞技场完成"
+    ],
+    "recognition": {
+      "param": {
+        "custom_recognition": "counter_check",
+        "custom_recognition_param": {
+          "count": 2,
+          "counter_name": "竞技场"
+        }
+      },
+      "type": "Custom"
+    }
+  },
+  "米西利斯塔": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "米西利斯塔未挑战完毕",
+      "米西利斯塔挑战完毕"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "OPEN"
+        ],
+        "roi": [
+          548,
+          362,
+          92,
+          40
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "米西利斯塔挑战完毕": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "米西利斯塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "米西利斯塔未挑战完毕": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入米西利斯塔"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "(每日通关1/3|每日通关2/3|每日通关3/3)"
+        ],
+        "roi": [
+          551,
+          593,
+          85,
+          31
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "返回无限之塔": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map无限之塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "map无限之塔"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入拦截战战斗": {
+    "action": {
+      "param": {
+        "target": [
+          681,
+          646,
+          120,
+          37
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "boss战开始"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          220,
+          30,
+          20
+        ],
+        "method": 4,
+        "roi": [
+          663,
+          644,
+          29,
+          36
+        ],
+        "upper": [
+          250,
+          70,
+          50
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "进入新人竞技场": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map竞技场",
+          "move_destination": "map新人竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "新人竞技场挑战完毕",
+      {
+        "jump_back": true,
+        "name": "开始挑战竞技场"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入朝圣塔": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map无限之塔",
+          "move_destination": "map朝圣塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "企业塔楼层跳转"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入极乐净土塔": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map无限之塔",
+          "move_destination": "map极乐净土塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "企业塔楼层跳转"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入泰特拉塔": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map无限之塔",
+          "move_destination": "map泰特拉塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "企业塔楼层跳转"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入特殊竞技场": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map竞技场",
+          "move_destination": "map特殊竞技场"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "特殊竞技场挑战完毕",
+      {
+        "jump_back": true,
+        "name": "领取特殊竞技场奖励"
+      },
+      {
+        "jump_back": true,
+        "name": "开始挑战竞技场"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入竞技场战斗": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "竞技场_调用点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "进入战斗"
+        ],
+        "roi": [
+          639,
+          561,
+          154,
+          59
+        ]
+      },
+      "type": "OCR"
+    },
+    "timeout": 240000
+  },
+  "进入米西利斯塔": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map无限之塔",
+          "move_destination": "map米西利斯塔"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "企业塔楼层跳转"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "选择boss": {
+    "action": {
+      "param": {
+        "target": [
+          590,
+          571,
+          102,
+          32
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "准备战斗"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "克拉肯"
+        ],
+        "roi": [
+          530,
+          517,
+          224,
+          44
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "选择c区": {
+    "action": {
+      "param": {
+        "target": [
+          728,
+          351,
+          52,
+          89
+        ]
+      },
+      "type": "Click"
+    },
+    "inverse": true,
+    "recognition": {
+      "param": {
+        "expected": [
+          "SELECTED"
+        ],
+        "roi": [
+          710,
+          460,
+          96,
+          23
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "选择难度5": {
+    "action": {
+      "param": {
+        "target": [
+          740,
+          224,
+          66,
+          64
+        ]
+      },
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {
+        "roi": [
+          690,
+          174,
+          166,
+          164
+        ],
+        "template": [
+          "ark/难度5.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "领取特殊竞技场奖励": {
+    "action": {
+      "param": {
+        "target": [
+          621,
+          134,
+          38,
+          43
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "确定领取特殊竞技场奖励"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "TOUCH"
+        ],
+        "roi": [
+          536,
+          104,
+          65,
+          61
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "首次模拟室检测": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "模拟室快速模拟",
+      "模拟室返回方舟"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          679,
+          381,
+          54,
+          50
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  }
 }

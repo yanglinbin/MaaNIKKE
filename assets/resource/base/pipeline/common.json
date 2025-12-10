@@ -1,83 +1,173 @@
 {
-	"$__mpe_config_新建Pipeline1": {
-		"$__mpe_code": {"prefix": "", "filename": "新建Pipeline1", "version": "v0.8.0_beta_2"}
-	},
-	"跳过boss等待": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [550, 255, 174, 129]}},
-		"$__mpe_code": {"position": {"x": 580, "y": 45}},
-		"next": ["确定跳过boss等待", "跳过boss等待"]
-	},
-	"等待战斗结算": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"timeout": 300000,
-		"$__mpe_code": {"position": {"x": 1160, "y": 45}},
-		"next": ["战斗结算"]
-	},
-	"boss战开始": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"$__mpe_code": {"position": {"x": 0, "y": 60}},
-		"next": ["进入boss战"]
-	},
-	"确定跳过boss等待": {
-		"recognition": {"type": "OCR", "param": {"expected": ["跳过动画"], "roi": [575, 168, 131, 86]}},
-		"action": {"type": "Click", "param": {"target": [672, 435, 104, 28]}},
-		"$__mpe_code": {"position": {"x": 870, "y": 15}},
-		"next": ["等待战斗结算"]
-	},
-	"进入boss战": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/进入boss战.png"], "roi": [594, 178, 94, 87], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"timeout": 30000,
-		"$__mpe_code": {"position": {"x": 290, "y": 0}},
-		"next": ["跳过boss等待"]
-	},
-	"战斗结算": {
-		"recognition": {"type": "OCR", "param": {"expected": ["点击任意处"], "roi": [447, 521, 383, 198]}},
-		"action": {"type": "Click", "param": {}},
-		"pre_delay": 1000,
-		"$__mpe_code": {"position": {"x": 1450, "y": 15}}
-	},
-	"普通战开始": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"$__mpe_code": {"position": {"x": 870, "y": 263}},
-		"next": ["等待战斗结算"]
-	},
-	"点击xx": {
-		"recognition": {"type": "OCR", "param": {"expected": ["(点击领取奖励|点击进行下|点击任意处进行下)"]}},
-		"action": {"type": "Click", "param": {}},
-		"$__mpe_code": {"position": {"x": 0, "y": 293}},
-		"next": ["点击xx完成", "点击xx"]
-	},
-	"小游戏挂机": {
-		"recognition": {"type": "OCR", "param": {"expected": ["确认"], "roi": [561, 518, 162, 56]}},
-		"action": {"type": "Click", "param": {}},
-		"timeout": 3600000,
-		"rate_limit": 30000,
-		"$__mpe_code": {"position": {"x": 0, "y": 511}},
-		"next": ["小游戏挂机"]
-	},
-	"点击xx完成": {
-		"recognition": {"type": "OCR", "param": {"expected": ["(点击领取奖励|点击进行下|点击任意处进行下)"]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"$__mpe_code": {"position": {"x": 290, "y": 278}}
-	},
-	"test": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "LongPressKey", "param": {"duration": 1000, "key": 27}},
-		"$__mpe_code": {"position": {"x": -6, "y": 821}},
-		"next": ["新建节点1"]
-	},
-	"新建节点1": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "LongPressKey", "param": {"key": 9, "duration": 1000}},
-		"$__mpe_code": {"position": {"x": 255, "y": 825}}
-	}
+  "boss战开始": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入boss战"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "战斗结算": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "pre_delay": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "点击任意处"
+        ],
+        "roi": [
+          447,
+          521,
+          383,
+          198
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "普通战开始": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "等待战斗结算"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "点击xx": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "点击xx完成",
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "(点击领取奖励|点击进行下|点击任意处进行下)"
+        ]
+      },
+      "type": "OCR"
+    },
+    "timeout": 60000
+  },
+  "点击xx完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "recognition": {
+      "param": {
+        "expected": [
+          "(点击领取奖励|点击进行下|点击任意处进行下)"
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "确定跳过boss等待": {
+    "action": {
+      "param": {
+        "target": [
+          672,
+          435,
+          104,
+          28
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "等待战斗结算"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "跳过动画"
+        ],
+        "roi": [
+          575,
+          168,
+          131,
+          86
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "等待战斗结算": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "战斗结算"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    },
+    "timeout": 300000
+  },
+  "跳过boss等待": {
+    "action": {
+      "param": {
+        "target": [
+          550,
+          255,
+          174,
+          129
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "确定跳过boss等待",
+      "跳过boss等待"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入boss战": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "跳过boss等待"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          594,
+          178,
+          94,
+          87
+        ],
+        "template": [
+          "common/进入boss战.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    },
+    "timeout": 30000
+  }
 }

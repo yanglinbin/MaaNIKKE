@@ -1,375 +1,1055 @@
 {
-	"奖励领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["奖励领取任务分发"]
-	},
-	"奖励领取任务分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "task_dispatcher",
-				"custom_action_param": {
-					"tasks": ["友情点赠送", "邮箱领取", "防御基地奖励领取", "任务领取", "通行证领取"]
-				}
-			}
-		},
-		"next": [
-			"[JumpBack]友情点赠送",
-			"[JumpBack]邮箱领取",
-			"[JumpBack]防御基地奖励领取",
-			"[JumpBack]任务领取",
-			"[JumpBack]通行证领取",
-			"奖励领取完成"
-		]
-	},
-	"赠送友情点": {
-		"recognition": {"type": "OCR", "param": {"expected": ["赠送"], "roi": [529, 570, 311, 89]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["确定赠送友情点"]
-	},
-	"确定赠送友情点": {
-		"recognition": {"type": "OCR", "param": {"expected": ["确认"], "roi": [524, 396, 236, 116]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["关闭友情点赠送页面"]
-	},
-	"关闭友情点赠送页面": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map主页", "current_location": "map好友"}
-			}
-		}
-	},
-	"领取邮箱": {
-		"recognition": {"type": "OCR", "param": {"roi": [583, 582, 257, 68], "expected": ["全部领取"]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["邮箱_调用领取奖励"]
-	},
-	"关闭任务面板": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [120, 120, 120], "upper": [130, 130, 130], "method": 4, "roi": [744, 626, 35, 19]}
-		},
-		"action": {"type": "Click", "param": {"target": [798, 41, 19, 17]}}
-	},
-	"领取任务奖励": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [0, 170, 240], "upper": [70, 190, 255], "roi": [744, 626, 35, 19]}
-		},
-		"action": {"type": "Click", "param": {"target": [722, 635, 81, 24]}},
-		"next": ["领取任务奖励", "点击xx"]
-	},
-	"进入通行证": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map好友"}}
-		},
-		"next": ["成功进入通行证"]
-	},
-	"进入通行证任务": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^任务$"], "roi": [650, 158, 174, 133]}},
-		"action": {"type": "Click", "param": {}},
-		"post_wait_freezes": 1000,
-		"next": ["通行证任务全部领取"]
-	},
-	"进入通行证奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^奖励$"], "roi": [472, 157, 165, 133]}},
-		"action": {"type": "Click", "param": {}},
-		"post_wait_freezes": 1000,
-		"next": ["通行证奖励全部领取"]
-	},
-	"通行证任务全部领取": {
-		"recognition": {"type": "OCR", "param": {"expected": ["全部领取"], "roi": [517, 645, 253, 52]}},
-		"action": {"type": "Click", "param": {}},
-		"post_wait_freezes": 1000
-	},
-	"通行证奖励全部领取": {
-		"recognition": {"type": "OCR", "param": {"expected": ["全部领取"], "roi": [517, 645, 253, 52]}},
-		"action": {"type": "Click", "param": {}},
-		"post_wait_freezes": 1000
-	},
-	"通行证升级": {
-		"recognition": {"type": "OCR", "param": {"expected": ["RANK"], "roi": [588, 317, 100, 35]}},
-		"action": {"type": "Click", "param": {"target": [564, 486, 185, 104]}}
-	},
-	"有未领取通行证任务": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [781, 157, 75, 139], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入通行证任务"]
-	},
-	"有未领取通行证奖励": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"roi": [583, 158, 63, 143], "template": ["common/标准大红点.png"], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入通行证奖励"]
-	},
-	"通行证奖励检测": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [1227, 71, 52, 231], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}}
-	},
-	"防御基地奖励领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map主页"}}
-		},
-		"next": ["进入防御基地"]
-	},
-	"无免费一举歼灭": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"roi": [628, 591, 11, 11], "lower": [240, 70, 40], "upper": [255, 90, 60]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"next": ["获得防御基地奖励"]
-	},
-	"一举歼灭": {
-		"recognition": {"type": "OCR", "param": {"expected": ["举歼灭"], "roi": [418, 542, 269, 133]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["进行歼灭"]
-	},
-	"进行歼灭": {
-		"recognition": {"type": "OCR", "param": {"expected": ["进行歼灭"], "roi": [537, 476, 313, 143]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["一举歼灭_调用领取奖励"]
-	},
-	"关闭一举歼灭": {
-		"recognition": {"type": "OCR", "param": {"expected": ["取消"], "roi": [452, 501, 170, 102]}},
-		"action": {"type": "Click", "param": {}}
-	},
-	"获得防御基地奖励": {
-		"recognition": {"type": "OCR", "param": {"expected": ["获得奖励"], "roi": [631, 575, 177, 79]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["点击xx"]
-	},
-	"通行证领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "logic_dispatcher", "custom_action_param": {"check_node": "通行证奖励检测"}}
-		},
-		"next": ["进入通行证"]
-	},
-	"可领取任务奖励": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"roi": [1119, 54, 11, 11], "lower": [245, 40, 20], "upper": [255, 55, 35]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入任务"]
-	},
-	"成功进入通行证": {
-		"recognition": {"type": "OCR", "param": {"expected": ["^任务$"], "roi": [650, 158, 174, 133]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["[JumpBack]有未领取通行证任务", "[JumpBack]通行证升级", "[JumpBack]有未领取通行证奖励"]
-	},
-	"进入任务": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map任务面板"}}
-		},
-		"next": ["任务领取分发"]
-	},
-	"未赠送友情点": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [1243, 130, 36, 46], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入好友"]
-	},
-	"进入好友": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map好友"}}
-		},
-		"next": ["赠送友情点"]
-	},
-	"可领取邮箱奖励": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [1210, 8, 32, 29], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入邮箱"]
-	},
-	"进入邮箱": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map邮箱"}}
-		},
-		"next": ["领取邮箱"]
-	},
-	"防御基地奖励检测": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {
-				"template": ["reward/防御基地小红点.png"],
-				"green_mask": true,
-				"roi": [387, 544, 58, 63],
-				"threshold": [0.8]
-			}
-		},
-		"action": {"type": "DoNothing", "param": {}}
-	},
-	"进入防御基地": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map防御前哨基地"}}
-		},
-		"next": ["防御基地任务分发"]
-	},
-	"防御基地任务分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["无免费一举歼灭", "[JumpBack]一举歼灭"]
-	},
-	"任务领取分发": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["每日任务检测", "[JumpBack]每日任务领取"]
-	},
-	"每日任务领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["领取任务奖励"]
-	},
-	"每周任务领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map每周任务", "current_location": "map任务面板"}
-			}
-		},
-		"next": ["领取任务奖励"]
-	},
-	"成就领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map成就", "current_location": "map任务面板"}
-			}
-		},
-		"next": ["领取任务奖励"]
-	},
-	"每日任务检测": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"roi": [533, 113, 11, 11], "lower": [125, 20, 0], "upper": [255, 55, 80]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"next": ["每周任务检测", "[JumpBack]每周任务领取"]
-	},
-	"每周任务检测": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"roi": [627, 114, 11, 11], "lower": [125, 20, 0], "upper": [255, 70, 90]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"next": ["成就检测", "[JumpBack]成就领取"]
-	},
-	"成就检测": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"roi": [813, 112, 11, 11], "lower": [125, 20, 0], "upper": [255, 95, 125]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"next": ["任务->主页"]
-	},
-	"关闭邮箱": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map主页", "current_location": "map邮箱"}
-			}
-		}
-	},
-	"一举歼灭_调用领取奖励": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "点击xx"}}
-		},
-		"next": ["关闭一举歼灭"]
-	},
-	"邮箱_调用领取奖励": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "node_caller", "custom_action_param": {"node_name": "点击xx"}}
-		},
-		"next": ["关闭邮箱"]
-	},
-	"友情点赠送": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map主页"}}
-		},
-		"next": ["未赠送友情点", "已赠送友情点"]
-	},
-	"任务领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map主页"}}
-		},
-		"next": ["可领取任务奖励", "无可领取任务奖励"]
-	},
-	"邮箱领取": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map主页"}}
-		},
-		"next": ["可领取邮箱奖励", "无可领取邮箱奖励"]
-	},
-	"已赠送友情点": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"无可领取任务奖励": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}}
-	},
-	"无可领取邮箱奖励": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}}
-	},
-	"任务->主页": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map主页", "current_location": "map任务面板"}
-			}
-		}
-	},
-	"奖励领取完成": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}}
+  "一举歼灭": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "进行歼灭"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "举歼灭"
+        ],
+        "roi": [
+          418,
+          542,
+          269,
+          133
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "一举歼灭_调用领取奖励": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "点击xx"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "关闭一举歼灭"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "任务-\u003e主页": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map任务面板",
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "任务领取": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "可领取任务奖励",
+      "无可领取任务奖励"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "任务领取分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "每日任务检测",
+      {
+        "jump_back": true,
+        "name": "每日任务领取"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "关闭一举歼灭": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {
+        "expected": [
+          "取消"
+        ],
+        "roi": [
+          452,
+          501,
+          170,
+          102
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "关闭友情点赠送页面": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map好友",
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "关闭邮箱": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map邮箱",
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "友情点赠送": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "未赠送友情点",
+      "已赠送友情点"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "可领取任务奖励": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入任务"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          245,
+          40,
+          20
+        ],
+        "roi": [
+          1119,
+          54,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          55,
+          35
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "可领取邮箱奖励": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入邮箱"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          1210,
+          8,
+          32,
+          29
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "奖励领取": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "奖励领取任务分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "奖励领取任务分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "友情点赠送"
+      },
+      {
+        "jump_back": true,
+        "name": "邮箱领取"
+      },
+      {
+        "jump_back": true,
+        "name": "防御基地奖励领取"
+      },
+      {
+        "jump_back": true,
+        "name": "任务领取"
+      },
+      "奖励领取完成",
+      {
+        "jump_back": true,
+        "name": "奖励领取任务分发终点"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "奖励领取任务分发终点": {
+    "action": {
+      "param": {
+        "custom_action": "EnableNode",
+        "custom_action_param": {
+          "node_name": "方舟任务完成"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "奖励领取完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "已赠送友情点": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "成功进入通行证": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "有未领取通行证任务"
+      },
+      {
+        "jump_back": true,
+        "name": "通行证升级"
+      },
+      {
+        "jump_back": true,
+        "name": "有未领取通行证奖励"
+      }
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "^任务$"
+        ],
+        "roi": [
+          650,
+          158,
+          174,
+          133
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "成就检测": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "next": [
+      "任务-\u003e主页"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          125,
+          20,
+          0
+        ],
+        "roi": [
+          813,
+          112,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          95,
+          125
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "成就领取": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map任务面板",
+          "move_destination": "map成就"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "领取任务奖励"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无免费一举歼灭": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "next": [
+      "获得防御基地奖励"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          240,
+          70,
+          40
+        ],
+        "roi": [
+          628,
+          591,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          90,
+          60
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "无可领取任务奖励": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无可领取邮箱奖励": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "有未领取通行证任务": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入通行证任务"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          781,
+          157,
+          75,
+          139
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "有未领取通行证奖励": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入通行证奖励"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          583,
+          158,
+          63,
+          143
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "未赠送友情点": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入好友"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          1243,
+          130,
+          36,
+          46
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "每周任务检测": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "next": [
+      "成就检测",
+      {
+        "jump_back": true,
+        "name": "成就领取"
+      }
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          125,
+          20,
+          0
+        ],
+        "roi": [
+          627,
+          114,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          70,
+          90
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "每周任务领取": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map任务面板",
+          "move_destination": "map每周任务"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "领取任务奖励"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "每日任务检测": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "next": [
+      "每周任务检测",
+      {
+        "jump_back": true,
+        "name": "每周任务领取"
+      }
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          125,
+          20,
+          0
+        ],
+        "roi": [
+          533,
+          113,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          55,
+          80
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "每日任务领取": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "领取任务奖励"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "确定赠送友情点": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "关闭友情点赠送页面"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "确认"
+        ],
+        "roi": [
+          524,
+          396,
+          236,
+          116
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "获得防御基地奖励": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "获得奖励"
+        ],
+        "roi": [
+          631,
+          575,
+          177,
+          79
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "赠送友情点": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "确定赠送友情点"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "赠送"
+        ],
+        "roi": [
+          529,
+          570,
+          311,
+          89
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "进入任务": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map任务面板"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "任务领取分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入好友": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map好友"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "赠送友情点"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入通行证": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map好友"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "成功进入通行证"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入通行证任务": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "通行证任务全部领取"
+    ],
+    "post_wait_freezes": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "^任务$"
+        ],
+        "roi": [
+          650,
+          158,
+          174,
+          133
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "进入通行证奖励": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "通行证奖励全部领取"
+    ],
+    "post_wait_freezes": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "^奖励$"
+        ],
+        "roi": [
+          472,
+          157,
+          165,
+          133
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "进入邮箱": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map邮箱"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "领取邮箱"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入防御基地": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map防御前哨基地"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "防御基地任务分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进行歼灭": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "一举歼灭_调用领取奖励"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "进行歼灭"
+        ],
+        "roi": [
+          537,
+          476,
+          313,
+          143
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "通行证任务全部领取": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "post_wait_freezes": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "全部领取"
+        ],
+        "roi": [
+          517,
+          645,
+          253,
+          52
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "通行证升级": {
+    "action": {
+      "param": {
+        "target": [
+          564,
+          486,
+          185,
+          104
+        ]
+      },
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {
+        "expected": [
+          "RANK"
+        ],
+        "roi": [
+          588,
+          317,
+          100,
+          35
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "通行证奖励全部领取": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "post_wait_freezes": 1000,
+    "recognition": {
+      "param": {
+        "expected": [
+          "全部领取"
+        ],
+        "roi": [
+          517,
+          645,
+          253,
+          52
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "通行证领取": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入通行证"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "邮箱_调用领取奖励": {
+    "action": {
+      "param": {
+        "custom_action": "node_caller",
+        "custom_action_param": {
+          "node_name": "点击xx"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "关闭邮箱"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "邮箱领取": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "可领取邮箱奖励",
+      "无可领取邮箱奖励"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "防御基地任务分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "无免费一举歼灭",
+      {
+        "jump_back": true,
+        "name": "一举歼灭"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "防御基地奖励领取": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "进入防御基地"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "领取任务奖励": {
+    "action": {
+      "param": {
+        "target": [
+          722,
+          635,
+          81,
+          24
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "领取任务奖励",
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          0,
+          170,
+          240
+        ],
+        "roi": [
+          744,
+          626,
+          35,
+          19
+        ],
+        "upper": [
+          70,
+          190,
+          255
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "领取邮箱": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "邮箱_调用领取奖励"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "全部领取"
+        ],
+        "roi": [
+          583,
+          582,
+          257,
+          68
+        ]
+      },
+      "type": "OCR"
+    }
+  }
 }

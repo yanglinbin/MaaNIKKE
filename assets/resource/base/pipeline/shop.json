@@ -1,268 +1,920 @@
 {
-	"普通礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map普通礼包"}}
-		},
-		"next": ["普通礼包任务分发"]
-	},
-	"进入每日礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map每日", "current_location": "map普通礼包"}
-			}
-		},
-		"next": ["领取每日免费礼包"]
-	},
-	"领取每日免费礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [27, 264, 89, 171]}},
-		"next": ["点击xx"]
-	},
-	"付费商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["普通礼包"]
-	},
-	"领取每周免费礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [27, 264, 89, 171]}},
-		"next": ["点击xx"]
-	},
-	"领取每月免费礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [27, 264, 89, 171]}},
-		"next": ["点击xx"]
-	},
-	"进入每周礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map每周", "current_location": "map普通礼包"}
-			}
-		},
-		"next": ["领取每周免费礼包"]
-	},
-	"进入每月礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map每月", "current_location": "map普通礼包"}
-			}
-		},
-		"next": ["领取每月免费礼包"]
-	},
-	"每日礼包可购买": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [216, 179, 26, 27], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入每日礼包"]
-	},
-	"每周礼包可购买": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [325, 180, 26, 25], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入每周礼包"]
-	},
-	"每月礼包可购买": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["common/标准大红点.png"], "roi": [437, 180, 26, 26], "green_mask": true}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入每月礼包"]
-	},
-	"普通商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map普通商店", "current_location": "map百货商店"}
-			}
-		},
-		"next": ["普通商店已购买", "[JumpBack]购买免费物品"]
-	},
-	"进入百货商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map百货商店"}}
-		},
-		"next": ["百货商店功能分发"]
-	},
-	"购买免费物品": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [92, 370, 73, 111]}},
-		"next": ["确认购买"]
-	},
-	"确定免费刷新": {
-		"recognition": {"type": "OCR", "param": {"expected": ["通知"], "roi": [602, 191, 81, 39]}},
-		"action": {"type": "Click", "param": {"target": [664, 436, 117, 27]}},
-		"next": ["刷新完成"]
-	},
-	"免费刷新": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [82, 319, 141, 13]}},
-		"next": ["确定免费刷新"]
-	},
-	"普通商店已购买": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [250, 60, 45], "upper": [255, 65, 50], "roi": [167, 356, 11, 11]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"next": ["普通商店已刷新", "[JumpBack]免费刷新"]
-	},
-	"竞技场商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map竞技场商店"}}
-		},
-		"next": ["竞技场商店功能分发"]
-	},
-	"竞技场商店功能分发": {
-		"recognition": {"type": "OCR", "param": {"expected": ["竞技场商店"], "roi": [67, 257, 100, 36]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["[JumpBack]代码手册", "[JumpBack]代码手册宝箱", "[JumpBack]公司武器熔炉", "竞技场商店√"]
-	},
-	"代码手册": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"代码手册宝箱": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["代码手册宝箱未购买", "代码手册宝箱已购买"]
-	},
-	"购买公司武器熔炉": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [633, 369, 72, 110]}},
-		"next": ["确认购买", "购买公司武器熔炉"]
-	},
-	"购买代码手册宝箱": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "Click", "param": {"target": [422, 375, 64, 89]}},
-		"next": ["确认购买", "购买代码手册宝箱"]
-	},
-	"百货商店功能分发": {
-		"recognition": {"type": "OCR", "param": {"expected": ["百货商店"], "roi": [0, 0, 65, 56]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["[JumpBack]普通商店", "[JumpBack]竞技场商店", "百货商店√"]
-	},
-	"百货商店": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["进入百货商店"]
-	},
-	"确认购买": {
-		"recognition": {"type": "OCR", "param": {"expected": ["购买"], "roi": [633, 549, 152, 100]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["确认购买", "点击xx"]
-	},
-	"普通礼包任务分发": {
-		"recognition": {"type": "OCR", "param": {"expected": ["普通礼包"], "roi": [575, 46, 131, 42]}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "task_dispatcher",
-				"custom_action_param": {"tasks": ["每日礼包", "每周礼包", "每月礼包"]}
-			}
-		},
-		"next": ["[JumpBack]每日礼包", "[JumpBack]每周礼包", "[JumpBack]每月礼包", "普通礼包√"]
-	},
-	"普通商店已刷新": {
-		"recognition": {"type": "OCR", "param": {"roi": [196, 273, 95, 77], "expected": ["\\bFR\\w*\\b"]}},
-		"action": {"type": "DoNothing", "param": {}},
-		"inverse": true,
-		"next": ["普通商店√"]
-	},
-	"公司武器熔炉未购买": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["shop/公司武器熔炉.png"], "roi": [640, 383, 57, 63]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["购买公司武器熔炉"]
-	},
-	"每日礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["每日礼包可购买", "无每日礼包"]
-	},
-	"每周礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["每周礼包可购买", "无每周礼包"]
-	},
-	"每月礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["每月礼包可购买", "无每月礼包"]
-	},
-	"无每日礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "每日礼包"}}
-		}
-	},
-	"无每周礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "每周礼包"}}
-		}
-	},
-	"无每月礼包": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "DisableNode", "custom_action_param": {"node_name": "每月礼包"}}
-		}
-	},
-	"刷新完成": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [250, 60, 45], "upper": [255, 65, 50], "roi": [167, 356, 11, 11]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["购买免费物品"]
-	},
-	"普通商店√": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"竞技场商店√": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"百货商店√": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"普通礼包√": {"recognition": {"type": "DirectHit", "param": {}}, "action": {"type": "DoNothing", "param": {}}},
-	"公司武器熔炉": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["公司武器熔炉未购买", "公司武器熔炉已购买"]
-	},
-	"公司武器熔炉已购买": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}}
-	},
-	"代码手册宝箱未购买": {
-		"recognition": {
-			"type": "TemplateMatch",
-			"param": {"template": ["shop/代码手册宝箱.png"], "roi": [423, 384, 60, 62]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["购买代码手册宝箱"]
-	},
-	"代码手册宝箱已购买": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {"type": "DoNothing", "param": {}}
-	}
+  "付费商店": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "普通礼包"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "代码手册": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "代码手册宝箱": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "代码手册宝箱未购买",
+      "代码手册宝箱已购买"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "代码手册宝箱已购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "代码手册宝箱未购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "购买代码手册宝箱"
+    ],
+    "recognition": {
+      "param": {
+        "roi": [
+          423,
+          384,
+          60,
+          62
+        ],
+        "template": [
+          "shop/代码手册宝箱.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "免费刷新": {
+    "action": {
+      "param": {
+        "target": [
+          82,
+          319,
+          141,
+          13
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "确定免费刷新"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "公司武器熔炉": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "公司武器熔炉未购买",
+      "公司武器熔炉已购买"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "公司武器熔炉已购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "公司武器熔炉未购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "购买公司武器熔炉"
+    ],
+    "recognition": {
+      "param": {
+        "roi": [
+          640,
+          383,
+          57,
+          63
+        ],
+        "template": [
+          "shop/公司武器熔炉.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "刷新完成": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "购买免费物品"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          250,
+          60,
+          45
+        ],
+        "roi": [
+          167,
+          356,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          65,
+          50
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "成功进入每周礼包": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "领取免费礼包"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          15,
+          195,
+          240
+        ],
+        "roi": [
+          250,
+          193,
+          26,
+          18
+        ],
+        "upper": [
+          20,
+          200,
+          245
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "成功进入每日礼包": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "领取免费礼包"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          15,
+          195,
+          240
+        ],
+        "roi": [
+          139,
+          193,
+          26,
+          18
+        ],
+        "upper": [
+          20,
+          200,
+          245
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "成功进入每月礼包": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "领取免费礼包"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          15,
+          195,
+          240
+        ],
+        "roi": [
+          361,
+          193,
+          26,
+          18
+        ],
+        "upper": [
+          20,
+          200,
+          245
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "无每周礼包": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "每周礼包"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无每日礼包": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "每日礼包"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无每月礼包": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "每月礼包"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "普通商店": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map百货商店",
+          "move_destination": "map普通商店"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "普通商店已购买",
+      {
+        "jump_back": true,
+        "name": "购买免费物品"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "普通商店√": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "普通商店已刷新": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "next": [
+      "普通商店√"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "\\bFR\\w*\\b"
+        ],
+        "roi": [
+          196,
+          273,
+          95,
+          77
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "普通商店已购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "inverse": true,
+    "next": [
+      "普通商店已刷新",
+      {
+        "jump_back": true,
+        "name": "免费刷新"
+      }
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          250,
+          60,
+          45
+        ],
+        "roi": [
+          167,
+          356,
+          11,
+          11
+        ],
+        "upper": [
+          255,
+          65,
+          50
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "普通礼包": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map普通礼包"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "普通礼包任务分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "普通礼包√": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "enabled": false,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "普通礼包任务分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "每日礼包"
+      },
+      {
+        "jump_back": true,
+        "name": "每周礼包"
+      },
+      {
+        "jump_back": true,
+        "name": "每月礼包"
+      },
+      "普通礼包√",
+      {
+        "jump_back": true,
+        "name": "普通礼包任务分发终点"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "普通礼包任务分发终点": {
+    "action": {
+      "param": {
+        "custom_action": "EnableNode",
+        "custom_action_param": {
+          "node_name": "普通礼包√"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "每周礼包": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "每周礼包可购买",
+      "无每周礼包"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "每周礼包可购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入每周礼包"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          325,
+          180,
+          26,
+          25
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "每日礼包": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "每日礼包可购买",
+      "无每日礼包"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "每日礼包可购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入每日礼包"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          216,
+          179,
+          26,
+          27
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "每月礼包": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "每月礼包可购买",
+      "无每月礼包"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "每月礼包可购买": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入每月礼包"
+    ],
+    "recognition": {
+      "param": {
+        "green_mask": true,
+        "roi": [
+          437,
+          180,
+          26,
+          26
+        ],
+        "template": [
+          "common/标准大红点.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    }
+  },
+  "百货商店": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "进入百货商店"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "百货商店√": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "百货商店功能分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "普通商店"
+      },
+      {
+        "jump_back": true,
+        "name": "竞技场商店"
+      },
+      "百货商店√"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "百货商店"
+        ],
+        "roi": [
+          0,
+          0,
+          65,
+          56
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "确定免费刷新": {
+    "action": {
+      "param": {
+        "target": [
+          664,
+          436,
+          117,
+          27
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "刷新完成"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "通知"
+        ],
+        "roi": [
+          602,
+          191,
+          81,
+          39
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "确认购买": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "确认购买",
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "购买"
+        ],
+        "roi": [
+          633,
+          549,
+          152,
+          100
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "竞技场商店": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map竞技场商店"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "竞技场商店功能分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "竞技场商店√": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "竞技场商店功能分发": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      {
+        "jump_back": true,
+        "name": "代码手册"
+      },
+      {
+        "jump_back": true,
+        "name": "代码手册宝箱"
+      },
+      {
+        "jump_back": true,
+        "name": "公司武器熔炉"
+      },
+      "竞技场商店√"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "竞技场商店"
+        ],
+        "roi": [
+          67,
+          257,
+          100,
+          36
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "购买代码手册宝箱": {
+    "action": {
+      "param": {
+        "target": [
+          422,
+          375,
+          64,
+          89
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "确认购买",
+      "购买代码手册宝箱"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "购买免费物品": {
+    "action": {
+      "param": {
+        "target": [
+          92,
+          370,
+          73,
+          111
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "确认购买"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "购买公司武器熔炉": {
+    "action": {
+      "param": {
+        "target": [
+          633,
+          369,
+          72,
+          110
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "确认购买",
+      "购买公司武器熔炉"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入每周礼包": {
+    "action": {
+      "param": {
+        "target": [
+          292,
+          203,
+          1,
+          1
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "成功进入每周礼包",
+      "进入每周礼包"
+    ],
+    "post_delay": 400,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入每日礼包": {
+    "action": {
+      "param": {
+        "target": [
+          182,
+          201,
+          1,
+          1
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "成功进入每日礼包",
+      "进入每日礼包"
+    ],
+    "post_delay": 400,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入每月礼包": {
+    "action": {
+      "param": {
+        "target": [
+          403,
+          205,
+          1,
+          1
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "成功进入每月礼包",
+      "进入每月礼包"
+    ],
+    "post_delay": 400,
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "进入百货商店": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map百货商店"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "百货商店功能分发"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "领取免费礼包": {
+    "action": {
+      "param": {
+        "target": [
+          27,
+          264,
+          89,
+          171
+        ]
+      },
+      "type": "Click"
+    },
+    "next": [
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  }
 }

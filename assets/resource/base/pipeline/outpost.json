@@ -1,67 +1,190 @@
 {
-	"前哨基地": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {"custom_action": "map_movement", "custom_action_param": {"move_destination": "map前哨基地"}}
-		},
-		"next": ["派遣公告栏"]
-	},
-	"全部派遣": {
-		"recognition": {"type": "OCR", "param": {"expected": ["全部派遣"], "roi": [575, 569, 245, 70]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["确认派遣"]
-	},
-	"确认派遣": {
-		"recognition": {"type": "OCR", "param": {"expected": ["派遣"], "roi": [510, 569, 264, 71]}},
-		"action": {"type": "Click", "param": {}}
-	},
-	"派遣奖励领取": {
-		"recognition": {"type": "OCR", "param": {"roi": [575, 569, 245, 70], "expected": ["全部领取"]}},
-		"action": {"type": "Click", "param": {}},
-		"next": ["点击xx"]
-	},
-	"退出派遣公告栏到主页": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map主页", "current_location": "map派遣公告栏"}
-			}
-		}
-	},
-	"派遣公告栏": {
-		"recognition": {"type": "DirectHit", "param": {}},
-		"action": {
-			"type": "Custom",
-			"param": {
-				"custom_action": "map_movement",
-				"custom_action_param": {"move_destination": "map派遣公告栏", "current_location": "map前哨基地"}
-			}
-		},
-		"next": [
-			"未完成派遣",
-			"[JumpBack]派遣奖励领取"
-		]
-	},
-	"未完成派遣": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [205, 205, 205], "upper": [210, 210, 210], "roi": [725, 590, 11, 11]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": [
-			"无可派遣任务",
-			"[JumpBack]全部派遣"
-		]
-	},
-	"无可派遣任务": {
-		"recognition": {
-			"type": "ColorMatch",
-			"param": {"lower": [205, 205, 205], "upper": [210, 210, 210], "roi": [614, 611, 11, 11]}
-		},
-		"action": {"type": "DoNothing", "param": {}},
-		"next": ["退出派遣公告栏到主页"]
-	}
+  "全部派遣": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "确认派遣"
+    ],
+    "post_delay": 600,
+    "recognition": {
+      "param": {
+        "expected": [
+          "全部派遣"
+        ],
+        "roi": [
+          575,
+          569,
+          245,
+          70
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "前哨基地": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "move_destination": "map前哨基地"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "派遣公告栏"
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "无可派遣任务": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "退出派遣公告栏到主页"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          205,
+          205,
+          205
+        ],
+        "roi": [
+          614,
+          611,
+          11,
+          11
+        ],
+        "upper": [
+          210,
+          210,
+          210
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "未完成派遣": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "无可派遣任务",
+      {
+        "jump_back": true,
+        "name": "全部派遣"
+      }
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          205,
+          205,
+          205
+        ],
+        "roi": [
+          725,
+          590,
+          11,
+          11
+        ],
+        "upper": [
+          210,
+          210,
+          210
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
+  "派遣公告栏": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map前哨基地",
+          "move_destination": "map派遣公告栏"
+        }
+      },
+      "type": "Custom"
+    },
+    "next": [
+      "未完成派遣",
+      {
+        "jump_back": true,
+        "name": "派遣奖励领取"
+      }
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
+  "派遣奖励领取": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "点击xx"
+    ],
+    "recognition": {
+      "param": {
+        "expected": [
+          "全部领取"
+        ],
+        "roi": [
+          575,
+          569,
+          245,
+          70
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "确认派遣": {
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "recognition": {
+      "param": {
+        "expected": [
+          "派遣"
+        ],
+        "roi": [
+          510,
+          569,
+          264,
+          71
+        ]
+      },
+      "type": "OCR"
+    }
+  },
+  "退出派遣公告栏到主页": {
+    "action": {
+      "param": {
+        "custom_action": "map_movement",
+        "custom_action_param": {
+          "current_location": "map派遣公告栏",
+          "move_destination": "map主页"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  }
 }
