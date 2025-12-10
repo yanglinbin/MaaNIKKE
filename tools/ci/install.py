@@ -155,8 +155,7 @@ def install_requirements():
 
 
 if __name__ == "__main__":
-    # 启用install_deps函数
-    install_deps()
+    #install_deps()
     install_resource()
     install_chores()
     install_agent()

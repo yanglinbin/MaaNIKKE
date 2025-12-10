@@ -146,6 +146,16 @@ jobs:
             echo "MFA directory not found, skipping copy."
           fi
 
+      - name: Clean up unnecessary files and folders
+        shell: bash
+        run: |
+          # 删除不需要的文件夹
+          rm -rf install/deps
+          rm -rf install/plugins
+          rm -rf install/MaaAgentBinary
+
+          echo "Clean up completed"
+
       - uses: actions/upload-artifact@v4
         with:
           name: MaaNIKKE-win-${{ matrix.arch }}
