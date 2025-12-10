@@ -1,8 +1,10 @@
 {
 	"name": "MaaNIKKE",
-	"version": "1.0.0",
+	"interface_version": "2",
+	"version": "",
 	"custom_title": "MaaNIKKE",
 	"url": "https://github.com/yanglinbin/MaaNIKKE",
+
 	"controller": [
 		{
 			"name": "桌面端",
@@ -11,7 +13,7 @@
 				"class_regex": "UnityWndClass*",
 				"window_regex": "NIKKE",
 				"input": 1,
-				"screencap": 2
+				"screencap": 8
 			}
 		}
 	],
@@ -22,64 +24,49 @@
 		}
 	],
 	"agent": {
-		"child_exec": "python",
-		"child_args": ["-u", "-m", "agent.main"]
+		"child_exec": "./python/python.exe",
+		"child_args": ["-u", "./agent/main.py"]
 	},
 	"task": [
 		{
 			"name": "方舟",
 			"entry": "方舟",
-			"option": [
-				"拦截战",
-				"异常个体拦截战boss选择",
-				"模拟室",
-				"无限之塔",
-				"竞技场",
-				"竞技场_新人竞技场",
-				"竞技场_特殊竞技场",
-				"竞技场_特殊竞技场_累计奖励领取"
-			]
+			"default_check": true,
+			"option": ["拦截战", "模拟室", "无限之塔", "竞技场"]
 		},
 		{
 			"name": "妮姬咨询",
 			"entry": "妮姬咨询",
+			"default_check": true,
 			"option": ["妮姬咨询次数上限"]
 		},
 		{
 			"name": "百货商店",
 			"entry": "百货商店",
-			"option": [
-				"普通商店",
-				"竞技场商店",
-				"竞技场商店_代码手册",
-				"竞技场商店_代码手册宝箱",
-				"竞技场商店_公司武器熔炉"
-			]
+			"default_check": true,
+			"option": ["普通商店", "竞技场商店"]
 		},
 		{
 			"name": "付费商店",
+			"default_check": true,
 			"entry": "付费商店"
 		},
 		{
 			"name": "前哨基地",
 			"entry": "前哨基地",
+			"default_check": true,
 			"option": ["派遣公告栏"]
 		},
 		{
 			"name": "活动",
 			"entry": "活动",
-			"option": [
-				"大活动",
-				"大活动_剧情活动关卡",
-				"大活动_挑战关卡",
-				"大活动_签到印章",
-				"大活动_活动任务",
-				"小活动"
-			]
+			"default_check": false,
+			"option": ["大活动", "小活动"]
 		},
 		{
 			"name": "奖励领取",
 			"entry": "奖励领取",
+			"default_check": true,
 			"option": ["友情点赠送", "防御基地奖励领取", "邮箱领取", "任务领取", "通行证领取"]
 		}
 	],
@@ -183,6 +170,7 @@
 			]
 		},
 		"大活动_活动任务": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -199,6 +187,7 @@
 			]
 		},
 		"大活动_签到印章": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -215,6 +204,7 @@
 			]
 		},
 		"大活动_挑战关卡": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -231,6 +221,7 @@
 			]
 		},
 		"大活动_剧情活动关卡": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -247,6 +238,7 @@
 			]
 		},
 		"小活动": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -263,10 +255,12 @@
 			]
 		},
 		"大活动": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
-					"pipeline_override": {}
+					"pipeline_override": {},
+					"option": ["大活动_活动任务", "大活动_签到印章", "大活动_挑战关卡", "大活动_剧情活动关卡"]
 				},
 				{
 					"name": "No",
@@ -294,23 +288,8 @@
 				}
 			]
 		},
-		"循环室": {
-			"cases": [
-				{
-					"name": "Yes",
-					"pipeline_override": {}
-				},
-				{
-					"name": "No",
-					"pipeline_override": {
-						"循环室": {
-							"enabled": false
-						}
-					}
-				}
-			]
-		},
 		"通行证领取": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -374,7 +353,7 @@
 				}
 			]
 		},
-		"竞技场_特殊竞技场_累计奖励领取": {
+		"特殊竞技场累计奖励领取": {
 			"cases": [
 				{
 					"name": "Yes",
@@ -390,7 +369,7 @@
 				}
 			]
 		},
-		"竞技场_新人竞技场": {
+		"新人竞技场": {
 			"cases": [
 				{
 					"name": "Yes",
@@ -406,7 +385,7 @@
 				}
 			]
 		},
-		"竞技场_特殊竞技场": {
+		"特殊竞技场": {
 			"cases": [
 				{
 					"name": "Yes",
@@ -426,7 +405,8 @@
 			"cases": [
 				{
 					"name": "Yes",
-					"pipeline_override": {}
+					"pipeline_override": {},
+					"option": ["新人竞技场", "特殊竞技场", "特殊竞技场累计奖励领取"]
 				},
 				{
 					"name": "No",
@@ -455,6 +435,7 @@
 			]
 		},
 		"异常个体拦截战boss选择": {
+			"default_case": "克拉肯",
 			"cases": [
 				{
 					"name": "茵迪维利亚",
@@ -543,7 +524,8 @@
 			"cases": [
 				{
 					"name": "Yes",
-					"pipeline_override": {}
+					"pipeline_override": {},
+					"option": ["异常个体拦截战boss选择"]
 				},
 				{
 					"name": "No",
@@ -575,7 +557,8 @@
 			"cases": [
 				{
 					"name": "Yes",
-					"pipeline_override": {}
+					"pipeline_override": {},
+					"option": ["代码手册", "公司武器熔炉", "代码手册宝箱"]
 				},
 				{
 					"name": "No",
@@ -587,7 +570,8 @@
 				}
 			]
 		},
-		"竞技场商店_代码手册": {
+		"代码手册": {
+			"default_case": "No",
 			"cases": [
 				{
 					"name": "Yes",
@@ -595,6 +579,7 @@
 				},
 				{
 					"name": "No",
+
 					"pipeline_override": {
 						"代码手册": {
 							"enabled": false
@@ -603,7 +588,7 @@
 				}
 			]
 		},
-		"竞技场商店_代码手册宝箱": {
+		"代码手册宝箱": {
 			"cases": [
 				{
 					"name": "Yes",
@@ -619,7 +604,7 @@
 				}
 			]
 		},
-		"竞技场商店_公司武器熔炉": {
+		"公司武器熔炉": {
 			"cases": [
 				{
 					"name": "Yes",
