@@ -236,6 +236,7 @@
       "type": "DoNothing"
     },
     "next": [
+      "奖励领取完成",
       {
         "jump_back": true,
         "name": "友情点赠送"
@@ -252,7 +253,6 @@
         "jump_back": true,
         "name": "任务领取"
       },
-      "奖励领取完成",
       {
         "jump_back": true,
         "name": "奖励领取任务分发终点"
@@ -283,6 +283,7 @@
       "param": {},
       "type": "DoNothing"
     },
+    "enabled": false,
     "recognition": {
       "param": {},
       "type": "DirectHit"

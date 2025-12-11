@@ -428,6 +428,7 @@
       "type": "DoNothing"
     },
     "next": [
+      "普通礼包√",
       {
         "jump_back": true,
         "name": "每日礼包"
@@ -440,7 +441,6 @@
         "jump_back": true,
         "name": "每月礼包"
       },
-      "普通礼包√",
       {
         "jump_back": true,
         "name": "普通礼包任务分发终点"
@@ -598,6 +598,7 @@
       "param": {},
       "type": "DoNothing"
     },
+    "enabled": false,
     "recognition": {
       "param": {},
       "type": "DirectHit"
@@ -609,6 +610,7 @@
       "type": "DoNothing"
     },
     "next": [
+      "百货商店√",
       {
         "jump_back": true,
         "name": "普通商店"
@@ -616,8 +618,7 @@
       {
         "jump_back": true,
         "name": "竞技场商店"
-      },
-      "百货商店√"
+      }
     ],
     "recognition": {
       "param": {
