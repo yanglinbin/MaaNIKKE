@@ -236,7 +236,6 @@
       "type": "DoNothing"
     },
     "next": [
-      "奖励领取完成",
       {
         "jump_back": true,
         "name": "友情点赠送"
@@ -253,26 +252,8 @@
         "jump_back": true,
         "name": "任务领取"
       },
-      {
-        "jump_back": true,
-        "name": "奖励领取任务分发终点"
-      }
+      "奖励领取完成"
     ],
-    "recognition": {
-      "param": {},
-      "type": "DirectHit"
-    }
-  },
-  "奖励领取任务分发终点": {
-    "action": {
-      "param": {
-        "custom_action": "EnableNode",
-        "custom_action_param": {
-          "node_name": "方舟任务完成"
-        }
-      },
-      "type": "Custom"
-    },
     "recognition": {
       "param": {},
       "type": "DirectHit"
@@ -283,7 +264,6 @@
       "param": {},
       "type": "DoNothing"
     },
-    "enabled": false,
     "recognition": {
       "param": {},
       "type": "DirectHit"
