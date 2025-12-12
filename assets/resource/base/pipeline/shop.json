@@ -17,6 +17,7 @@
       "param": {},
       "type": "DoNothing"
     },
+    "enabled": false,
     "recognition": {
       "param": {},
       "type": "DirectHit"
@@ -28,7 +29,10 @@
       "type": "DoNothing"
     },
     "next": [
-      "代码手册宝箱未购买",
+      {
+        "jump_back": true,
+        "name": "代码手册宝箱未购买"
+      },
       "代码手册宝箱已购买"
     ],
     "recognition": {
@@ -38,8 +42,13 @@
   },
   "代码手册宝箱已购买": {
     "action": {
-      "param": {},
-      "type": "DoNothing"
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "代码手册宝箱"
+        }
+      },
+      "type": "Custom"
     },
     "recognition": {
       "param": {},
@@ -48,8 +57,13 @@
   },
   "代码手册宝箱未购买": {
     "action": {
-      "param": {},
-      "type": "DoNothing"
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "代代码手册宝箱"
+        }
+      },
+      "type": "Custom"
     },
     "next": [
       "购买代码手册宝箱"
@@ -95,7 +109,10 @@
       "type": "DoNothing"
     },
     "next": [
-      "公司武器熔炉未购买",
+      {
+        "jump_back": true,
+        "name": "公司武器熔炉未购买"
+      },
       "公司武器熔炉已购买"
     ],
     "recognition": {
@@ -105,8 +122,13 @@
   },
   "公司武器熔炉已购买": {
     "action": {
-      "param": {},
-      "type": "DoNothing"
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "公司武器熔炉"
+        }
+      },
+      "type": "Custom"
     },
     "recognition": {
       "param": {},
@@ -115,8 +137,13 @@
   },
   "公司武器熔炉未购买": {
     "action": {
-      "param": {},
-      "type": "DoNothing"
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "公司武器熔炉"
+        }
+      },
+      "type": "Custom"
     },
     "next": [
       "购买公司武器熔炉"
@@ -256,6 +283,21 @@
       "type": "ColorMatch"
     }
   },
+  "新建节点2": {
+    "action": {
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "节点名称"
+        }
+      },
+      "type": "Custom"
+    },
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    }
+  },
   "无每周礼包": {
     "action": {
       "param": {
@@ -326,8 +368,13 @@
   },
   "普通商店√": {
     "action": {
-      "param": {},
-      "type": "DoNothing"
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "普通商店"
+        }
+      },
+      "type": "Custom"
     },
     "recognition": {
       "param": {},
@@ -688,10 +735,14 @@
   },
   "竞技场商店√": {
     "action": {
-      "param": {},
-      "type": "DoNothing"
+      "param": {
+        "custom_action": "DisableNode",
+        "custom_action_param": {
+          "node_name": "竞技场商店"
+        }
+      },
+      "type": "Custom"
     },
-    "enabled": false,
     "recognition": {
       "param": {},
       "type": "DirectHit"
