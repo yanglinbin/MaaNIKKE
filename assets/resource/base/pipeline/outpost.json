@@ -41,6 +41,36 @@
       "type": "DirectHit"
     }
   },
+  "新建节点15": {
+    "action": {
+      "param": {},
+      "type": "DoNothing"
+    },
+    "next": [
+      "派遣奖励领取"
+    ],
+    "recognition": {
+      "param": {
+        "lower": [
+          0,
+          165,
+          245
+        ],
+        "roi": [
+          727,
+          592,
+          9,
+          8
+        ],
+        "upper": [
+          10,
+          180,
+          255
+        ]
+      },
+      "type": "ColorMatch"
+    }
+  },
   "无可派遣任务": {
     "action": {
       "param": {},
@@ -120,7 +150,7 @@
       "未完成派遣",
       {
         "jump_back": true,
-        "name": "派遣奖励领取"
+        "name": "新建节点15"
       }
     ],
     "recognition": {
